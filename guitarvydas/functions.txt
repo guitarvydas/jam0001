@@ -77,7 +77,7 @@ detailsStart () {
 c5 () {
 
 
-echo *** detailsStart ***
+echo BBB detailsStart BBB
 
 
 ./detStart

@@ -135,7 +135,7 @@ factcomponentcode(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~
 factcomponentcode(id15,"").
 factcomponentcode(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
 factcomponentcode(id17,"").
-factcomponentcode(id18,"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
+factcomponentcode(id18,"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
 factcomponentcode(id19,"").
 factcomponentcode(id2,"").
 factcomponentcode(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
@@ -299,7 +299,7 @@ value(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
 value(id15,"topologicalSort").
 value(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
 value(id17,"detailsStart").
-value(id18,"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
+value(id18,"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
 value(id19,"detailsEmitJSON").
 value(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
 value(id21,"emitFunctions").

@@ -88,7 +88,7 @@
   "inputs": [],
   "name":"c5",
   "outputs": [],
-  "synccode":"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~"
+  "synccode":"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~"
 }
 {
   "children": ["c7" ],

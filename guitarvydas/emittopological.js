@@ -270,6 +270,10 @@ function transpiler (scnText, grammar, semOperation, semanticsObject) {
 	    let result = sem (cst)[semOperation]();
 	    return result;
 	} else {
+	    process.stderr.write(scnText);
+	    process.stderr.write("\n\n");
+	    process.stderr.write(grammar);
+	    process.stderr.write("\n\n");
 	    throw "grammar matching failed";
 	}
     }

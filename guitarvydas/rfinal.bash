@@ -78,7 +78,7 @@ detailsStart () {
 c5 () {
 
 
-echo *** detailsStart ***
+echo BBB detailsStart BBB
 
 
 ./detStart
@@ -206,9 +206,3 @@ buildDetails () {
  
  c1
  }
-buildSequence
-sequenceStart
-seqEmitJSON
-emitTopo
-topologicalSort
-combine
