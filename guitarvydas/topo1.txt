@@ -1,4 +1,12 @@
-process__A  process__B 
+
+
+
+
+
+
+
+
+buildSequence  sequenceStart buildDetails  detailsStart detailsStart  detailsEmitJSON emitTopo  topologicalSort seqEmitJSON  emitTopo topologicalSort  combine detailsEmitJSON  emitFunctions emitFunctions  combine sequenceStart  seqEmitJSON 
 
 
 

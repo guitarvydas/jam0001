@@ -1,12 +1,143 @@
 {"diagram":"id1", "toplevelcomponent":"id4"}
 
 {
-  "children": ["process A", "process B" ],
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id12",
+  "inputs": [],
+  "name":"buildSequence",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id15",
+  "inputs": [],
+  "name":"buildDetails",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id19",
+  "inputs": ["" ],
+  "name":"detailsStart",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id20",
+  "inputs": ["" ],
+  "name":"detailsEmitJSON",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id25",
+  "inputs": ["" ],
+  "name":"emitTopo",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id31",
+  "inputs": ["" ],
+  "name":"topologicalSort",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id35",
+  "inputs": ["" ],
+  "name":"combine",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id39",
+  "inputs": ["" ],
+  "name":"emitFunctions",
+  "outputs": ["" ],
+  "synccode":""
+}
+{
+  "children": [
+    "buildSequence",
+    "buildDetails",
+    "detailsStart",
+    "detailsEmitJSON",
+    "emitTopo",
+    "topologicalSort",
+    "combine",
+    "emitFunctions",
+    "sequenceStart",
+    "seqEmitJSON"
+  ],
   "connections": [
     {
       "name":"x2",
-      "source": {"component":"process A", "port":"fb"},
-      "target": {"component":"process B", "port":"in"}
+      "source": {"component":"buildSequence", "port":""},
+      "target": {"component":"sequenceStart", "port":""}
+    },
+    {
+      "name":"x3",
+      "source": {"component":"buildDetails", "port":""},
+      "target": {"component":"detailsStart", "port":""}
+    },
+    {
+      "name":"x4",
+      "source": {"component":"detailsStart", "port":""},
+      "target": {"component":"detailsEmitJSON", "port":""}
+    },
+    {
+      "name":"x5",
+      "source": {"component":"emitTopo", "port":""},
+      "target": {"component":"topologicalSort", "port":""}
+    },
+    {
+      "name":"x6",
+      "source": {"component":"seqEmitJSON", "port":""},
+      "target": {"component":"emitTopo", "port":""}
+    },
+    {
+      "name":"x7",
+      "source": {"component":"topologicalSort", "port":""},
+      "target": {"component":"combine", "port":""}
+    },
+    {
+      "name":"x8",
+      "source": {"component":"detailsEmitJSON", "port":""},
+      "target": {"component":"emitFunctions", "port":""}
+    },
+    {
+      "name":"x9",
+      "source": {"component":"emitFunctions", "port":""},
+      "target": {"component":"combine", "port":""}
+    },
+    {
+      "name":"x10",
+      "source": {"component":"sequenceStart", "port":""},
+      "target": {"component":"seqEmitJSON", "port":""}
     }
   ],
   "diagram":"id1",
@@ -21,9 +152,9 @@
   "connections": [],
   "diagram":"id1",
   "id":"id5",
-  "inputs": [],
-  "name":"process A",
-  "outputs": ["fb" ],
+  "inputs": ["" ],
+  "name":"sequenceStart",
+  "outputs": ["" ],
   "synccode":""
 }
 {
@@ -31,9 +162,9 @@
   "connections": [],
   "diagram":"id1",
   "id":"id6",
-  "inputs": ["in" ],
-  "name":"process B",
-  "outputs": [],
+  "inputs": ["" ],
+  "name":"seqEmitJSON",
+  "outputs": ["" ],
   "synccode":""
 }
 

@@ -1,7 +1,168 @@
 {"diagram":"id1", "toplevelcomponent":"id4"}
 
 {
-  "children": ["process__A", "process__B" ],
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id10",
+  "inputs": [],
+  "name":"c1",
+  "outputs": [],
+  "synccode":"~~node details.js ~~"
+}
+{
+  "children": ["c2" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id11",
+  "inputs": [],
+  "name":"seqEmitJSON",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id12",
+  "inputs": [],
+  "name":"c2",
+  "outputs": [],
+  "synccode":"~~./seq__run__aux.bash ~~"
+}
+{
+  "children": ["c3" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id13",
+  "inputs": [],
+  "name":"emitTopo",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id14",
+  "inputs": [],
+  "name":"c3",
+  "outputs": [],
+  "synccode":"~~node emittopological.js ~~"
+}
+{
+  "children": ["c4" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id15",
+  "inputs": [],
+  "name":"topologicalSort",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id16",
+  "inputs": [],
+  "name":"c4",
+  "outputs": [],
+  "synccode":"~~tsort topo1.txt ~~"
+}
+{
+  "children": ["c5" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id17",
+  "inputs": [],
+  "name":"detailsStart",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id18",
+  "inputs": [],
+  "name":"c5",
+  "outputs": [],
+  "synccode":"~~swipl -q~~ ~~ ~~ -g 'consult(details).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat details.pl temp.pl | sort ~~"
+}
+{
+  "children": ["c7" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id19",
+  "inputs": [],
+  "name":"detailsEmitJSON",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id20",
+  "inputs": [],
+  "name":"c7",
+  "outputs": [],
+  "synccode":"~~./details__run__aux.bash ~~"
+}
+{
+  "children": ["c8" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id21",
+  "inputs": [],
+  "name":"emitFunctions",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id22",
+  "inputs": [],
+  "name":"c8",
+  "outputs": [],
+  "synccode":"~~node emitfunctions.js ~~"
+}
+{
+  "children": ["c9" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id23",
+  "inputs": [],
+  "name":"combine",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id24",
+  "inputs": [],
+  "name":"c9",
+  "outputs": [],
+  "synccode":"~~cat header.txt functions.txt topo.txt trailer.txt ~~"
+}
+{
+  "children": [
+    "seqEmitJSON",
+    "emitTopo",
+    "topologicalSort",
+    "detailsStart",
+    "detailsEmitJSON",
+    "emitFunctions",
+    "combine",
+    "sequenceStart",
+    "buildSequence",
+    "buildDetails"
+  ],
   "connections": [],
   "diagram":"id1",
   "id":"id4",
@@ -11,12 +172,12 @@
   "synccode":""
 }
 {
-  "children": ["c3" ],
+  "children": ["c11" ],
   "connections": [],
   "diagram":"id1",
   "id":"id5",
   "inputs": [],
-  "name":"process__A",
+  "name":"sequenceStart",
   "outputs": [],
   "synccode":""
 }
@@ -26,17 +187,17 @@
   "diagram":"id1",
   "id":"id6",
   "inputs": [],
-  "name":"c3",
+  "name":"c11",
   "outputs": [],
-  "synccode":"~~echo hello~~echo ... from process A~~"
+  "synccode":"~~echo *** sequenceStart ***~~swipl -q~~ ~~ ~~ -g 'consult(sequence).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat sequence.pl temp.pl | sort ~~"
 }
 {
-  "children": ["c4" ],
+  "children": ["c12" ],
   "connections": [],
   "diagram":"id1",
   "id":"id7",
   "inputs": [],
-  "name":"process__B",
+  "name":"buildSequence",
   "outputs": [],
   "synccode":""
 }
@@ -46,8 +207,18 @@
   "diagram":"id1",
   "id":"id8",
   "inputs": [],
-  "name":"c4",
+  "name":"c12",
   "outputs": [],
-  "synccode":"~~echo ... from process B~~echo goodbye~~"
+  "synccode":"~~node sequence.js ~~"
+}
+{
+  "children": ["c1" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id9",
+  "inputs": [],
+  "name":"buildDetails",
+  "outputs": [],
+  "synccode":""
 }
 

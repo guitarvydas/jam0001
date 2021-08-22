@@ -55,4 +55,4 @@ node emitfunctions.js >functions.txt
 mv fb.pl detfb.pl
 
 cat header.txt functions.txt topo.txt trailer.txt >final.bash
-source final.bash
+# source final.bash

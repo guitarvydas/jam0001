@@ -1,2 +1,10 @@
-process__A
-process__B
+buildDetails
+buildSequence
+detailsStart
+sequenceStart
+seqEmitJSON
+emitTopo
+detailsEmitJSON
+emitFunctions
+topologicalSort
+combine

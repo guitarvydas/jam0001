@@ -546,7 +546,7 @@ function plsort (factbase) {
 }
 
 
-var drawioRaw = fs.readFileSync ('sequence.drawio', 'utf-8');
+var drawioRaw = fs.readFileSync ('sequencedogfood.drawio', 'utf-8');
 
 function generatePipeline () {
     var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
