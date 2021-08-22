@@ -1,10 +1,6 @@
-buildDetails
 buildSequence
-detailsStart
 sequenceStart
 seqEmitJSON
 emitTopo
-detailsEmitJSON
-emitFunctions
 topologicalSort
 combine

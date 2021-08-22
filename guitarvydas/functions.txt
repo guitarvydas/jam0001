@@ -2,7 +2,13 @@
 
 c1 () {
 
-node details.js 
+
+
+
+node details.js >details.pl
+
+
+
  
   }
 
@@ -13,7 +19,14 @@ seqEmitJSON () {
 
 c2 () {
 
-./seq__run__aux.bash 
+
+
+./seq__run__aux.bash >sequence.json
+
+
+
+
+
  
   }
 
@@ -24,7 +37,16 @@ emitTopo () {
 
 c3 () {
 
-node emittopological.js 
+
+
+
+node emittopological.js >topo1.txt
+
+
+
+
+
+
  
   }
 
@@ -35,7 +57,15 @@ topologicalSort () {
 
 c4 () {
 
-tsort topo1.txt 
+
+
+tsort topo1.txt >topo.txt
+
+
+
+
+
+
  
   }
 
@@ -46,24 +76,20 @@ detailsStart () {
 
 c5 () {
 
-swipl -q
- 
- 
- -g 'consult(details).'
- 
- 
- -g 'consult(rects).'
- 
- 
- -g 'printRects.'
- 
- 
- -g 'halt.'
- 
- 
- 
- temp.pl
-cat details.pl temp.pl | sort 
+
+echo *** detailsStart ***
+
+
+./detStart
+
+
+
+cat details.pl temp.pl | sort >fb.pl
+
+
+
+
+
  
   }
 
@@ -74,7 +100,14 @@ detailsEmitJSON () {
 
 c7 () {
 
-./details__run__aux.bash 
+
+
+./run__aux.bash >details.json
+
+
+
+
+
  
   }
 
@@ -85,7 +118,16 @@ emitFunctions () {
 
 c8 () {
 
-node emitfunctions.js 
+
+
+
+node emitfunctions.js >topo1.txt
+
+
+
+
+
+
  
   }
 
@@ -96,7 +138,11 @@ combine () {
 
 c9 () {
 
-cat header.txt functions.txt topo.txt trailer.txt 
+
+
+cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash
+
+
  
   }
 
@@ -121,25 +167,19 @@ sequenceStart () {
 
 c11 () {
 
-echo *** sequenceStart ***
-swipl -q
- 
- 
- -g 'consult(sequence).'
- 
- 
- -g 'consult(rects).'
- 
- 
- -g 'printRects.'
- 
- 
- -g 'halt.'
- 
- 
- 
- temp.pl
-cat sequence.pl temp.pl | sort 
+
+echo AAA sequenceStart AAA
+
+./seqStart
+
+
+cat sequence.pl temp.pl | sort >fb.pl
+
+
+
+
+
+
  
   }
 
@@ -150,7 +190,14 @@ buildSequence () {
 
 c12 () {
 
-node sequence.js 
+
+
+node sequence.js >sequence.pl
+
+
+
+
+
  
   }
 

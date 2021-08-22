@@ -2,11 +2,12 @@
 
 
 
+buildSequence  sequenceStart 
+emitTopo  topologicalSort 
+seqEmitJSON  emitTopo 
+topologicalSort  combine 
+sequenceStart  seqEmitJSON 
 
-
-
-
-buildSequence  sequenceStart buildDetails  detailsStart detailsStart  detailsEmitJSON emitTopo  topologicalSort seqEmitJSON  emitTopo topologicalSort  combine detailsEmitJSON  emitFunctions emitFunctions  combine sequenceStart  seqEmitJSON 
 
 
 

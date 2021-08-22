@@ -26,7 +26,7 @@ swipl -q \
 # augment the factbase (fb.pl) after every inferencing step
 cat sequence.pl temp.pl | sort >fb.pl
 
-./seq-run-aux.bash >sequence.json
+./seq__run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
 tsort topo1.txt >topo.txt
@@ -47,7 +47,7 @@ swipl -q \
 # augment the factbase (fb.pl) after every inferencing step
 cat details.pl temp.pl | sort >fb.pl
 
-./run-aux.bash | ./fixup.bash >details.json
+./run__aux.bash | ./fixup.bash >details.json
 
 node emitfunctions.js >functions.txt
 

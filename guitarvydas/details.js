@@ -374,9 +374,16 @@ function expandStyle (s) {
 function strMangle (s) {
         // remove HTML junk added by drawio
     var ret = s
-	.replace (/&[^ ]+;/g, '\n')
-	.replace (/\\\\/g, '');
+	.replace (/&amp;gt;/g,'>')
+	.replace (/&amp;nbsp;/g,' ')
 
+	.replace (/&lt;br&gt;/g,'\n')
+
+	.replace (/&lt;div&gt;/g,'\n')
+	.replace (/&lt;\/div&gt;/g,'\n')
+	.replace (/&lt;span&gt;/g,'\n')
+	.replace (/&lt;\/span&gt;/g,'\n')
+	.replace (/\\\\/g, '');
     return ret
         // convert names to be acceptable to SWIPL
 	.replace (/-/g, '__')

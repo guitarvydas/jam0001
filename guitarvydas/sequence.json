@@ -14,37 +14,7 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id15",
-  "inputs": [],
-  "name":"buildDetails",
-  "outputs": ["" ],
-  "synccode":""
-}
-{
-  "children": [],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id19",
-  "inputs": ["" ],
-  "name":"detailsStart",
-  "outputs": ["" ],
-  "synccode":""
-}
-{
-  "children": [],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id20",
-  "inputs": ["" ],
-  "name":"detailsEmitJSON",
-  "outputs": ["" ],
-  "synccode":""
-}
-{
-  "children": [],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id25",
+  "id":"id16",
   "inputs": ["" ],
   "name":"emitTopo",
   "outputs": ["" ],
@@ -54,7 +24,7 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id31",
+  "id":"id22",
   "inputs": ["" ],
   "name":"topologicalSort",
   "outputs": ["" ],
@@ -64,32 +34,18 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id35",
+  "id":"id26",
   "inputs": ["" ],
   "name":"combine",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": [],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id39",
-  "inputs": ["" ],
-  "name":"emitFunctions",
-  "outputs": ["" ],
-  "synccode":""
-}
-{
   "children": [
     "buildSequence",
-    "buildDetails",
-    "detailsStart",
-    "detailsEmitJSON",
     "emitTopo",
     "topologicalSort",
     "combine",
-    "emitFunctions",
     "sequenceStart",
     "seqEmitJSON"
   ],
@@ -101,41 +57,21 @@
     },
     {
       "name":"x3",
-      "source": {"component":"buildDetails", "port":""},
-      "target": {"component":"detailsStart", "port":""}
-    },
-    {
-      "name":"x4",
-      "source": {"component":"detailsStart", "port":""},
-      "target": {"component":"detailsEmitJSON", "port":""}
-    },
-    {
-      "name":"x5",
       "source": {"component":"emitTopo", "port":""},
       "target": {"component":"topologicalSort", "port":""}
     },
     {
-      "name":"x6",
+      "name":"x4",
       "source": {"component":"seqEmitJSON", "port":""},
       "target": {"component":"emitTopo", "port":""}
     },
     {
-      "name":"x7",
+      "name":"x5",
       "source": {"component":"topologicalSort", "port":""},
       "target": {"component":"combine", "port":""}
     },
     {
-      "name":"x8",
-      "source": {"component":"detailsEmitJSON", "port":""},
-      "target": {"component":"emitFunctions", "port":""}
-    },
-    {
-      "name":"x9",
-      "source": {"component":"emitFunctions", "port":""},
-      "target": {"component":"combine", "port":""}
-    },
-    {
-      "name":"x10",
+      "name":"x6",
       "source": {"component":"sequenceStart", "port":""},
       "target": {"component":"seqEmitJSON", "port":""}
     }

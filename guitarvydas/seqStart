@@ -1,0 +1,7 @@
+#!/bin/bash
+swipl -q \
+      -g 'consult(sequence).'  \
+      -g 'consult(rects).'  \
+      -g 'printRects.'  \
+      -g 'halt.'  \
+      > temp.pl

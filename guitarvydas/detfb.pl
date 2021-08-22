@@ -127,28 +127,28 @@ diagramContains(id1,id6).
 diagramContains(id1,id7).
 diagramContains(id1,id8).
 diagramContains(id1,id9).
-factcomponentcode(id10,"~~node details.js ~~").
+factcomponentcode(id10,"~~~~~~~~node details.js >details.pl~~~~~~~~").
 factcomponentcode(id11,"").
-factcomponentcode(id12,"~~./seq__run__aux.bash ~~").
+factcomponentcode(id12,"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~").
 factcomponentcode(id13,"").
-factcomponentcode(id14,"~~node emittopological.js ~~").
+factcomponentcode(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
 factcomponentcode(id15,"").
-factcomponentcode(id16,"~~tsort topo1.txt ~~").
+factcomponentcode(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
 factcomponentcode(id17,"").
-factcomponentcode(id18,"~~swipl -q~~ ~~ ~~ -g 'consult(details).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat details.pl temp.pl | sort ~~").
+factcomponentcode(id18,"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
 factcomponentcode(id19,"").
 factcomponentcode(id2,"").
-factcomponentcode(id20,"~~./details__run__aux.bash ~~").
+factcomponentcode(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
 factcomponentcode(id21,"").
-factcomponentcode(id22,"~~node emitfunctions.js ~~").
+factcomponentcode(id22,"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~").
 factcomponentcode(id23,"").
-factcomponentcode(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
+factcomponentcode(id24,"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~").
 factcomponentcode(id3,"").
 factcomponentcode(id4,"").
 factcomponentcode(id5,"").
-factcomponentcode(id6,"~~echo *** sequenceStart ***~~swipl -q~~ ~~ ~~ -g 'consult(sequence).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat sequence.pl temp.pl | sort ~~").
+factcomponentcode(id6,"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~").
 factcomponentcode(id7,"").
-factcomponentcode(id8,"~~node sequence.js ~~").
+factcomponentcode(id8,"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~").
 factcomponentcode(id9,"").
 factcomponentname(id10,"c1").
 factcomponentname(id11,"seqEmitJSON").
@@ -291,26 +291,26 @@ t(id8,305).
 t(id9,385).
 unknowncomponentname(id2,"c6").
 unknowncomponentname(id3,"c10").
-value(id10,"~~node details.js ~~").
+value(id10,"~~~~~~~~node details.js >details.pl~~~~~~~~").
 value(id11,"seqEmitJSON").
-value(id12,"~~./seq__run__aux.bash ~~").
+value(id12,"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~").
 value(id13,"emitTopo").
-value(id14,"~~node emittopological.js ~~").
+value(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
 value(id15,"topologicalSort").
-value(id16,"~~tsort topo1.txt ~~").
+value(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
 value(id17,"detailsStart").
-value(id18,"~~swipl -q~~ ~~ ~~ -g 'consult(details).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat details.pl temp.pl | sort ~~").
+value(id18,"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
 value(id19,"detailsEmitJSON").
-value(id20,"~~./details__run__aux.bash ~~").
+value(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
 value(id21,"emitFunctions").
-value(id22,"~~node emitfunctions.js ~~").
+value(id22,"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~").
 value(id23,"combine").
-value(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
+value(id24,"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~").
 value(id4,"top level").
 value(id5,"sequenceStart").
-value(id6,"~~echo *** sequenceStart ***~~swipl -q~~ ~~ ~~ -g 'consult(sequence).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat sequence.pl temp.pl | sort ~~").
+value(id6,"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~").
 value(id7,"buildSequence").
-value(id8,"~~node sequence.js ~~").
+value(id8,"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~").
 value(id9,"buildDetails").
 vertex(id10,"").
 vertex(id11,"").

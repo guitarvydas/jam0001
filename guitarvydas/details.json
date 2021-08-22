@@ -8,7 +8,7 @@
   "inputs": [],
   "name":"c1",
   "outputs": [],
-  "synccode":"~~node details.js ~~"
+  "synccode":"~~~~~~~~node details.js >details.pl~~~~~~~~"
 }
 {
   "children": ["c2" ],
@@ -28,7 +28,7 @@
   "inputs": [],
   "name":"c2",
   "outputs": [],
-  "synccode":"~~./seq__run__aux.bash ~~"
+  "synccode":"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~"
 }
 {
   "children": ["c3" ],
@@ -48,7 +48,7 @@
   "inputs": [],
   "name":"c3",
   "outputs": [],
-  "synccode":"~~node emittopological.js ~~"
+  "synccode":"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~"
 }
 {
   "children": ["c4" ],
@@ -68,7 +68,7 @@
   "inputs": [],
   "name":"c4",
   "outputs": [],
-  "synccode":"~~tsort topo1.txt ~~"
+  "synccode":"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~"
 }
 {
   "children": ["c5" ],
@@ -88,7 +88,7 @@
   "inputs": [],
   "name":"c5",
   "outputs": [],
-  "synccode":"~~swipl -q~~ ~~ ~~ -g 'consult(details).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat details.pl temp.pl | sort ~~"
+  "synccode":"~~~~echo *** detailsStart ***~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~"
 }
 {
   "children": ["c7" ],
@@ -108,7 +108,7 @@
   "inputs": [],
   "name":"c7",
   "outputs": [],
-  "synccode":"~~./details__run__aux.bash ~~"
+  "synccode":"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~"
 }
 {
   "children": ["c8" ],
@@ -128,7 +128,7 @@
   "inputs": [],
   "name":"c8",
   "outputs": [],
-  "synccode":"~~node emitfunctions.js ~~"
+  "synccode":"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~"
 }
 {
   "children": ["c9" ],
@@ -148,7 +148,7 @@
   "inputs": [],
   "name":"c9",
   "outputs": [],
-  "synccode":"~~cat header.txt functions.txt topo.txt trailer.txt ~~"
+  "synccode":"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~"
 }
 {
   "children": [
@@ -189,7 +189,7 @@
   "inputs": [],
   "name":"c11",
   "outputs": [],
-  "synccode":"~~echo *** sequenceStart ***~~swipl -q~~ ~~ ~~ -g 'consult(sequence).'~~ ~~ ~~ -g 'consult(rects).'~~ ~~ ~~ -g 'printRects.'~~ ~~ ~~ -g 'halt.'~~ ~~ ~~ ~~ temp.pl~~cat sequence.pl temp.pl | sort ~~"
+  "synccode":"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~"
 }
 {
   "children": ["c12" ],
@@ -209,7 +209,7 @@
   "inputs": [],
   "name":"c12",
   "outputs": [],
-  "synccode":"~~node sequence.js ~~"
+  "synccode":"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~"
 }
 {
   "children": ["c1" ],
