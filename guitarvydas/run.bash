@@ -1,11 +1,11 @@
 #!/bin/bash
-
 clear
 set -e
+set -x
 trap 'catch' ERR
 
 catch () {
-    echo '*** FATAL ERROR ***'
+    echo '*** FATAL ERROR in run.bash ***'
     exit 1
 }
 
@@ -25,7 +25,11 @@ swipl -q \
 
 # augment the factbase (fb.pl) after every inferencing step
 cat sequence.pl temp.pl | sort >fb.pl
+cp fb.pl _seq_end_fb.pl
 
+./designRuleCheckEdges.bash
+./bb.bash
+./designRuleCheckBoundingBoxes.bash
 ./seq__run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
@@ -47,6 +51,9 @@ swipl -q \
 # augment the factbase (fb.pl) after every inferencing step
 cat details.pl temp.pl | sort >fb.pl
 
+# no edges, therefore no edge check
+./bb.bash
+./designRuleCheckBoundingBoxes.bash
 ./run__aux.bash | ./fixup.bash >details.json
 
 node emitfunctions.js >functions.txt
@@ -54,5 +61,5 @@ node emitfunctions.js >functions.txt
 # debug
 mv fb.pl detfb.pl
 
-cat header.txt functions.txt topo.txt trailer.txt >final.bash
+cat header.txt functions.txt topo.txt trailer.txt | sed -e '/^ *$/d' >final.bash
 # source final.bash

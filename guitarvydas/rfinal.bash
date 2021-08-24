@@ -206,3 +206,6 @@ buildDetails () {
  
  c1
  }
+buildSequence
+buildDetails
+combine

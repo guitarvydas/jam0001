@@ -1,4 +1,5 @@
 #!/bin/bash
+set -v
 swipl -g 'consult(fb).' \
       -g 'consult(boundingBoxes).' \
       -g 'printBB.' \
@@ -13,9 +14,11 @@ mv temp3.pl fb.pl
 
 #_details_
 allContains1 (){
+cp fb.pl contains1_fb.pl    
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain1).' -g 'allContains1.' -g 'halt.' | ./augment-fb.bash 
 }
 printAllDeepContains (){
+cp fb.pl deep_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain2).' -g 'printAllDeepContains.' -g 'halt.' | ./augment-fb.bash 
 }
 printAllDirectContains (){

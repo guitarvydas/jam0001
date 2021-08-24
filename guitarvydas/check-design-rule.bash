@@ -1,6 +1,6 @@
 #!/bin/bash
 cat - >_errors.txt
-if grep -q 'FATAL' _errors.txt
+if grep 'FATAL' _errors.txt
 then
     echo quitting
     exit 1

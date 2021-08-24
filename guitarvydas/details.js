@@ -560,7 +560,7 @@ function plsort (factbase) {
 }
 
 
-var drawioRaw = fs.readFileSync ('detailsdogfood.drawio', 'utf-8');
+var drawioRaw = fs.readFileSync ('details.drawio', 'utf-8');
 
 function generatePipeline () {
     var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
