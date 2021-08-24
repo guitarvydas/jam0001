@@ -546,10 +546,11 @@ function plsort (factbase) {
 }
 
 
-var drawioRaw = fs.readFileSync ('sequencedogfood.drawio', 'utf-8');
+var drawioRaw = fs.readFileSync ('sequence.drawio', 'utf-8');
 
 function generatePipeline () {
     var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
+    fs.writeFileSync("xxx-seq.html", drawioUncompressed, 'utf-8');
     var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed)
     var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded)
     var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided)

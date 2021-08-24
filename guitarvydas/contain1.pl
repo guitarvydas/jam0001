@@ -2,11 +2,27 @@
 
 % rectangles can contain rectangles or edges
 allContains1:-
-    bagof(R1,(rect(R1,_),(rect(R2,_);edge(R2,_)),R1 \= R2,onSameDiagram(R1,R2),printContainment(R1,R2)),_),!.
-allContains1.
+    forall(rect(R1,_),
+	   container(R1)).
+
+container(R1):-
+    forall(contained(R1,R2),
+	   forall(rect(R2,_),
+		  printContainment(R1,R2))).
+
+contained(R1,R2):-
+    rect(R2,_),
+    R1 \= R2,
+    onSameDiagram(R1,R2),
+    completelyInside(R2,R1).
+contained(R,E):-
+    edge(E,_),
+    R \= E,
+    onSameDiagram(R,E),
+    completelyInside(E,R).
 
 printContainment(R1,R2):-
-    completelyInside(R2,R1),
+    contained(R1,R2),
     format("contains1(~w,~w).~n",[R1,R2]).
 
 % succeeds only if B's bounding box is fully inside A's bounding box, inclusively
