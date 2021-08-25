@@ -3,6 +3,8 @@
 
 component(C):-
     rect(C,_).
+port(C):-
+    ellipse(C,_).
 
 component(Diagram,C,Name,Ins,Outs,SyncCode,Children,Connections) :-
     diagramContains(Diagram,C),
@@ -73,16 +75,21 @@ childof(C,Name):-
     rect(Child,_),
     componentname(Child,Name).
 
-connectionOf(C,connection{name:ConnectionName,source:pair{component:SourceName,port:SourcePort},target:pair{component:TargetName,port:TargetPort}}):-
+connectionOf(C,connection{
+		   name:ConnectionName,
+		   source:pair{component:SourceName,port:SourcePort},
+		   target:pair{component:TargetName,port:TargetPort}
+	       }):-
     contains(C,E),
     edge(E,_),
     source(E,SC),
-    componentname(SC,SourcePort),
+    portname(SC,SourcePort),
     contains(SourceParent,SC),
     getname(C,SourceParent,SourceName),
     target(E,TC),
-    componentname(TC,TargetPort),
+    portname(TC,TargetPort),
     contains(TargetParent,TC),
     getname(C,TargetParent,TargetName),
     gensym(x,ConnectionName).
-    
+
+

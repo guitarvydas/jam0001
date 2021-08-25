@@ -13,6 +13,14 @@ cell(id6,"").
 cell(id7,"").
 cell(id8,"").
 cell(id9,"").
+contains(id4,id5).
+contains(id4,id6).
+contains(id4,id8).
+contains(id5,id9).
+contains(id6,id7).
+contains_1(id4,id5).
+contains_1(id4,id6).
+contains_1(id4,id8).
 diagram(id1, "").
 diagramContains(id1, id2).
 diagramContains(id1, id3).
@@ -25,6 +33,16 @@ diagramContains(id1, id9).
 edge(id8, "").
 ellipse(id7, "").
 ellipse(id9, "").
+factcomponentcode(id2,"").
+factcomponentcode(id3,"").
+factcomponentcode(id4,"").
+factcomponentcode(id5,"").
+factcomponentcode(id6,"").
+factcomponentname(id4,"topLevel").
+factcomponentname(id5,"process A").
+factcomponentname(id6,"process B").
+factcomponentname(id7,"in").
+factcomponentname(id9,"fb").
 fillColor(id7, "green").
 fillColor(id9, "yellow").
 height(id4, 150).
@@ -39,6 +57,8 @@ l(id7,510).
 l(id8,395).
 l(id9,380).
 name(id1, "Page__1").
+portdirection(id7,input).
+portdirection(id9,output).
 r(id4,720).
 r(id5,400).
 r(id6,640).
@@ -58,6 +78,8 @@ t(id7,295).
 t(id8,310).
 t(id9,295).
 target(id8, id7).
+unknowncomponentname(id2,"c1").
+unknowncomponentname(id3,"c2").
 value(id4, "topLevel").
 value(id5, "process A").
 value(id6, "process B").

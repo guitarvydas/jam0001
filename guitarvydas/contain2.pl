@@ -1,18 +1,18 @@
-:- dynamic contains1/2.
+:- dynamic contains_1/2.
 
-deepcontains1(Parent,GrandChild):-
+deepcontains_1(Parent,GrandChild):-
     onSameDiagram(Parent,GrandChild),
-    contains1(Parent,GrandChild),
-    contains1(Child,GrandChild),
-    contains1(Parent,Child).
-deepcontains1(Parent,GrandChild):-
+    contains_1(Parent,GrandChild),
+    contains_1(Child,GrandChild),
+    contains_1(Parent,Child).
+deepcontains_1(Parent,GrandChild):-
     onSameDiagram(Parent,GrandChild),
-    contains1(Parent,GrandChild),
-    contains1(Child,GrandChild),
-    deepcontains1(Parent,Child).
+    contains_1(Parent,GrandChild),
+    contains_1(Child,GrandChild),
+    deepcontains_1(Parent,Child).
 
 deepcontains(R,Bag):-
-    setof(X,deepcontains1(R,X),Bag).
+    setof(X,deepcontains_1(R,X),Bag).
 
 printContains(R):-
     deepcontains(R,Bag),
@@ -20,7 +20,7 @@ printContains(R):-
 
 printContainsSingle(_,[]).
 printContainsSingle(R,[H|T]):-
-    format("deepcontains(~w,~w).~n", [R,H]),
+    format("deep_contains(~w,~w).~n", [R,H]),
     printContainsSingle(R,T).
 
 printAllDeepContains:-
