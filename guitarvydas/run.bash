@@ -28,12 +28,18 @@ cat sequence.pl temp.pl | sort >fb.pl
 cp fb.pl _seq_end_fb.pl
 
 ./designRuleCheckEdges.bash
+cp fb.pl _pre_bb.pl
 ./bb.bash
+cp fb.pl _post_bb.pl
 ./designRuleCheckBoundingBoxes.bash
-./seq__run__aux.bash >sequence.json
+#./seq__run__aux.bash >sequence.json
+./run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
-tsort topo1.txt >topo.txt
+
+#debug
+cat topo1.txt
+exit 0
 
 # debug
 mv fb.pl seqfb.pl

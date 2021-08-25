@@ -1,10 +1,10 @@
-:- dynamic contains1/2.
-:- dynamic deepcontains/2.
+:- dynamic contains_1/2.
+:- dynamic deep_contains/2.
 
 factContains(Parent,Child):-
-    contains1(Parent,Child),
+    contains_1(Parent,Child),
     onSameDiagram(Parent,Child),
-    \+ deepcontains(Parent,Child).
+    \+ deep_contains(Parent,Child).
 
 allContainedChildren(R,Bag):-
     bagof(Child,factContains(R,Child),Bag).

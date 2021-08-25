@@ -1,35 +1,36 @@
-:- dynamic edge/2.
-:- dynamic source/2.
-:- dynamic target/2.
+:- dynamic rect/2.
+:- dynamic ellipse/2.
+:- dynamic text/2.
+:- dynamic vertex/2.
+:- dynamic l/2.
+:- dynamic t/2.
+:- dynamic r/2.
+:- dynamic b/2.
 
-edgeHasSourceAndTarget(E):-
-    edge(E,_),
-    source(E,_),
-    target(E,_),
-    !.
-edgeHasSourceAndTarget(E):-
-    edge(E,_),
-    source(E,_),
-    format('FATAL design rule: edge ~w has no target (reconnect edge in drawio)~n',[E]),
-    !.
-edgeHasSourceAndTarget(E):-
-    edge(E,_),
-    target(E,_),
-    format('FATAL design rule: edge ~w has no source (reconnect edge in drawio)~n',[E]),
-    !.
-edgeHasSourceAndTarget(E):-
-    edge(E,_),
-    format('FATAL design rule: edge ~w has no source nor target (reconnect edge in drawio)~n',[E]).
+hasBB(Item):-
+    l(Item,_),
+    t(Item,_),
+    r(Item,_),
+    b(Item,_).
 
-checkThatEdgesExist:-
-    edge(_,_),
+hasExactlyOneBB(Item):-
+    bagof(V,l(Item,V),LBag),
+    length(LBag,1),
+    bagof(V,t(Item,V),TBag),
+    length(TBag,1),
+    bagof(V,r(Item,V),RBag),
+    length(RBag,1),
+    bagof(V,b(Item,V),BBag),
+    length(BBag,1),
     !.
-checkThatEdgesExist:-
-    format('FATAL design rule: no edges at all (reconnect edges in drawio)~n').
+hasExactlyOneBB(Item):-
+	format('FATAL design rule: Item ~w has 0 or more than one bounding boxes~n', [Item]).
 
-designRuleCheckEdges:-
+checkBB(Item):-
+    hasExactlyOneBB(Item).
+
+designRuleCheckBoundingBoxes:-
     consult(fb),
-    checkThatEdgesExist,
-    forall(edge(E,_),
-	   edgeHasSourceAndTarget(E)),
+    forall(vertex(V,_),
+	   checkBB(V)),
     halt.

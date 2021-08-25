@@ -1,42 +1,38 @@
 #!/bin/bash
 set -v
-swipl -g 'consult(fb).' \
-      -g 'consult(boundingBoxes).' \
-      -g 'printBB.' \
-      -g 'halt.' \
-      >temp2.pl
-
-# augment the factbase (fb.pl) after every inferencing step
-cat fb.pl temp2.pl | sort >temp3.pl
-mv temp3.pl fb.pl
 
 ##### containment inferencing #########
 
 #_details_
 allContains1 (){
-cp fb.pl contains1_fb.pl    
+cp fb.pl _pre_contains1_fb.pl    
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain1).' -g 'allContains1.' -g 'halt.' | ./augment-fb.bash 
 }
 printAllDeepContains (){
-cp fb.pl deep_fb.pl
+cp fb.pl _pre_deep_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain2).' -g 'printAllDeepContains.' -g 'halt.' | ./augment-fb.bash 
 }
 printAllDirectContains (){
+cp fb.pl _pre_direct_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain3).' -g 'printAllDirectContains.' -g 'halt.' | ./augment-fb.bash 
 }
 designRuleRectanglesMustNotIntersectOnTheSameDiagram (){
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(designRuleRectanglesMustNotIntersect).' -g 'designRuleRectanglesMustNotIntersectOnTheSameDiagram.' -g 'halt.' | ./check-design-rule.bash 
 }
 printAllPortContains (){
+cp fb.pl _pre_portcontains_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(containsport).' -g 'printAllPortContains.' -g 'halt.' | ./augment-fb.bash 
 }
 printAllDirections (){
+cp fb.pl _pre_directions_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(portdirection).' -g 'printAllDirections.' -g 'halt.' | ./augment-fb.bash 
 }
 assignNames (){
+cp fb.pl _pre_names_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(component).' -g 'consult(names).' -g 'printNames.' -g 'halt.' | ./augment-fb.bash 
 }
 assignCode (){
+cp fb.pl _pre_code_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(component).' -g 'consult(code).' -g 'printCode.' -g 'halt.' | ./augment-fb.bash 
 }
 

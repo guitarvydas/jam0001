@@ -20,10 +20,12 @@ getname(_,_,self).
 componentname(C,Name):-
     factcomponentname(C,Name).
 
+portname(C,Name):-
+    componentname(C,Name).
 
 
 
 printNames:-
-    forall( component(C),
+    forall( (component(C) ; port(C)),
 	    makecomponentname(C)
 	  ).
