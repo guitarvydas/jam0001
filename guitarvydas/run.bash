@@ -27,9 +27,6 @@ swipl -q \
 cat sequence.pl temp.pl | sort >fb.pl
 cp fb.pl _seq_end_fb.pl
 
-### 
-exit 0
-
 ./designRuleCheckEdges.bash
 cp fb.pl _pre_bb.pl
 ./bb.bash
@@ -39,6 +36,10 @@ cp fb.pl _post_bb.pl
 ./senders.bash
 ./receivers.bash
 
+### 
+exit 0
+
+./contain1.bash
 ./run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
@@ -63,6 +64,8 @@ cat details.pl temp.pl | sort >fb.pl
 # no edges, therefore no edge check
 ./bb.bash
 ./designRuleCheckBoundingBoxes.bash
+
+./contains1.bash
 ./run__aux.bash | ./fixup.bash >details.json
 
 node emitfunctions.js >functions.txt
