@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
-set -e
 set -x
+set -e
 trap 'catch' ERR
 
 catch () {
@@ -27,19 +27,22 @@ swipl -q \
 cat sequence.pl temp.pl | sort >fb.pl
 cp fb.pl _seq_end_fb.pl
 
+### 
+exit 0
+
 ./designRuleCheckEdges.bash
 cp fb.pl _pre_bb.pl
 ./bb.bash
 cp fb.pl _post_bb.pl
 ./designRuleCheckBoundingBoxes.bash
-#./seq__run__aux.bash >sequence.json
+
+./senders.bash
+./receivers.bash
+
 ./run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
-
-#debug
-cat topo1.txt
-exit 0
+tsort topo1.txt >topo.txt
 
 # debug
 mv fb.pl seqfb.pl

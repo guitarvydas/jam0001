@@ -1,5 +1,5 @@
 #!/bin/bash
-set -v
+set -x
 
 ##### containment inferencing #########
 
@@ -14,7 +14,8 @@ swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain2).' -g
 }
 printAllDirectContains (){
 cp fb.pl _pre_direct_fb.pl
-swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain3).' -g 'printAllDirectContains.' -g 'halt.' | ./augment-fb.bash 
+swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(contain3).' -g 'printAllDirectContains.' -g 'halt.' | ./augment-fb.bash
+cp fb.pl _post_direct_fb.pl
 }
 designRuleRectanglesMustNotIntersectOnTheSameDiagram (){
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(designRuleRectanglesMustNotIntersect).' -g 'designRuleRectanglesMustNotIntersectOnTheSameDiagram.' -g 'halt.' | ./check-design-rule.bash 
@@ -35,6 +36,17 @@ assignCode (){
 cp fb.pl _pre_code_fb.pl
 swipl -g 'consult(fb).'  -g 'consult(onSameDiagram).' -g 'consult(component).' -g 'consult(code).' -g 'printCode.' -g 'halt.' | ./augment-fb.bash 
 }
+to_json () {
+# convert fb.pl to "structured" form
+swipl -g 'use_module(library(http/json))' \
+      -g 'consult(fb).' \
+      -g 'consult(component).' \
+      -g 'consult(names).' \
+      -g 'consult(code).' \
+      -g 'consult(jsoncomponent).'\
+      -g 'allc.'\
+      -g 'halt.'
+}    
 
 # pipeline
 allContains1
@@ -47,12 +59,4 @@ printAllDirections
 assignNames
 assignCode
 
-# convert fb.pl to "structured" form
-swipl -g 'use_module(library(http/json))' \
-      -g 'consult(fb).' \
-      -g 'consult(component).' \
-      -g 'consult(names).' \
-      -g 'consult(code).' \
-      -g 'consult(jsoncomponent).'\
-      -g 'allc.'\
-      -g 'halt.'
+to_json

@@ -1,0 +1,14 @@
+* edges id11 and id12 have no source nor target
+** label edges
+*** support.js as a requires module
+*** id11 is mx_kBMiYbfJri47WsX8j__13, id12 is mx_kBMiYbfJri47WsX8j__11
+**** edgelabels are vertices
+
+*** kill sequence.drawio and start again
+    FATAL design rule: rectangles must not intersect (Atop Bright) id10 id9
+FATAL design rule: rectangles must not intersect (Atop Bleft) id11 id9
+FATAL design rule: rectangles must not intersect (Atop Bright) id7 id4
+FATAL design rule: rectangles must not intersect (Atop Bright) id8 id5
+
+id9		"ybbTwsdQuFU4afnuUeu4__7"
+id10		"ybbTwsdQuFU4afnuUeu4__8"

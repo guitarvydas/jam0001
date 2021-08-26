@@ -1,8 +1,5 @@
-//require ('./support');
-var atob = require ('atob'); // npm install atob
-var pako = require ('pako'); // npm install pako
-exports.decodeMxDiagram = (encoded) => {
-    var data = atob (encoded);
+function decodeMxDiagram (encoded) {
+    var data = window.atob (encoded);
     var inf = pako.inflateRaw (
 	Uint8Array.from (data, c=>c.charCodeAt (0)), {to: 'string'})
     var str = decodeURIComponent (inf);
@@ -10,13 +7,14 @@ exports.decodeMxDiagram = (encoded) => {
 }
 
 exports.expandStyle = (s) => {
+    process.stderr.write(s); process.stderr.write('\n');
     var sx = s
 	.replace(/"/g,'')
-	.replace (/([^=]+)=([^;]+);/g, '$1="$2" ')
-	.replace (/([^;]+);/g,'$1="1" ')
+	.replace(/([^;]+)([^=]);/g,'$1=1;$2')
+	.replace (/([^=]+)=([^;]+);/g, '$1="$2" ');
     return sx;
 }
-exports.strMangle = (s) => {
+function strMangle (s) {
         // remove HTML junk added by drawio
     var ret = s
 	.replace (/&[^ ]+;/g, '\n')
@@ -31,52 +29,26 @@ exports.strMangle = (s) => {
 	.replace (/__q/g, '-q');
 }
 
-var _scope;
-exports.init = (scope) => {
-    _scope = scope;
-}
-
-function scopeModify (key, val) {
-  return _scope.scopeModify (key, val);
-}
-
-function scopeAdd (key, val) {
-  return _scope.scopeAdd (key, val);
-}
-
-function scopeGet (key) {
-  return _scope.scopeGet (key);
-}
-
 
 var nameIndexTable = [];
 var counter = 1;
 
-exports.resetNames = () => {
+function resetNames () {
     nameIndexTable = [];
     counter = 1;
 }
 
 /// generic
-function lID (quoteds) {
-    var s = stripQuotes (quoteds);
-    return s;
-}
-exports.longID = (quoteds) => {
-    var s = lID (quoteds);
-    return s;
-}
-    
 function newID (name, quoteds) {
-    var s = lID (quoteds);
+    var s = stripQuotes (quoteds);
     scopeModify (name, s);
     nameIndexTable[s] = counter;
     counter += 1;
-    return s;
+    return '';
 }
 
 function pushID (name, s) {
-    scopeModify (name, lID (s));
+    scopeModify (name, stripQuotes (s));
     return '';
 }
 
@@ -87,37 +59,47 @@ function getID (name) {
 
 
 /// cells
-exports.newCellID = (s) => {
+function newCellID (s) {
     return newID ('cellid', s);
 }
 
-exports.pushCellID = (s) => {
+function pushCellID (s) {
     return pushID ('cellid', s);
 }
 
-exports.getCellID = () => {
+function getCellID () {
     return getID ('cellid');
 }
 
-exports.refCellID = (s) => {
+function refCellID (s) {
     return refID (s);
 }
 
 /// diagrams
-exports.newDiagramID = (s) => {
+function newDiagramID (s) {
     return newID ('diagramid', s);
 }
 
-exports.pushDiagramID = (s) => {
+function pushDiagramID (s) {
     return pushID ('diagramid', s);
 }
 
-exports.getDiagramID = () => {
+function getDiagramID () {
     return getID ('diagramid');
 }
 
 
 
+// //function refIDFat (s) {
+// function refID (s) {
+//     return "id_" + reallyStripQuotes(s);
+// }
+
+// function refIDTiny (s) {
+//     return "id" + s.replace(/"/g,"");
+// }
+
+// function refIDBoth (s) {
 function refID (s) {
     // use refIDTiny to produce smaller ID's (useful for debugging workbench)
     var n = nameIndexTable[s];
@@ -129,8 +111,9 @@ function refID (s) {
 }    
 
 
-exports.stripQuotes = (s) => {
+function stripQuotes (s) {
     return s;
+    //return reallyStringQuotes(s);
 }
 
 function reallyStripQuotes (s) {

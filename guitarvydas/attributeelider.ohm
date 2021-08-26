@@ -19,7 +19,7 @@ AppAttributeelider{
   Geometry = GeometryWithoutContent | GeometryWithContent
   GeometryWithoutContent = "<mxGeometry" GAttribute+ "/>"
   GeometryWithContent = "<mxGeometry" GAttribute+ ">" ignore+ "</mxGeometry>"
-  CellAttribute =   KindAttribute 
+  CellAttribute =   EllipseAttribute 
                   | ValueAttribute 
 		  | EdgeAttribute
 		  | VertexAttribute
@@ -30,7 +30,7 @@ AppAttributeelider{
 		  | YellowAttribute
 		  | RedAttribute
 		  | OtherCellAttribute
-  KindAttribute = "kind" "=" string
+  EllipseAttribute = "ellipse" "=" string
   ValueAttribute = "value" "=" string
   SourceAttribute = "source" "=" string
   TargetAttribute = "target" "=" string

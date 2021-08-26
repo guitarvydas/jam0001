@@ -127,28 +127,28 @@ diagramContains(id1,id6).
 diagramContains(id1,id7).
 diagramContains(id1,id8).
 diagramContains(id1,id9).
-factcomponentcode(id10,"~~~~~~~~node details.js >details.pl~~~~~~~~").
+factcomponentcode(id10,"~~node details.js ~~").
 factcomponentcode(id11,"").
-factcomponentcode(id12,"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~").
+factcomponentcode(id12,"~~./seq__run__aux.bash ~~").
 factcomponentcode(id13,"").
-factcomponentcode(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
+factcomponentcode(id14,"~~node emittopological.js ~~").
 factcomponentcode(id15,"").
-factcomponentcode(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
+factcomponentcode(id16,"~~tsort topo1.txt ~~").
 factcomponentcode(id17,"").
-factcomponentcode(id18,"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
+factcomponentcode(id18,"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~").
 factcomponentcode(id19,"").
 factcomponentcode(id2,"").
-factcomponentcode(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
+factcomponentcode(id20,"~~./run__aux.bash ~~").
 factcomponentcode(id21,"").
-factcomponentcode(id22,"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~").
+factcomponentcode(id22,"~~node emitfunctions.js ~~").
 factcomponentcode(id23,"").
-factcomponentcode(id24,"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~").
+factcomponentcode(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
 factcomponentcode(id3,"").
 factcomponentcode(id4,"").
 factcomponentcode(id5,"").
-factcomponentcode(id6,"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~").
+factcomponentcode(id6,"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~").
 factcomponentcode(id7,"").
-factcomponentcode(id8,"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~").
+factcomponentcode(id8,"~~node sequence.js ~~").
 factcomponentcode(id9,"").
 factcomponentname(id10,"c1").
 factcomponentname(id11,"seqEmitJSON").
@@ -291,26 +291,26 @@ t(id8,305).
 t(id9,385).
 unknowncomponentname(id2,"c6").
 unknowncomponentname(id3,"c10").
-value(id10,"~~~~~~~~node details.js >details.pl~~~~~~~~").
+value(id10,"~~node details.js ~~").
 value(id11,"seqEmitJSON").
-value(id12,"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~").
+value(id12,"~~./seq__run__aux.bash ~~").
 value(id13,"emitTopo").
-value(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
+value(id14,"~~node emittopological.js ~~").
 value(id15,"topologicalSort").
-value(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
+value(id16,"~~tsort topo1.txt ~~").
 value(id17,"detailsStart").
-value(id18,"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
+value(id18,"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~").
 value(id19,"detailsEmitJSON").
-value(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
+value(id20,"~~./run__aux.bash ~~").
 value(id21,"emitFunctions").
-value(id22,"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~").
+value(id22,"~~node emitfunctions.js ~~").
 value(id23,"combine").
-value(id24,"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~").
+value(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
 value(id4,"top level").
 value(id5,"sequenceStart").
-value(id6,"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~").
+value(id6,"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~").
 value(id7,"buildSequence").
-value(id8,"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~").
+value(id8,"~~node sequence.js ~~").
 value(id9,"buildDetails").
 vertex(id10,"").
 vertex(id11,"").

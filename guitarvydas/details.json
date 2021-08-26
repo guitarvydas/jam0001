@@ -8,7 +8,7 @@
   "inputs": [],
   "name":"c1",
   "outputs": [],
-  "synccode":"~~~~~~~~node details.js >details.pl~~~~~~~~"
+  "synccode":"~~node details.js ~~"
 }
 {
   "children": ["c2" ],
@@ -28,7 +28,7 @@
   "inputs": [],
   "name":"c2",
   "outputs": [],
-  "synccode":"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~"
+  "synccode":"~~./seq__run__aux.bash ~~"
 }
 {
   "children": ["c3" ],
@@ -48,7 +48,7 @@
   "inputs": [],
   "name":"c3",
   "outputs": [],
-  "synccode":"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~"
+  "synccode":"~~node emittopological.js ~~"
 }
 {
   "children": ["c4" ],
@@ -68,7 +68,7 @@
   "inputs": [],
   "name":"c4",
   "outputs": [],
-  "synccode":"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~"
+  "synccode":"~~tsort topo1.txt ~~"
 }
 {
   "children": ["c5" ],
@@ -88,7 +88,7 @@
   "inputs": [],
   "name":"c5",
   "outputs": [],
-  "synccode":"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~"
+  "synccode":"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~"
 }
 {
   "children": ["c7" ],
@@ -108,7 +108,7 @@
   "inputs": [],
   "name":"c7",
   "outputs": [],
-  "synccode":"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~"
+  "synccode":"~~./run__aux.bash ~~"
 }
 {
   "children": ["c8" ],
@@ -128,7 +128,7 @@
   "inputs": [],
   "name":"c8",
   "outputs": [],
-  "synccode":"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~"
+  "synccode":"~~node emitfunctions.js ~~"
 }
 {
   "children": ["c9" ],
@@ -148,7 +148,7 @@
   "inputs": [],
   "name":"c9",
   "outputs": [],
-  "synccode":"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~"
+  "synccode":"~~cat header.txt functions.txt topo.txt trailer.txt ~~"
 }
 {
   "children": [
@@ -189,7 +189,7 @@
   "inputs": [],
   "name":"c11",
   "outputs": [],
-  "synccode":"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~"
+  "synccode":"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~"
 }
 {
   "children": ["c12" ],
@@ -209,7 +209,7 @@
   "inputs": [],
   "name":"c12",
   "outputs": [],
-  "synccode":"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~"
+  "synccode":"~~node sequence.js ~~"
 }
 {
   "children": ["c1" ],
