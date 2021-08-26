@@ -20,7 +20,7 @@ GeometryWithoutContent [k1 @as k2] = [[${k1}${as}${k2}]]
 GeometryWithContent [k1 @as k2 @ignore k3] = [[${k1}${as}${k2}${ignore}${k3}]]
 
 CellAttribute [a] = [[${a}]]
-KindAttribute [kind eq s] = [[\ ${kind}${eq}${s}]]
+EllipseAttribute [ell eq s] = [[\ ${ell}${eq}${s}]]
 ValueAttribute [v eq s] = [[\ ${v}${eq}${s}]]
 SourceAttribute [v eq s] = [[\ ${v}${eq}${s}]]
 TargetAttribute [v eq s] = [[\ ${v}${eq}${s}]]

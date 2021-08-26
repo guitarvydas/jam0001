@@ -1,18 +1,12 @@
 {"diagram":"id1", "toplevelcomponent":"id4"}
 
 {
-  "children": ["process A", "process B" ],
-  "connections": [
-    {
-      "name":"x2",
-      "source": {"component":"process A", "port":"fb"},
-      "target": {"component":"process B", "port":"in"}
-    }
-  ],
+  "children": ["buildSequence", "sequenceStart" ],
+  "connections": [],
   "diagram":"id1",
   "id":"id4",
   "inputs": [],
-  "name":"topLevel",
+  "name":"top level",
   "outputs": [],
   "synccode":""
 }
@@ -22,17 +16,17 @@
   "diagram":"id1",
   "id":"id5",
   "inputs": [],
-  "name":"process A",
-  "outputs": ["fb" ],
+  "name":"buildSequence",
+  "outputs": [],
   "synccode":""
 }
 {
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id6",
-  "inputs": ["in" ],
-  "name":"process B",
+  "id":"id8",
+  "inputs": [],
+  "name":"sequenceStart",
   "outputs": [],
   "synccode":""
 }

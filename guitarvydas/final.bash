@@ -1,50 +1,49 @@
 #!/bin/bash
 c1 () {
-node details.js >details.pl
+node details.js 
   }
 seqEmitJSON () {
  c2
  }
 c2 () {
-./seq__run__aux.bash >sequence.json
+./seq__run__aux.bash 
   }
 emitTopo () {
  c3
  }
 c3 () {
-node emittopological.js >topo1.txt
+node emittopological.js 
   }
 topologicalSort () {
  c4
  }
 c4 () {
-tsort topo1.txt >topo.txt
+tsort topo1.txt 
   }
 detailsStart () {
  c5
  }
 c5 () {
 echo BBB detailsStart BBB
-./detStart
-cat details.pl temp.pl | sort >fb.pl
+cat details.pl temp.pl | sort 
   }
 detailsEmitJSON () {
  c7
  }
 c7 () {
-./run__aux.bash >details.json
+./run__aux.bash 
   }
 emitFunctions () {
  c8
  }
 c8 () {
-node emitfunctions.js >topo1.txt
+node emitfunctions.js 
   }
 combine () {
  c9
  }
 c9 () {
-cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash
+cat header.txt functions.txt topo.txt trailer.txt 
   }
 top__level () {
  seqEmitJSON
@@ -62,15 +61,14 @@ sequenceStart () {
  c11
  }
 c11 () {
-echo AAA sequenceStart AAA
-./seqStart
-cat sequence.pl temp.pl | sort >fb.pl
+echo '*** sequenceStart ***'
+cat sequence.pl temp.pl | sort 
   }
 buildSequence () {
  c12
  }
 c12 () {
-node sequence.js >sequence.pl
+node sequence.js 
   }
 buildDetails () {
  c1

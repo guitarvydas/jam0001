@@ -1,4 +1,4 @@
-Tofb1{
+symbolTable {
   Diagrams = Diagram+
   Diagram = "<diagram" Attribute* ">" GraphModel "</diagram>"
   Attribute = NameAttribute | DiagramIDAttribute | OtherAttribute

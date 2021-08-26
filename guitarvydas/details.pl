@@ -78,26 +78,26 @@ height(id7,95).
 height(id8,30).
 height(id9,95).
 name(id1,"Details").
-value(id10,"~~~~~~~~node details.js >details.pl~~~~~~~~").
+value(id10,"~~node details.js ~~").
 value(id11,"seqEmitJSON").
-value(id12,"~~~~~~./seq__run__aux.bash >sequence.json~~~~~~~~~~~~").
+value(id12,"~~./seq__run__aux.bash ~~").
 value(id13,"emitTopo").
-value(id14,"~~~~~~~~node emittopological.js >topo1.txt~~~~~~~~~~~~~~").
+value(id14,"~~node emittopological.js ~~").
 value(id15,"topologicalSort").
-value(id16,"~~~~~~tsort topo1.txt >topo.txt~~~~~~~~~~~~~~").
+value(id16,"~~tsort topo1.txt ~~").
 value(id17,"detailsStart").
-value(id18,"~~~~echo BBB detailsStart BBB~~~~~~./detStart~~~~~~~~cat details.pl temp.pl | sort >fb.pl~~~~~~~~~~~~").
+value(id18,"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~").
 value(id19,"detailsEmitJSON").
-value(id20,"~~~~~~./run__aux.bash >details.json~~~~~~~~~~~~").
+value(id20,"~~./run__aux.bash ~~").
 value(id21,"emitFunctions").
-value(id22,"~~~~~~~~node emitfunctions.js >topo1.txt~~~~~~~~~~~~~~").
+value(id22,"~~node emitfunctions.js ~~").
 value(id23,"combine").
-value(id24,"~~~~~~cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash~~~~~~").
+value(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
 value(id4,"top level").
 value(id5,"sequenceStart").
-value(id6,"~~~~echo AAA sequenceStart AAA~~~~./seqStart~~~~~~cat sequence.pl temp.pl | sort >fb.pl~~~~~~~~~~~~~~").
+value(id6,"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~").
 value(id7,"buildSequence").
-value(id8,"~~~~~~node sequence.js >sequence.pl~~~~~~~~~~~~").
+value(id8,"~~node sequence.js ~~").
 value(id9,"buildDetails").
 vertex(id10,"").
 vertex(id11,"").

@@ -21,7 +21,6 @@ Tofb{
   GeometryWithContent = "<mxGeometry" GAttribute+ ">" ignore+ "</mxGeometry>"
   CellAttribute =   EllipseAttribute
                   | TextAttribute 
-                  | KindAttribute 
                   | ValueAttribute 
 		  | EdgeAttribute
 		  | VertexAttribute
@@ -32,9 +31,8 @@ Tofb{
 		  | GreenAttribute
 		  | YellowAttribute
 		  | OtherCellAttribute
-  EllipseAttribute = "kind" "=" quote "ellipse" quote
-  TextAttribute = "kind" "=" quote "text" quote
-  KindAttribute = "kind" "=" string
+  EllipseAttribute = "ellipse" "=" quote "1" quote
+  TextAttribute = "text" "=" quote "1" quote
   ValueAttribute = "value" "=" string
   SourceAttribute = "source" "=" string
   TargetAttribute = "target" "=" string

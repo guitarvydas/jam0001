@@ -1,16 +1,22 @@
 :- dynamic edge/2.
 
-% rectangles can contain rectangles or edges
+% rectangles can contain rectangles or edges or ellipses
 allContains1:-
     forall(rect(R1,_),
 	   forall(containedIn(R1,X),
 		  printContainment(R1,X))).
 
 containedIn(R1,X):-
-    (rect(X,_);edge(X,_)),
+    containable(X),
     R1 \= X,
     onSameDiagram(R1,X),
     completelyInside(X,R1).
+
+containable(X):-
+    rect(X,_).
+containable(X):-
+    edge(X,_).
+%% ellipses handle separately (ellipse intersects rect -> contains)
 
 printContainment(R1,X):-
     format("contains_1(~w,~w).~n",[R1,X]).
