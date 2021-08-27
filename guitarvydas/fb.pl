@@ -1,4 +1,10 @@
 
+b(id10,205).
+b(id4,400).
+b(id5,220).
+b(id7,205).
+b(id8,220).
+b(id9,205).
 cell(id10,"").
 cell(id2,"").
 cell(id3,"").
@@ -31,13 +37,31 @@ height(id5, 60).
 height(id7, 30).
 height(id8, 60).
 height(id9, 30).
+l(id10,310).
+l(id4,60).
+l(id5,80).
+l(id7,180).
+l(id8,320).
+l(id9,420).
 name(id1, "Page__1").
+r(id10,340).
+r(id4,1440).
+r(id5,200).
+r(id7,210).
+r(id8,440).
+r(id9,450).
 rect(id2,"").
 rect(id3,"").
 rect(id4,"").
 rect(id5,"").
 rect(id8,"").
 source(id6, "ybbTwsdQuFU4afnuUeu4__5").
+t(id10,175).
+t(id4,110).
+t(id5,160).
+t(id7,175).
+t(id8,160).
+t(id9,175).
 target(id6, "ybbTwsdQuFU4afnuUeu4__9").
 value(id10, "TA").
 value(id4, "top level").
