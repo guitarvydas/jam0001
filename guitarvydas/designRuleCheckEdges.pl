@@ -1,25 +1,25 @@
 :- dynamic edge/2.
-:- dynamic source/2.
-:- dynamic target/2.
+:- dynamic sender/2.
+:- dynamic receiver/2.
 
-edgeHasSourceAndTarget(E):-
+edgeHasSenderAndReceiver(E):-
     edge(E,_),
-    source(E,_),
-    target(E,_),
+    sender(E,_),
+    receiver(E,_),
     !.
-edgeHasSourceAndTarget(E):-
+edgeHasSenderAndReceiver(E):-
     edge(E,_),
-    source(E,_),
-    format('FATAL design rule: edge ~w has no target (reconnect edge in drawio)~n',[E]),
+    sender(E,_),
+    format('FATAL design rule: edge ~w has no receiver (reconnect edge in drawio)~n',[E]),
     !.
-edgeHasSourceAndTarget(E):-
+edgeHasSenderAndReceiver(E):-
     edge(E,_),
-    target(E,_),
-    format('FATAL design rule: edge ~w has no source (reconnect edge in drawio)~n',[E]),
+    receiver(E,_),
+    format('FATAL design rule: edge ~w has no sender (reconnect edge in drawio)~n',[E]),
     !.
-edgeHasSourceAndTarget(E):-
+edgeHasSenderAndReceiver(E):-
     edge(E,_),
-    format('FATAL design rule: edge ~w has no source nor target (reconnect edge in drawio)~n',[E]).
+    format('FATAL design rule: edge ~w has no sender nor receiver (reconnect edge in drawio)~n',[E]).
 
 checkThatEdgesExist:-
     edge(_,_),
@@ -31,5 +31,5 @@ designRuleCheckEdges:-
     consult(fb),
     checkThatEdgesExist,
     forall(edge(E,_),
-	   edgeHasSourceAndTarget(E)),
+	   edgeHasSenderAndReceiver(E)),
     halt.

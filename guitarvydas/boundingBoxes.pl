@@ -18,9 +18,9 @@ makebb(CellID):-
 % this is not definitive, but, just enough to allow containment to deal with edges
 makebb(Edge) :-
     edge(Edge,_),
-    source(Edge,Source),
+    sender(Edge,Source),
     vertex(Source,_),
-    target(Edge,Target),
+    receiver(Edge,Target),
     vertex(Target,_),
     x(Source,Sx),
     y(Source,Sy),
