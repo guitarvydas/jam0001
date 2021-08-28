@@ -36,7 +36,6 @@ cp fb.pl _post_bb.pl
 ./senders.bash
 ./receivers.bash
 
-./contain1.bash
 ./run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt

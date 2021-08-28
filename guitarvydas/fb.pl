@@ -15,6 +15,13 @@ cell(id6,"").
 cell(id7,"").
 cell(id8,"").
 cell(id9,"").
+contains(id4,id5).
+contains(id4,id8).
+contains(id5,id7).
+contains(id8,id10).
+contains(id8,id9).
+contains_1(id4,id5).
+contains_1(id4,id8).
 diagram(id1, "").
 diagramContains(id1, id10).
 diagramContains(id1, id2).
@@ -29,6 +36,17 @@ edge(id6, "").
 ellipse(id10, "").
 ellipse(id7, "").
 ellipse(id9, "").
+factcomponentcode(id2,"").
+factcomponentcode(id3,"").
+factcomponentcode(id4,"").
+factcomponentcode(id5,"").
+factcomponentcode(id8,"").
+factcomponentname(id4,"top level").
+factcomponentname(id5,"buildSequence").
+factcomponentname(id8,"sequenceStart").
+factportname(id10,"TA").
+factportname(id7,"SA").
+factportname(id9,"SB").
 fillColor(id10, "green").
 fillColor(id7, "yellow").
 fillColor(id9, "yellow").
@@ -55,6 +73,9 @@ longid(id7, "ybbTwsdQuFU4afnuUeu4__5").
 longid(id8, "ybbTwsdQuFU4afnuUeu4__7").
 longid(id9, "ybbTwsdQuFU4afnuUeu4__8").
 name(id1, "Page__1").
+portdirection(id10,input).
+portdirection(id7,output).
+portdirection(id9,output).
 r(id10,340).
 r(id4,1440).
 r(id5,200).
@@ -76,6 +97,8 @@ t(id7,175).
 t(id8,160).
 t(id9,175).
 target(id6, "ybbTwsdQuFU4afnuUeu4__9").
+unknowncomponentname(id2,"c1").
+unknowncomponentname(id3,"c2").
 value(id10, "TA").
 value(id4, "top level").
 value(id5, "buildSequence").
