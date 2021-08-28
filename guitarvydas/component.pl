@@ -77,8 +77,8 @@ childof(C,Name):-
 
 connectionOf(C,connection{
 		   name:ConnectionName,
-		   source:pair{component:SenderName,port:SenderPort},
-		   target:pair{component:ReceiverName,port:ReceiverPort}
+		   sender:pair{component:SenderName,port:SenderPort},
+		   receiver:pair{component:ReceiverName,port:ReceiverPort}
 	       }):-
     contains(C,E),
     edge(E,_),

@@ -27,21 +27,34 @@ swipl -q \
 cat sequence.pl temp.pl | sort >fb.pl
 cp fb.pl _seq_end_fb.pl
 
+./senders.bash
+./receivers.bash
+
 ./designRuleCheckEdges.bash
 cp fb.pl _pre_bb.pl
 ./bb.bash
 cp fb.pl _post_bb.pl
 ./designRuleCheckBoundingBoxes.bash
 
-./senders.bash
-./receivers.bash
+./contains1.bash
+./deepcontains.bash
+./directcontains.bash
+./designrule1.bash
+./portcontains.bash
+./portdirections.bash
+./assignnames.bash
+./assigncode.bash
+###
+exit 0
 
-./run__aux.bash >sequence.json
+
+./tojson.bash >sequence.json
 
 node emittopological.js >topo1.txt
 tsort topo1.txt >topo.txt
 
 ### 
+cat topo.txt
 exit 0
 
 # debug

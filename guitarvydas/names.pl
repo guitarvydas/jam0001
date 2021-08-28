@@ -29,7 +29,9 @@ componentname(C,Name):-
     factcomponentname(C,Name).
 
 portname(C,Name):-
-    portname(C,Name).
+    factcomponentname(C,Name).
+portname(C,Name):-
+    factportname(C,Name).
 
 
 
