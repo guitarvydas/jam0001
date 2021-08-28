@@ -1,7 +1,7 @@
 makereceiver(Edge):-
     edge(Edge,_),
-    target(Edge,Target),
-    lookupid(Target,TargetID),
+    target(Edge,TargetLong),
+    lookupid(TargetID,TargetLong),
     format("receiver(~w,~w).~n", [Edge,TargetID]).
 
 receiversmain:-

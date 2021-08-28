@@ -1,4 +1,5 @@
 
+
 b(id10,205).
 b(id4,400).
 b(id5,220).
@@ -43,6 +44,16 @@ l(id5,80).
 l(id7,180).
 l(id8,320).
 l(id9,420).
+longid(id1, "UL2OmWR_p9KJ0XYvqh1g").
+longid(id10, "ybbTwsdQuFU4afnuUeu4__9").
+longid(id2, "0").
+longid(id3, "1").
+longid(id4, "ybbTwsdQuFU4afnuUeu4__42").
+longid(id5, "ybbTwsdQuFU4afnuUeu4__1").
+longid(id6, "ybbTwsdQuFU4afnuUeu4__10").
+longid(id7, "ybbTwsdQuFU4afnuUeu4__5").
+longid(id8, "ybbTwsdQuFU4afnuUeu4__7").
+longid(id9, "ybbTwsdQuFU4afnuUeu4__8").
 name(id1, "Page__1").
 r(id10,340).
 r(id4,1440).
@@ -50,11 +61,13 @@ r(id5,200).
 r(id7,210).
 r(id8,440).
 r(id9,450).
+receiver(id6,id10).
 rect(id2,"").
 rect(id3,"").
 rect(id4,"").
 rect(id5,"").
 rect(id8,"").
+sender(id6,id7).
 source(id6, "ybbTwsdQuFU4afnuUeu4__5").
 t(id10,175).
 t(id4,110).

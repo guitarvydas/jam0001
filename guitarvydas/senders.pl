@@ -1,8 +1,8 @@
 makesender(Edge):-
     edge(Edge,_),
-    source(Edge,Source),
-    lookupid(Source,SourceID),
-    format("source(~w,~w).~n", [Edge,SourceID]).
+    source(Edge,SourceLong),
+    lookupid(SourceID,SourceLong),
+    format("sender(~w,~w).~n", [Edge,SourceID]).
 
 sendersmain:-
     consult(fb),

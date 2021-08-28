@@ -36,14 +36,14 @@ cp fb.pl _post_bb.pl
 ./senders.bash
 ./receivers.bash
 
-### 
-exit 0
-
 ./contain1.bash
 ./run__aux.bash >sequence.json
 
 node emittopological.js >topo1.txt
 tsort topo1.txt >topo.txt
+
+### 
+exit 0
 
 # debug
 mv fb.pl seqfb.pl

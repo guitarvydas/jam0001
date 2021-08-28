@@ -62,17 +62,17 @@ function lID (quoteds) {
     var s = stripQuotes (quoteds);
     return s;
 }
-exports.longID = (quoteds) => {
-    var s = lID (quoteds);
-    return s;
-}
+// exports.longID = (quoteds) => {
+//     var s = lID (quoteds);
+//     return s;
+// }
     
 function newID (name, quoteds) {
     var s = lID (quoteds);
     scopeModify (name, s);
     nameIndexTable[s] = counter;
     counter += 1;
-    return s;
+    return '';
 }
 
 function pushID (name, s) {

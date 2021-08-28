@@ -1,3 +1,3 @@
-lookupid(Long,Short):-
+lookupid(Short,Long):-
     longid(Short,Long).
 

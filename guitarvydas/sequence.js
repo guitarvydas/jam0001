@@ -410,7 +410,7 @@ function generatePipeline () {
     fs.writeFileSync("_symbolTable-seq.html", symbolTable, 'utf-8');
     process.stderr.write("symbol table\n");
     // N.B. same args as for symbolTable
-    var factbase = execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
+    var factbase = symbolTable + execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
     fs.writeFileSync("_factbase-seq.html", factbase, 'utf-8');
     process.stderr.write("factbase (unsorted)\n");
     var sortedFactbase = plsort (factbase);
