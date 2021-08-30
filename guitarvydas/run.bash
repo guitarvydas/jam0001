@@ -44,8 +44,6 @@ cp fb.pl _post_bb.pl
 ./portdirections.bash
 ./assignnames.bash
 ./assigncode.bash
-###
-exit 0
 
 
 ./tojson.bash >sequence.json

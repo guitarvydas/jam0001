@@ -1,11 +1,13 @@
 #!/bin/bash
-to_json () {
+pt () {
 # convert fb.pl to "structured" form
 swipl -g 'use_module(library(http/json))' \
       -g 'consult(fb).' \
       -g 'consult(component).' \
       -g 'consult(names).' \
       -g 'consult(code).' \
-      -g 'consult(jsoncomponent).'
+      -g 'consult(test).'  \
+      -g 'consult(jsoncomponent).'\
+      -g 'pt(S,SP,R,RP).'
 }    
-to_json
+pt

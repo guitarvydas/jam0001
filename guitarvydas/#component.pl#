@@ -78,10 +78,18 @@ childof(C,Name):-
 connectionOf(C,connection{
 		   name:ConnectionName,
 		   sender:pair{component:SenderName,port:SenderPort},
-		   receiver:pair{component:ReceiverName,port:ReceiverPort}
+		   receivenr:pair{component:ReceiverName,port:ReceiverPort}
 	       }):-
-    contains(C,E),edge(E,_),sender(E,SenderPort),contains(Sparent,SenderPort),portname(Sparent,SenderName),
-    receiver(E,ReceiverPort),contains(Rparent,ReceiverPort),portname(Rparent,ReceiverName),
+    contains(C,E),
+    edge(E,_),
+    sender(E,SC),
+    portname(SC,SenderPort),
+    contains(SenderParent,SC),
+    getname(C,SenderParent,SenderName),
+    receiver(E,TC),
+    portname(TC,ReceiverPort),
+    contains(ReceiverParent,TC),
+    getname(C,ReceiverParent,ReceiverName),
     gensym(x,ConnectionName).
 
 

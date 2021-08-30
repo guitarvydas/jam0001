@@ -1,8 +1,39 @@
 {"diagram":"id1", "toplevelcomponent":"id4"}
 
 {
-  "children": ["buildSequence", "sequenceStart" ],
+  "children": [],
   "connections": [],
+  "diagram":"id1",
+  "id":"id10",
+  "inputs": [],
+  "name":"C",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id13",
+  "inputs": [],
+  "name":"D",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": ["C", "D", "buildSequence", "sequenceStart" ],
+  "connections": [
+    {
+      "name":"x2",
+      "receiver": {"component":"D", "port":"id14"},
+      "sender": {"component":"C", "port":"id12"}
+    },
+    {
+      "name":"x3",
+      "receiver": {"component":"sequenceStart", "port":"id9"},
+      "sender": {"component":"buildSequence", "port":"id7"}
+    }
+  ],
   "diagram":"id1",
   "id":"id4",
   "inputs": [],

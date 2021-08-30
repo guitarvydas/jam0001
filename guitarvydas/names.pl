@@ -6,9 +6,17 @@ makename(C):-
     format("factcomponentname(~w,\"~w\").~n",[C,Name]),
     !.
 makename(C):-
+    value(C,""),
+    rect(C,_),
+    format("factcomponentname(~w,\"~w\").~n",[C,C]),!.
+makename(C):-
     value(C,Name),
     rect(C,_),
     format("factcomponentname(~w,\"~w\").~n",[C,Name]),!.
+makename(C):-
+    value(C,""),
+    ellipse(C,_),
+    format("factportname(~w,\"~w\").~n",[C,C]),!.
 makename(C):-
     value(C,Name),
     ellipse(C,_),
