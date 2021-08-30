@@ -72,10 +72,10 @@ factcomponentname(id13,"D").
 factcomponentname(id4,"top level").
 factcomponentname(id5,"buildSequence").
 factcomponentname(id8,"sequenceStart").
-factportname(id12,"id12").
-factportname(id14,"id14").
-factportname(id7,"a").
-factportname(id9,"b").
+factportname(id12,"out").
+factportname(id14,"in").
+factportname(id7,"out").
+factportname(id9,"in").
 fillColor(id12, "yellow").
 fillColor(id14, "green").
 fillColor(id7, "yellow").

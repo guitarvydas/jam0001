@@ -14,13 +14,14 @@ makename(C):-
     rect(C,_),
     format("factcomponentname(~w,\"~w\").~n",[C,Name]),!.
 makename(C):-
-    value(C,""),
+    %value(C,""),
     ellipse(C,_),
-    format("factportname(~w,\"~w\").~n",[C,C]),!.
+    portdirection(C,input),
+    format("factportname(~w,\"in\").~n",[C]),!.
 makename(C):-
-    value(C,Name),
+    %value(C,Name),
     ellipse(C,_),
-    format("factportname(~w,\"~w\").~n",[C,Name]),!.
+    format("factportname(~w,\"out\").~n",[C]),!.
 makename(C):-
     gensym(c,Name),
     format("unknowncomponentname(~w,\"~w\").~n",[C,Name]).
