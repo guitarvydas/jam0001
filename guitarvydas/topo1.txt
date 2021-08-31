@@ -8,7 +8,7 @@
 bounding__boxes  check__bounding__boxes 
 check__bounding__boxes  contains1 
 senders  receivers 
-receivers  bounding__boxes 
+receivers  check__edges 
 directcontains  rectangles__must__not__intersect 
 rectangles__must__not__intersect  port__contains 
 deepcontains  directcontains 
@@ -16,9 +16,15 @@ contains1  deepcontains
 convert__to__fb  make__rects 
 port__directions  assign__names 
 port__contains  port__directions 
+assign__code  convert__to__JSON 
 assign__names  assign__code 
-make__rects  check__edges 
-check__edges  senders 
+convert__to__JSON  emit__topological 
+make__rects  senders 
+emit__topological  topological__sort 
+check__edges  bounding__boxes 
+
+
+
 
 
 

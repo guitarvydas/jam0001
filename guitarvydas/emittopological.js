@@ -356,7 +356,7 @@ function _ruleExit (ruleName) {
 
 
 
-//require ('./support');
+var support = require ('./support');
 var atob = require ('atob'); // npm install atob
 var pako = require ('pako'); // npm install pako
 function decodeMxDiagram (encoded) {
@@ -491,10 +491,7 @@ function setDiagram () {
 //////// details transpiler //////////
 
 function namify (s) {
-    return s
-	.trim ()
-	.replace (/"/g,'')
-	.replace (/ /g,'__');
+    return support.namify (s);
 }
 
 function stripQuotes (s) {

@@ -1,22 +1,39 @@
 {"diagram":"id1", "toplevelcomponent":"id10"}
-{"diagram":"id1", "toplevelcomponent":"id12"}
+{"diagram":"id1", "toplevelcomponent":"id11"}
 {"diagram":"id1", "toplevelcomponent":"id14"}
-{"diagram":"id1", "toplevelcomponent":"id16"}
-{"diagram":"id1", "toplevelcomponent":"id18"}
-{"diagram":"id1", "toplevelcomponent":"id20"}
-{"diagram":"id1", "toplevelcomponent":"id22"}
-{"diagram":"id1", "toplevelcomponent":"id24"}
+{"diagram":"id1", "toplevelcomponent":"id17"}
+{"diagram":"id1", "toplevelcomponent":"id19"}
+{"diagram":"id1", "toplevelcomponent":"id21"}
+{"diagram":"id1", "toplevelcomponent":"id23"}
+{"diagram":"id1", "toplevelcomponent":"id25"}
+{"diagram":"id1", "toplevelcomponent":"id27"}
+{"diagram":"id1", "toplevelcomponent":"id29"}
+{"diagram":"id1", "toplevelcomponent":"id31"}
+{"diagram":"id1", "toplevelcomponent":"id33"}
+{"diagram":"id1", "toplevelcomponent":"id35"}
 {"diagram":"id1", "toplevelcomponent":"id4"}
 {"diagram":"id1", "toplevelcomponent":"id6"}
+{"diagram":"id1", "toplevelcomponent":"id7"}
 {"diagram":"id1", "toplevelcomponent":"id8"}
+{"diagram":"id1", "toplevelcomponent":"id9"}
 
 {
-  "children": ["c1", "c1" ],
+  "children": ["c17" ],
   "connections": [],
   "diagram":"id1",
   "id":"id10",
   "inputs": [],
-  "name":"seqEmitJSON",
+  "name":"emit%20topological",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": ["c18" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id11",
+  "inputs": [],
+  "name":"topological%20sort",
   "outputs": [],
   "synccode":""
 }
@@ -24,21 +41,11 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id11",
+  "id":"id12",
   "inputs": [],
   "name":"c1",
   "outputs": [],
-  "synccode":"~~./seq__run__aux.bash ~~"
-}
-{
-  "children": ["c2", "c2" ],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id12",
-  "inputs": [],
-  "name":"emitTopo",
-  "outputs": [],
-  "synccode":""
+  "synccode":"%23%23%20create%20rect%20fact%20for%20every%20vertex%20that%20is%20not%20an%20edge%2Fellipse%2Ftext%0A%23%23%20sequence.drawio%20file%20contains%20vertexes%2C%20and%20marks%20all%20edge%20and%20ellipse%20(and%20text)%0A%23%23%20but%20does%20not%20mark%20rectangles%20(the%20default)%0A%23%23%20this%20pass%20finds%20the%20defaults%20and%20creates%20explicit%20rect(...)%20facts%0Aswipl%20-q%20%5C%0A%20%20%20-g%20'consult(sequence).'%20%5C%0A%20%20%20-g%20'consult(rects).'%20%5C%0A%20%20%20-g%20'printRects.'%20%5C%0A%20%20%20-g%20'halt.'%20%5C%0A%20%20%20%3E%20temp.pl%0A%0A%0A%23%20augment%20the%20factbase%20(fb.pl)%20after%20every%20inferencing%20step%0Acat%20sequence.pl%20temp.pl%20%7C%20sort%20%3Efb.pl%0Acp%20fb.pl%20_seq_end_fb.pl%0A%0A%0A"
 }
 {
   "children": [],
@@ -48,15 +55,15 @@
   "inputs": [],
   "name":"c2",
   "outputs": [],
-  "synccode":"~~node emittopological.js ~~"
+  "synccode":".%2Fsenders.bash%0A%0A%0A"
 }
 {
-  "children": ["c3", "c3" ],
+  "children": ["c3" ],
   "connections": [],
   "diagram":"id1",
   "id":"id14",
   "inputs": [],
-  "name":"topologicalSort",
+  "name":"receivers",
   "outputs": [],
   "synccode":""
 }
@@ -68,75 +75,65 @@
   "inputs": [],
   "name":"c3",
   "outputs": [],
-  "synccode":"~~tsort topo1.txt ~~"
+  "synccode":".%2Freceivers.bash%0A%0A%0A"
 }
 {
-  "children": ["c4", "c4" ],
+  "children": [],
   "connections": [],
   "diagram":"id1",
   "id":"id16",
   "inputs": [],
-  "name":"detailsStart",
+  "name":"c4",
   "outputs": [],
-  "synccode":""
+  "synccode":".%2FdesignRuleCheckEdges.bash%0A%0A%0A"
 }
 {
-  "children": [],
+  "children": ["c5" ],
   "connections": [],
   "diagram":"id1",
   "id":"id17",
   "inputs": [],
-  "name":"c4",
+  "name":"bounding%20boxes",
   "outputs": [],
-  "synccode":"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~"
+  "synccode":""
 }
 {
-  "children": ["c5", "c5" ],
+  "children": [],
   "connections": [],
   "diagram":"id1",
   "id":"id18",
   "inputs": [],
-  "name":"detailsEmitJSON",
+  "name":"c5",
   "outputs": [],
-  "synccode":""
+  "synccode":".%2Fbb.bash%0A%0A%0A"
 }
 {
-  "children": [],
+  "children": ["c7" ],
   "connections": [],
   "diagram":"id1",
   "id":"id19",
   "inputs": [],
-  "name":"c5",
+  "name":"check%20bounding%20boxes",
   "outputs": [],
-  "synccode":"~~./run__aux.bash ~~"
+  "synccode":""
 }
 {
-  "children": ["c7", "c7" ],
+  "children": [],
   "connections": [],
   "diagram":"id1",
   "id":"id20",
   "inputs": [],
-  "name":"emitFunctions",
+  "name":"c7",
   "outputs": [],
-  "synccode":""
+  "synccode":".%2FdesignRuleCheckBoundingBoxes.bash%0A%0A%0A"
 }
 {
-  "children": [],
+  "children": ["c8" ],
   "connections": [],
   "diagram":"id1",
   "id":"id21",
   "inputs": [],
-  "name":"c7",
-  "outputs": [],
-  "synccode":"~~node emitfunctions.js ~~"
-}
-{
-  "children": ["c8", "c8" ],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id22",
-  "inputs": [],
-  "name":"combine",
+  "name":"contains1",
   "outputs": [],
   "synccode":""
 }
@@ -144,11 +141,21 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id23",
+  "id":"id22",
   "inputs": [],
   "name":"c8",
   "outputs": [],
-  "synccode":"~~cat header.txt functions.txt topo.txt trailer.txt ~~"
+  "synccode":".%2Fcontains1.bash%0A%0A%0A"
+}
+{
+  "children": ["c9" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id23",
+  "inputs": [],
+  "name":"rectangles%20must%20not%20intersect",
+  "outputs": [],
+  "synccode":""
 }
 {
   "children": [],
@@ -156,17 +163,157 @@
   "diagram":"id1",
   "id":"id24",
   "inputs": [],
-  "name":"top level",
+  "name":"c9",
+  "outputs": [],
+  "synccode":".%2FdesignRule1.bash%0A%0A%0A"
+}
+{
+  "children": ["c10" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id25",
+  "inputs": [],
+  "name":"deepcontains",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": ["c10", "c10" ],
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id26",
+  "inputs": [],
+  "name":"c10",
+  "outputs": [],
+  "synccode":".%2Fdeepcontains.bash%0A%0A%0A"
+}
+{
+  "children": ["c11" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id27",
+  "inputs": [],
+  "name":"directcontains",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id28",
+  "inputs": [],
+  "name":"c11",
+  "outputs": [],
+  "synccode":".%2Fdirectcontains.bash%0A%0A%0A"
+}
+{
+  "children": ["c13" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id29",
+  "inputs": [],
+  "name":"port%20contains",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id30",
+  "inputs": [],
+  "name":"c13",
+  "outputs": [],
+  "synccode":".%2Fportcontains1.bash%0A%0A%0A"
+}
+{
+  "children": ["c14" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id31",
+  "inputs": [],
+  "name":"port%20directions",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id32",
+  "inputs": [],
+  "name":"c14",
+  "outputs": [],
+  "synccode":".%2Fportdirections.bash%0A%0A%0A"
+}
+{
+  "children": ["c15" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id33",
+  "inputs": [],
+  "name":"assign%20names",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id34",
+  "inputs": [],
+  "name":"c15",
+  "outputs": [],
+  "synccode":".%2Fassignnames.bash%0A%0A%0A"
+}
+{
+  "children": ["c16" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id35",
+  "inputs": [],
+  "name":"assign%20code",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id36",
+  "inputs": [],
+  "name":"c16",
+  "outputs": [],
+  "synccode":".%2Fassigncode.bash%0A%0A%0A"
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id37",
+  "inputs": [],
+  "name":"c17",
+  "outputs": [],
+  "synccode":"node%20emittopological.js%0A%0A%0A"
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id38",
+  "inputs": [],
+  "name":"c18",
+  "outputs": [],
+  "synccode":"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A"
+}
+{
+  "children": ["c19" ],
   "connections": [],
   "diagram":"id1",
   "id":"id4",
   "inputs": [],
-  "name":"sequenceStart",
+  "name":"convert%20to%20fb",
   "outputs": [],
   "synccode":""
 }
@@ -176,48 +323,48 @@
   "diagram":"id1",
   "id":"id5",
   "inputs": [],
-  "name":"c10",
+  "name":"c19",
   "outputs": [],
-  "synccode":"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~"
+  "synccode":"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A"
 }
 {
-  "children": ["c11", "c11" ],
+  "children": [],
   "connections": [],
   "diagram":"id1",
   "id":"id6",
   "inputs": [],
-  "name":"buildSequence",
+  "name":"top%20level",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": [],
+  "children": ["c1" ],
   "connections": [],
   "diagram":"id1",
   "id":"id7",
   "inputs": [],
-  "name":"c11",
-  "outputs": [],
-  "synccode":"~~node sequence.js ~~"
-}
-{
-  "children": ["c12", "c12" ],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id8",
-  "inputs": [],
-  "name":"buildDetails",
+  "name":"make%20rects",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": [],
+  "children": ["c4" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id8",
+  "inputs": [],
+  "name":"check%20edges",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": ["c2" ],
   "connections": [],
   "diagram":"id1",
   "id":"id9",
   "inputs": [],
-  "name":"c12",
+  "name":"senders",
   "outputs": [],
-  "synccode":"~~node details.js ~~"
+  "synccode":""
 }
 

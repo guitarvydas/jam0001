@@ -68,7 +68,6 @@ cat details.pl temp.pl | sort >fb.pl
 ./bb.bash
 ./designRuleCheckBoundingBoxes.bash
 
-./contains1.bash
 ./run__aux.bash | ./fixup.bash >details.json
 
 node emitfunctions.js >functions.txt

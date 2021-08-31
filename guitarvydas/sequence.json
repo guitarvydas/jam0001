@@ -86,7 +86,10 @@
     "port directions",
     "port contains",
     "assign code",
-    "assign names"
+    "assign names",
+    "convert to JSON",
+    "emit topological",
+    "topological sort"
   ],
   "connections": [
     {
@@ -106,7 +109,7 @@
     },
     {
       "name":"x5",
-      "receiver": {"component":"bounding boxes", "port":"id17"},
+      "receiver": {"component":"check edges", "port":"id16"},
       "sender": {"component":"receivers", "port":"id32"}
     },
     {
@@ -136,7 +139,7 @@
     },
     {
       "name":"x11",
-      "receiver": {"component":"assign names", "port":"id63"},
+      "receiver": {"component":"assign names", "port":"id64"},
       "sender": {"component":"port directions", "port":"id51"}
     },
     {
@@ -146,17 +149,32 @@
     },
     {
       "name":"x13",
-      "receiver": {"component":"assign code", "port":"id59"},
-      "sender": {"component":"assign names", "port":"id62"}
+      "receiver": {"component":"convert to JSON", "port":"id68"},
+      "sender": {"component":"assign code", "port":"id59"}
     },
     {
       "name":"x14",
-      "receiver": {"component":"check edges", "port":"id16"},
-      "sender": {"component":"make rects", "port":"id8"}
+      "receiver": {"component":"assign code", "port":"id60"},
+      "sender": {"component":"assign names", "port":"id63"}
     },
     {
       "name":"x15",
+      "receiver": {"component":"emit topological", "port":"id72"},
+      "sender": {"component":"convert to JSON", "port":"id67"}
+    },
+    {
+      "name":"x16",
       "receiver": {"component":"senders", "port":"id25"},
+      "sender": {"component":"make rects", "port":"id8"}
+    },
+    {
+      "name":"x17",
+      "receiver": {"component":"topological sort", "port":"id75"},
+      "sender": {"component":"emit topological", "port":"id71"}
+    },
+    {
+      "name":"x18",
+      "receiver": {"component":"bounding boxes", "port":"id17"},
       "sender": {"component":"check edges", "port":"id10"}
     }
   ],
@@ -231,7 +249,7 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id60",
+  "id":"id61",
   "inputs": [],
   "name":"assign code",
   "outputs": [],
@@ -241,9 +259,39 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id64",
+  "id":"id65",
   "inputs": [],
   "name":"assign names",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id69",
+  "inputs": [],
+  "name":"convert to JSON",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id73",
+  "inputs": [],
+  "name":"emit topological",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id76",
+  "inputs": [],
+  "name":"topological sort",
   "outputs": [],
   "synccode":""
 }

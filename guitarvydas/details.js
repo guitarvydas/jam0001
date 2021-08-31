@@ -374,7 +374,13 @@ const emitEscapeNewlinesGrammar = fs.readFileSync ('emitEscapeNewlines.ohm', 'ut
 const emitEscapeNewlinesGlue = fs.readFileSync ('emitEscapeNewlines.glue', 'utf-8');
 
 function escapeNewlines (s) {
-    return s.replace (/\n/g,'~~');
+    //return s.replace (/\n/g,'~~');
+    return encodeURIComponent (s);
+}
+
+function unescapeNewlines (s) {
+    return s;
+    //return s.replace(/~~/g,`\n`);
 }
 
 function execTranspiler (grammar, semantics, source) {
@@ -408,8 +414,10 @@ function generatePipeline () {
     var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided)
     // N.B. same args as for symbolTable
     var factbase = execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
+    //fs.writeFileSync("_factbase-details.pl", factbase, 'utf-8');
     var factbasenl = execTranspiler (emitEscapeNewlinesGrammar, emitEscapeNewlinesGlue, factbase);
-    var sortedFactbase = plsort (factbasenl);
+    var sortedFactbase = unescapeNewlines (plsort (factbasenl));
+    //fs.writeFileSync("_sorted-details.pl", sortedFactbase, 'utf-8');
     console.log (sortedFactbase);
 }
 generatePipeline ();

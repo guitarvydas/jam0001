@@ -1,8 +1,8 @@
 convert__to__fb
 make__rects
-check__edges
 senders
 receivers
+check__edges
 bounding__boxes
 check__bounding__boxes
 contains1
@@ -13,3 +13,6 @@ port__contains
 port__directions
 assign__names
 assign__code
+convert__to__JSON
+emit__topological
+topological__sort
