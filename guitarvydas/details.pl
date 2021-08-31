@@ -46,59 +46,59 @@ diagramContains(id1,id6).
 diagramContains(id1,id7).
 diagramContains(id1,id8).
 diagramContains(id1,id9).
-fillColor(id10,"red").
-fillColor(id12,"red").
-fillColor(id14,"red").
-fillColor(id16,"red").
-fillColor(id18,"red").
-fillColor(id20,"red").
-fillColor(id22,"red").
-fillColor(id24,"red").
-fillColor(id6,"red").
-fillColor(id8,"red").
-height(id10,30).
-height(id11,110).
-height(id12,35).
-height(id13,110).
-height(id14,35).
-height(id15,110).
-height(id16,35).
-height(id17,190).
-height(id18,135).
-height(id19,110).
-height(id20,35).
-height(id21,110).
-height(id22,35).
-height(id23,105).
-height(id24,35).
-height(id4,550).
-height(id5,190).
-height(id6,135).
-height(id7,95).
-height(id8,30).
-height(id9,95).
+fillColor(id11,"red").
+fillColor(id13,"red").
+fillColor(id15,"red").
+fillColor(id17,"red").
+fillColor(id19,"red").
+fillColor(id21,"red").
+fillColor(id23,"red").
+fillColor(id5,"red").
+fillColor(id7,"red").
+fillColor(id9,"red").
+height(id10,110).
+height(id11,35).
+height(id12,110).
+height(id13,35).
+height(id14,110).
+height(id15,35).
+height(id16,190).
+height(id17,135).
+height(id18,110).
+height(id19,35).
+height(id20,110).
+height(id21,35).
+height(id22,105).
+height(id23,35).
+height(id24,95).
+height(id4,190).
+height(id5,135).
+height(id6,95).
+height(id7,30).
+height(id8,95).
+height(id9,30).
 name(id1,"Details").
-value(id10,"~~node details.js ~~").
-value(id11,"seqEmitJSON").
-value(id12,"~~./seq__run__aux.bash ~~").
-value(id13,"emitTopo").
-value(id14,"~~node emittopological.js ~~").
-value(id15,"topologicalSort").
-value(id16,"~~tsort topo1.txt ~~").
-value(id17,"detailsStart").
-value(id18,"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~").
-value(id19,"detailsEmitJSON").
-value(id20,"~~./run__aux.bash ~~").
-value(id21,"emitFunctions").
-value(id22,"~~node emitfunctions.js ~~").
-value(id23,"combine").
-value(id24,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
-value(id4,"top level").
-value(id5,"sequenceStart").
-value(id6,"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~").
-value(id7,"buildSequence").
-value(id8,"~~node sequence.js ~~").
-value(id9,"buildDetails").
+value(id10,"seqEmitJSON").
+value(id11,"~~./seq__run__aux.bash ~~").
+value(id12,"emitTopo").
+value(id13,"~~node emittopological.js ~~").
+value(id14,"topologicalSort").
+value(id15,"~~tsort topo1.txt ~~").
+value(id16,"detailsStart").
+value(id17,"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~").
+value(id18,"detailsEmitJSON").
+value(id19,"~~./run__aux.bash ~~").
+value(id20,"emitFunctions").
+value(id21,"~~node emitfunctions.js ~~").
+value(id22,"combine").
+value(id23,"~~cat header.txt functions.txt topo.txt trailer.txt ~~").
+value(id24,"top level").
+value(id4,"sequenceStart").
+value(id5,"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~").
+value(id6,"buildSequence").
+value(id7,"~~node sequence.js ~~").
+value(id8,"buildDetails").
+value(id9,"~~node details.js ~~").
 vertex(id10,"").
 vertex(id11,"").
 vertex(id12,"").
@@ -120,66 +120,66 @@ vertex(id6,"").
 vertex(id7,"").
 vertex(id8,"").
 vertex(id9,"").
-width(id10,180).
-width(id11,260).
-width(id12,210).
-width(id13,260).
-width(id14,210).
-width(id15,260).
-width(id16,210).
-width(id17,260).
-width(id18,210).
-width(id19,260).
-width(id20,210).
-width(id21,260).
-width(id22,210).
-width(id23,360).
-width(id24,310).
-width(id4,1890).
-width(id5,260).
-width(id6,210).
-width(id7,240).
-width(id8,180).
-width(id9,240).
-x(id10,90).
-x(id11,705).
-x(id12,730).
-x(id13,995).
-x(id14,1020).
-x(id15,1265).
-x(id16,1290).
-x(id17,390).
-x(id18,420).
-x(id19,705).
-x(id20,730).
-x(id21,995).
-x(id22,1020).
-x(id23,1545).
-x(id24,1570).
-x(id4,40).
-x(id5,390).
-x(id6,420).
-x(id7,60).
-x(id8,90).
-x(id9,60).
-y(id10,420).
-y(id11,160).
-y(id12,195).
-y(id13,160).
-y(id14,195).
-y(id15,160).
-y(id16,195).
-y(id17,400).
-y(id18,435).
-y(id19,400).
-y(id20,435).
-y(id21,400).
-y(id22,435).
-y(id23,305).
-y(id24,340).
-y(id4,120).
-y(id5,160).
-y(id6,195).
-y(id7,270).
-y(id8,305).
-y(id9,385).
+width(id10,260).
+width(id11,210).
+width(id12,260).
+width(id13,210).
+width(id14,260).
+width(id15,210).
+width(id16,260).
+width(id17,210).
+width(id18,260).
+width(id19,210).
+width(id20,260).
+width(id21,210).
+width(id22,360).
+width(id23,310).
+width(id24,240).
+width(id4,260).
+width(id5,210).
+width(id6,240).
+width(id7,180).
+width(id8,240).
+width(id9,180).
+x(id10,705).
+x(id11,730).
+x(id12,995).
+x(id13,1020).
+x(id14,1265).
+x(id15,1290).
+x(id16,390).
+x(id17,420).
+x(id18,705).
+x(id19,730).
+x(id20,995).
+x(id21,1020).
+x(id22,1545).
+x(id23,1570).
+x(id24,80).
+x(id4,390).
+x(id5,420).
+x(id6,60).
+x(id7,90).
+x(id8,60).
+x(id9,90).
+y(id10,160).
+y(id11,195).
+y(id12,160).
+y(id13,195).
+y(id14,160).
+y(id15,195).
+y(id16,400).
+y(id17,435).
+y(id18,400).
+y(id19,435).
+y(id20,400).
+y(id21,435).
+y(id22,305).
+y(id23,340).
+y(id24,40).
+y(id4,160).
+y(id5,195).
+y(id6,270).
+y(id7,305).
+y(id8,385).
+y(id9,420).

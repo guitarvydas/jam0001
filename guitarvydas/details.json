@@ -1,20 +1,20 @@
+{"diagram":"id1", "toplevelcomponent":"id10"}
+{"diagram":"id1", "toplevelcomponent":"id12"}
+{"diagram":"id1", "toplevelcomponent":"id14"}
+{"diagram":"id1", "toplevelcomponent":"id16"}
+{"diagram":"id1", "toplevelcomponent":"id18"}
+{"diagram":"id1", "toplevelcomponent":"id20"}
+{"diagram":"id1", "toplevelcomponent":"id22"}
+{"diagram":"id1", "toplevelcomponent":"id24"}
 {"diagram":"id1", "toplevelcomponent":"id4"}
+{"diagram":"id1", "toplevelcomponent":"id6"}
+{"diagram":"id1", "toplevelcomponent":"id8"}
 
 {
-  "children": [],
+  "children": ["c1", "c1" ],
   "connections": [],
   "diagram":"id1",
   "id":"id10",
-  "inputs": [],
-  "name":"c1",
-  "outputs": [],
-  "synccode":"~~node details.js ~~"
-}
-{
-  "children": ["c2" ],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id11",
   "inputs": [],
   "name":"seqEmitJSON",
   "outputs": [],
@@ -24,17 +24,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id12",
+  "id":"id11",
   "inputs": [],
-  "name":"c2",
+  "name":"c1",
   "outputs": [],
   "synccode":"~~./seq__run__aux.bash ~~"
 }
 {
-  "children": ["c3" ],
+  "children": ["c2", "c2" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id13",
+  "id":"id12",
   "inputs": [],
   "name":"emitTopo",
   "outputs": [],
@@ -44,17 +44,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id14",
+  "id":"id13",
   "inputs": [],
-  "name":"c3",
+  "name":"c2",
   "outputs": [],
   "synccode":"~~node emittopological.js ~~"
 }
 {
-  "children": ["c4" ],
+  "children": ["c3", "c3" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id15",
+  "id":"id14",
   "inputs": [],
   "name":"topologicalSort",
   "outputs": [],
@@ -64,17 +64,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id16",
+  "id":"id15",
   "inputs": [],
-  "name":"c4",
+  "name":"c3",
   "outputs": [],
   "synccode":"~~tsort topo1.txt ~~"
 }
 {
-  "children": ["c5" ],
+  "children": ["c4", "c4" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id17",
+  "id":"id16",
   "inputs": [],
   "name":"detailsStart",
   "outputs": [],
@@ -84,17 +84,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id18",
+  "id":"id17",
   "inputs": [],
-  "name":"c5",
+  "name":"c4",
   "outputs": [],
   "synccode":"~~echo BBB detailsStart BBB~~cat details.pl temp.pl | sort ~~"
 }
 {
-  "children": ["c7" ],
+  "children": ["c5", "c5" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id19",
+  "id":"id18",
   "inputs": [],
   "name":"detailsEmitJSON",
   "outputs": [],
@@ -104,17 +104,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id20",
+  "id":"id19",
   "inputs": [],
-  "name":"c7",
+  "name":"c5",
   "outputs": [],
   "synccode":"~~./run__aux.bash ~~"
 }
 {
-  "children": ["c8" ],
+  "children": ["c7", "c7" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id21",
+  "id":"id20",
   "inputs": [],
   "name":"emitFunctions",
   "outputs": [],
@@ -124,17 +124,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id22",
+  "id":"id21",
   "inputs": [],
-  "name":"c8",
+  "name":"c7",
   "outputs": [],
   "synccode":"~~node emitfunctions.js ~~"
 }
 {
-  "children": ["c9" ],
+  "children": ["c8", "c8" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id23",
+  "id":"id22",
   "inputs": [],
   "name":"combine",
   "outputs": [],
@@ -144,38 +144,27 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id24",
+  "id":"id23",
   "inputs": [],
-  "name":"c9",
+  "name":"c8",
   "outputs": [],
   "synccode":"~~cat header.txt functions.txt topo.txt trailer.txt ~~"
 }
 {
-  "children": [
-    "seqEmitJSON",
-    "emitTopo",
-    "topologicalSort",
-    "detailsStart",
-    "detailsEmitJSON",
-    "emitFunctions",
-    "combine",
-    "sequenceStart",
-    "buildSequence",
-    "buildDetails"
-  ],
+  "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id4",
+  "id":"id24",
   "inputs": [],
   "name":"top level",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": ["c11" ],
+  "children": ["c10", "c10" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id5",
+  "id":"id4",
   "inputs": [],
   "name":"sequenceStart",
   "outputs": [],
@@ -185,17 +174,17 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id6",
+  "id":"id5",
   "inputs": [],
-  "name":"c11",
+  "name":"c10",
   "outputs": [],
   "synccode":"~~echo '*** sequenceStart ***'~~cat sequence.pl temp.pl | sort ~~"
 }
 {
-  "children": ["c12" ],
+  "children": ["c11", "c11" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id7",
+  "id":"id6",
   "inputs": [],
   "name":"buildSequence",
   "outputs": [],
@@ -205,20 +194,30 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id8",
+  "id":"id7",
   "inputs": [],
-  "name":"c12",
+  "name":"c11",
   "outputs": [],
   "synccode":"~~node sequence.js ~~"
 }
 {
-  "children": ["c1" ],
+  "children": ["c12", "c12" ],
   "connections": [],
   "diagram":"id1",
-  "id":"id9",
+  "id":"id8",
   "inputs": [],
   "name":"buildDetails",
   "outputs": [],
   "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id9",
+  "inputs": [],
+  "name":"c12",
+  "outputs": [],
+  "synccode":"~~node details.js ~~"
 }
 

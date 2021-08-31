@@ -4,9 +4,9 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id10",
+  "id":"id19",
   "inputs": [],
-  "name":"C",
+  "name":"convert to fb",
   "outputs": [],
   "synccode":""
 }
@@ -14,24 +14,150 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id13",
+  "id":"id20",
   "inputs": [],
-  "name":"D",
+  "name":"make rects",
   "outputs": [],
   "synccode":""
 }
 {
-  "children": ["C", "D", "buildSequence", "sequenceStart" ],
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id21",
+  "inputs": [],
+  "name":"check edges",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id22",
+  "inputs": [],
+  "name":"bounding boxes",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id23",
+  "inputs": [],
+  "name":"check bounding boxes",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id28",
+  "inputs": [],
+  "name":"senders",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id33",
+  "inputs": [],
+  "name":"receivers",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [
+    "convert to fb",
+    "make rects",
+    "check edges",
+    "bounding boxes",
+    "check bounding boxes",
+    "senders",
+    "receivers",
+    "directcontains",
+    "rectangles must not intersect",
+    "deepcontains",
+    "contains1",
+    "port directions",
+    "port contains",
+    "assign code",
+    "assign names"
+  ],
   "connections": [
     {
       "name":"x2",
-      "receiver": {"component":"D", "port":"id14"},
-      "sender": {"component":"C", "port":"id12"}
+      "receiver": {"component":"check bounding boxes", "port":"id18"},
+      "sender": {"component":"bounding boxes", "port":"id12"}
     },
     {
       "name":"x3",
-      "receiver": {"component":"sequenceStart", "port":"id9"},
-      "sender": {"component":"buildSequence", "port":"id7"}
+      "receiver": {"component":"contains1", "port":"id48"},
+      "sender": {"component":"check bounding boxes", "port":"id14"}
+    },
+    {
+      "name":"x4",
+      "receiver": {"component":"receivers", "port":"id30"},
+      "sender": {"component":"senders", "port":"id27"}
+    },
+    {
+      "name":"x5",
+      "receiver": {"component":"bounding boxes", "port":"id17"},
+      "sender": {"component":"receivers", "port":"id32"}
+    },
+    {
+      "name":"x6",
+      "receiver": {"component":"rectangles must not intersect", "port":"id39"},
+      "sender": {"component":"directcontains", "port":"id35"}
+    },
+    {
+      "name":"x7",
+      "receiver": {"component":"port contains", "port":"id56"},
+      "sender": {"component":"rectangles must not intersect", "port":"id37"}
+    },
+    {
+      "name":"x8",
+      "receiver": {"component":"directcontains", "port":"id38"},
+      "sender": {"component":"deepcontains", "port":"id43"}
+    },
+    {
+      "name":"x9",
+      "receiver": {"component":"deepcontains", "port":"id44"},
+      "sender": {"component":"contains1", "port":"id47"}
+    },
+    {
+      "name":"x10",
+      "receiver": {"component":"make rects", "port":"id15"},
+      "sender": {"component":"convert to fb", "port":"id6"}
+    },
+    {
+      "name":"x11",
+      "receiver": {"component":"assign names", "port":"id63"},
+      "sender": {"component":"port directions", "port":"id51"}
+    },
+    {
+      "name":"x12",
+      "receiver": {"component":"port directions", "port":"id52"},
+      "sender": {"component":"port contains", "port":"id55"}
+    },
+    {
+      "name":"x13",
+      "receiver": {"component":"assign code", "port":"id59"},
+      "sender": {"component":"assign names", "port":"id62"}
+    },
+    {
+      "name":"x14",
+      "receiver": {"component":"check edges", "port":"id16"},
+      "sender": {"component":"make rects", "port":"id8"}
+    },
+    {
+      "name":"x15",
+      "receiver": {"component":"senders", "port":"id25"},
+      "sender": {"component":"check edges", "port":"id10"}
     }
   ],
   "diagram":"id1",
@@ -45,9 +171,9 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id5",
+  "id":"id40",
   "inputs": [],
-  "name":"buildSequence",
+  "name":"directcontains",
   "outputs": [],
   "synccode":""
 }
@@ -55,9 +181,69 @@
   "children": [],
   "connections": [],
   "diagram":"id1",
-  "id":"id8",
+  "id":"id41",
   "inputs": [],
-  "name":"sequenceStart",
+  "name":"rectangles must not intersect",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id45",
+  "inputs": [],
+  "name":"deepcontains",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id49",
+  "inputs": [],
+  "name":"contains1",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id53",
+  "inputs": [],
+  "name":"port directions",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id57",
+  "inputs": [],
+  "name":"port contains",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id60",
+  "inputs": [],
+  "name":"assign code",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id64",
+  "inputs": [],
+  "name":"assign names",
   "outputs": [],
   "synccode":""
 }

@@ -1,75 +1,90 @@
 #!/bin/bash
-c1 () {
-node details.js 
-  }
 seqEmitJSON () {
- c2
+ c1
+c1
  }
-c2 () {
+c1 () {
 ./seq__run__aux.bash 
   }
 emitTopo () {
- c3
+ c2
+c2
  }
-c3 () {
+c2 () {
 node emittopological.js 
   }
 topologicalSort () {
- c4
+ c3
+c3
  }
-c4 () {
+c3 () {
 tsort topo1.txt 
   }
 detailsStart () {
- c5
+ c4
+c4
  }
-c5 () {
+c4 () {
 echo BBB detailsStart BBB
 cat details.pl temp.pl | sort 
   }
 detailsEmitJSON () {
- c7
+ c5
+c5
  }
-c7 () {
+c5 () {
 ./run__aux.bash 
   }
 emitFunctions () {
- c8
+ c7
+c7
  }
-c8 () {
+c7 () {
 node emitfunctions.js 
   }
 combine () {
- c9
+ c8
+c8
  }
-c9 () {
+c8 () {
 cat header.txt functions.txt topo.txt trailer.txt 
   }
 top__level () {
- seqEmitJSON
-emitTopo
-topologicalSort
-detailsStart
-detailsEmitJSON
-emitFunctions
-combine
-sequenceStart
-buildSequence
-buildDetails
- }
+  }
 sequenceStart () {
- c11
+ c10
+c10
  }
-c11 () {
+c10 () {
 echo '*** sequenceStart ***'
 cat sequence.pl temp.pl | sort 
   }
 buildSequence () {
- c12
+ c11
+c11
  }
-c12 () {
+c11 () {
 node sequence.js 
   }
 buildDetails () {
- c1
+ c12
+c12
  }
+c12 () {
+node details.js 
+  }
+convert__to__fb
+make__rects
+check__edges
+senders
+receivers
+bounding__boxes
+check__bounding__boxes
+contains1
+deepcontains
+directcontains
+rectangles__must__not__intersect
+port__contains
+port__directions
+assign__names
+assign__code

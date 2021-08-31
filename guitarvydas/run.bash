@@ -1,6 +1,5 @@
 #!/bin/bash
 clear
-set -x
 set -e
 trap 'catch' ERR
 
@@ -31,9 +30,7 @@ cp fb.pl _seq_end_fb.pl
 ./receivers.bash
 
 ./designRuleCheckEdges.bash
-cp fb.pl _pre_bb.pl
 ./bb.bash
-cp fb.pl _post_bb.pl
 ./designRuleCheckBoundingBoxes.bash
 
 ./contains1.bash
@@ -50,10 +47,6 @@ cp fb.pl _post_bb.pl
 
 node emittopological.js >topo1.txt
 tsort topo1.txt >topo.txt
-
-### 
-cat topo.txt
-exit 0
 
 # debug
 mv fb.pl seqfb.pl
