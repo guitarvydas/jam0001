@@ -23,8 +23,8 @@ Components {
 
       JSONconnection = "{" 
                           Pair<"name"> 
-                          ComponentPortPair<"source">
-                          ComponentPortPair<"target">
+                          ComponentPortPair<"receiver">
+                          ComponentPortPair<"sender">
                        "}"
 
     ComponentPortPair<Name> = quote Name quote colon "{"

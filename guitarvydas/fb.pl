@@ -164,7 +164,7 @@ value(id13, "D").
 value(id14, "").
 value(id4, "top level").
 value(id5, "buildSequence").
-value(id7, "a").
+value(id7, "").
 value(id8, "sequenceStart").
 value(id9, "b").
 vertex(id10, "").
