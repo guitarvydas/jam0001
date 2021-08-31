@@ -1,4 +1,43 @@
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -g 'consult(rects).' \\
+ -g 'consult(sequence).' \\
+ -g 'halt.' \\
+ -g 'printRects.' \\
+ temp.pl
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+").
+ ").
+").
+# augment the factbase (fb.pl) after every inferencing step
+## but does not mark rectangles (the default)
+## create rect fact for every vertex that is not an edge/ellipse/text
+## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
+## this pass finds the defaults and creates explicit rect(...) facts
+cat sequence.pl temp.pl | sort 
 cell(id10,"").
 cell(id11,"").
 cell(id12,"").
@@ -36,6 +75,7 @@ cell(id6,"").
 cell(id7,"").
 cell(id8,"").
 cell(id9,"").
+cp fb.pl _seq_end_fb.pl
 diagram(id1,"").
 diagramContains(id1,id10).
 diagramContains(id1,id11).
@@ -127,40 +167,81 @@ height(id7,300).
 height(id8,70).
 height(id9,70).
 name(id1,"Details").
-value(id10,"emit%20topological").
-value(id11,"topological%20sort").
-value(id12,"%23%23%20create%20rect%20fact%20for%20every%20vertex%20that%20is%20not%20an%20edge%2Fellipse%2Ftext%0A%23%23%20sequence.drawio%20file%20contains%20vertexes%2C%20and%20marks%20all%20edge%20and%20ellipse%20(and%20text)%0A%23%23%20but%20does%20not%20mark%20rectangles%20(the%20default)%0A%23%23%20this%20pass%20finds%20the%20defaults%20and%20creates%20explicit%20rect(...)%20facts%0Aswipl%20-q%20%5C%0A%20%20%20-g%20'consult(sequence).'%20%5C%0A%20%20%20-g%20'consult(rects).'%20%5C%0A%20%20%20-g%20'printRects.'%20%5C%0A%20%20%20-g%20'halt.'%20%5C%0A%20%20%20%3E%20temp.pl%0A%0A%0A%23%20augment%20the%20factbase%20(fb.pl)%20after%20every%20inferencing%20step%0Acat%20sequence.pl%20temp.pl%20%7C%20sort%20%3Efb.pl%0Acp%20fb.pl%20_seq_end_fb.pl%0A%0A%0A").
-value(id13,".%2Fsenders.bash%0A%0A%0A").
+node emittopological.js
+node sequence.js 
+rect(id10,"").
+rect(id11,"").
+rect(id12,"").
+rect(id13,"").
+rect(id14,"").
+rect(id15,"").
+rect(id16,"").
+rect(id17,"").
+rect(id18,"").
+rect(id19,"").
+rect(id2,"").
+rect(id20,"").
+rect(id21,"").
+rect(id22,"").
+rect(id23,"").
+rect(id24,"").
+rect(id25,"").
+rect(id26,"").
+rect(id27,"").
+rect(id28,"").
+rect(id29,"").
+rect(id3,"").
+rect(id30,"").
+rect(id31,"").
+rect(id32,"").
+rect(id33,"").
+rect(id34,"").
+rect(id35,"").
+rect(id36,"").
+rect(id37,"").
+rect(id38,"").
+rect(id4,"").
+rect(id5,"").
+rect(id6,"").
+rect(id7,"").
+rect(id8,"").
+rect(id9,"").
+swipl -q \\
+tsort topo1.txt 
+value(id10,"emit topological").
+value(id11,"tsort").
+value(id12,"
+value(id13,"
 value(id14,"receivers").
-value(id15,".%2Freceivers.bash%0A%0A%0A").
-value(id16,".%2FdesignRuleCheckEdges.bash%0A%0A%0A").
-value(id17,"bounding%20boxes").
-value(id18,".%2Fbb.bash%0A%0A%0A").
-value(id19,"check%20bounding%20boxes").
-value(id20,".%2FdesignRuleCheckBoundingBoxes.bash%0A%0A%0A").
+value(id15,"
+value(id16,"
+value(id17,"bounding boxes").
+value(id18,"
+value(id19,"check bounding boxes").
+value(id20,"
 value(id21,"contains1").
-value(id22,".%2Fcontains1.bash%0A%0A%0A").
-value(id23,"rectangles%20must%20not%20intersect").
-value(id24,".%2FdesignRule1.bash%0A%0A%0A").
+value(id22,"
+value(id23,"rectangles must not intersect").
+value(id24,"
 value(id25,"deepcontains").
-value(id26,".%2Fdeepcontains.bash%0A%0A%0A").
+value(id26,"
 value(id27,"directcontains").
-value(id28,".%2Fdirectcontains.bash%0A%0A%0A").
-value(id29,"port%20contains").
-value(id30,".%2Fportcontains1.bash%0A%0A%0A").
-value(id31,"port%20directions").
-value(id32,".%2Fportdirections.bash%0A%0A%0A").
-value(id33,"assign%20names").
-value(id34,".%2Fassignnames.bash%0A%0A%0A").
-value(id35,"assign%20code").
-value(id36,".%2Fassigncode.bash%0A%0A%0A").
-value(id37,"node%20emittopological.js%0A%0A%0A").
-value(id38,"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A").
-value(id4,"convert%20to%20fb").
-value(id5,"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A").
-value(id6,"top%20level").
-value(id7,"make%20rects").
-value(id8,"check%20edges").
+value(id28,"
+value(id29,"port contains").
+value(id30,"
+value(id31,"port directions").
+value(id32,"
+value(id33,"assign names").
+value(id34,"
+value(id35,"assign code").
+value(id36,"
+value(id37,"
+value(id38,"
+value(id4,"convert to fb").
+value(id5,"
+value(id6,"top level").
+value(id7,"make rects").
+value(id8,"check edges").
 value(id9,"senders").
 vertex(id10,"").
 vertex(id11,"").

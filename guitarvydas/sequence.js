@@ -395,24 +395,12 @@ function plsort (factbase) {
 var drawioRaw = fs.readFileSync ('sequence.drawio', 'utf-8');
 
 function generatePipeline () {
-    process.stderr.write("begin uncompress\n");
     var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
-    fs.writeFileSync("_uncompressed-seq.html", drawioUncompressed, 'utf-8');
-    process.stderr.write("uncompress\n");
     var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed)
-    process.stderr.write("begin style expand\n");
-    fs.writeFileSync("_expanded-seq.html", stylesExpanded, 'utf-8');
-    process.stderr.write("style expand\n");
     var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded)
-    fs.writeFileSync("_elided-seq.html", attributesElided, 'utf-8');
-    process.stderr.write("style elide\n");
     var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided)
-    fs.writeFileSync("_symbolTable-seq.html", symbolTable, 'utf-8');
-    process.stderr.write("symbol table\n");
     // N.B. same args as for symbolTable
     var factbase = symbolTable + execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
-    fs.writeFileSync("_factbase-seq.html", factbase, 'utf-8');
-    process.stderr.write("factbase (unsorted)\n");
     var sortedFactbase = plsort (factbase);
     console.log (sortedFactbase);
 }

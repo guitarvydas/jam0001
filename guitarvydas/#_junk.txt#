@@ -1,0 +1,58 @@
+value(id12, "&lt;div&gt;&lt;div&gt;&lt;div&gt;## create rect fact for every vertex that is not an edge/ellipse/text&lt;/div&gt;&lt;div&gt;## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)&lt;/div&gt;&lt;div&gt;## but does not mark rectangles (the default)&lt;/div&gt;&lt;div&gt;## this pass finds the defaults and creates explicit rect(...) facts&lt;/div&gt;&lt;div&gt;swipl -q \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; -g 'consult(sequence).' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; -g 'consult(rects).' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; -g 'printRects.' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; -g 'halt.' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;gt; temp.pl&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;# augment the factbase (fb.pl) after every inferencing step&lt;/div&gt;&lt;div&gt;cat sequence.pl temp.pl | sort &amp;gt;fb.pl&lt;/div&gt;&lt;div&gt;cp fb.pl _seq_end_fb.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+
+
+
+
+[H[2J{"diagram":"id1", "toplevelcomponent":"id4"}
+
+{
+  "children": ["rects", "bounding boxes" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id4",
+  "inputs": [],
+  "name":"top level",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": ["c3" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id5",
+  "inputs": [],
+  "name":"rects",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id6",
+  "inputs": [],
+  "name":"c3",
+  "outputs": [],
+  "synccode":"swipl -q  -g 'consult(fb).'  -g 'consult(rects).'  -g 'printRects.'  __g 'halt.'| ./augment__fb"
+}
+{
+  "children": ["c4" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id7",
+  "inputs": [],
+  "name":"bounding boxes",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id8",
+  "inputs": [],
+  "name":"c4",
+  "outputs": [],
+  "synccode":"swipl -q  -g 'consult(fb).'  -g 'consult(boundingBoxes).'  -g 'printBB.'  -g 'halt.'  | ./augment__fb"
+}
+

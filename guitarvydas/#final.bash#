@@ -1,88 +1,135 @@
 #!/bin/bash
-c1 () {
-    node details.js >details.pl
+emit__topological () {
+    c17
 }
-seqEmitJSON () {
-    c2
+tsort () {
+    c18
+}
+c1 () {
+    ## create rect fact for every vertex that is not an edge/ellipse/text
+    ## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
+    ## but does not mark rectangles (the default)
+    ## this pass finds the defaults and creates explicit rect(...) facts
+    swipl -q \
+	  -g 'consult(sequence).' \
+	  -g 'consult(rects).' \
+	  -g 'printRects.' \
+	  -g 'halt.' \
+	  > temp.pl
+    # augment the factbase (fb.pl) after every inferencing step
+    cat sequence.pl temp.pl | sort >fb.pl
+    cp fb.pl _seq_end_fb.pl
 }
 c2 () {
-    ./seq__run__aux.bash >sequence.json
+    ./senders.bash
 }
-emitTopo () {
+receivers () {
     c3
 }
 c3 () {
-    node emittopological.js >topo1.txt
-}
-topologicalSort () {
-    c4
+    ./receivers.bash
 }
 c4 () {
-    tsort topo1.txt >topo.txt
+    ./designRuleCheckEdges.bash
 }
-detailsStart () {
+bounding__boxes () {
     c5
 }
 c5 () {
-    echo BBB detailsStart BBB
-    ./detStart
-    cat details.pl temp.pl | sort >fb.pl
+    ./bb.bash
 }
-detailsEmitJSON () {
+check__bounding__boxes () {
     c7
 }
 c7 () {
-    ./run__aux.bash >details.json
+    ./designRuleCheckBoundingBoxes.bash
 }
-emitFunctions () {
+contains1 () {
     c8
 }
 c8 () {
-    node emitfunctions.js >topo1.txt
+    ./contains1.bash
 }
-combine () {
+rectangles__must__not__intersect () {
     c9
 }
 c9 () {
-    cat header.txt functions.txt topo.txt trailer.txt >rfinal.bash
+    ./designRule1.bash
 }
-top__level () {
-    seqEmitJSON
-    emitTopo
-    topologicalSort
-    detailsStart
-    detailsEmitJSON
-    emitFunctions
-    combine
-    sequenceStart
-    buildSequence
-    buildDetails
+deepcontains () {
+    c10
 }
-sequenceStart () {
+c10 () {
+    ./deepcontains.bash
+}
+directcontains () {
     c11
 }
 c11 () {
-    echo AAA sequenceStart AAA
-    ./seqStart
-    cat sequence.pl temp.pl | sort >fb.pl
+    ./directcontains.bash
 }
-buildSequence () {
-    c12
+port__contains () {
+    c13
 }
-c12 () {
+c13 () {
+    ./portcontains1.bash
+}
+port__directions () {
+    c14
+}
+c14 () {
+    ./portdirections.bash
+}
+assign__names () {
+    c15
+}
+c15 () {
+    ./assignnames.bash
+}
+assign__code () {
+    c16
+}
+c16 () {
+    ./assigncode.bash
+}
+c17 () {
+    node emittopological.js
+}
+c18 () {
+    tsort topo1.txt >topo.txt
+}
+convert__to__fb () {
+    c19
+}
+c19 () {
     node sequence.js >sequence.pl
 }
-buildDetails () {
+top__level () {
+}
+make__rects () {
     c1
 }
-self
-buildDetails
-buildSequence
-detailsStart
-sequenceStart
-seqEmitJSON
-emitTopo
-detailsEmitJSON
-emitFunctions
-topologicalSort
-combine
+check__edges () {
+    c4
+}
+senders () {
+    c2
+}
+convert__to__fb
+make__rects
+senders
+receivers
+check__edges
+bounding__boxes
+check__bounding__boxes
+contains1
+deepcontains
+directcontains
+rectangles__must__not__intersect
+port__contains
+port__directions
+assign__names
+assign__code
+convert__to__JSON
+emit__topological
+tsort

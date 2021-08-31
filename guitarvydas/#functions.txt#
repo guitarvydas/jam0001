@@ -1,0 +1,219 @@
+
+
+emit topological () {
+
+c17
+c17
+}
+
+tsort () {
+
+c18
+c18
+}
+
+c1 () {
+
+## create rect fact for every vertex that is not an edge/ellipse/text
+## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
+## but does not mark rectangles (the default)
+## this pass finds the defaults and creates explicit rect(...) facts
+swipl -q \
+
+
+-g 'consult(sequence).' \
+
+
+-g 'consult(rects).' \
+
+
+-g 'printRects.' \
+
+
+-g 'halt.' \
+
+
+
+temp.pl
+# augment the factbase (fb.pl) after every inferencing step
+cat sequence.pl temp.pl | sort 
+cp fb.pl _seq_end_fb.pl
+
+}
+
+c2 () {
+
+
+}
+
+receivers () {
+
+c3
+c3
+}
+
+c3 () {
+
+
+}
+
+c4 () {
+
+
+}
+
+bounding boxes () {
+
+c5
+c5
+}
+
+c5 () {
+
+
+}
+
+check bounding boxes () {
+
+c7
+c7
+}
+
+c7 () {
+
+
+}
+
+contains1 () {
+
+c8
+c8
+}
+
+c8 () {
+
+
+}
+
+rectangles must not intersect () {
+
+c9
+c9
+}
+
+c9 () {
+
+
+}
+
+deepcontains () {
+
+c10
+c10
+}
+
+c10 () {
+
+
+}
+
+directcontains () {
+
+c11
+c11
+}
+
+c11 () {
+
+
+}
+
+port contains () {
+
+c13
+c13
+}
+
+c13 () {
+
+
+}
+
+port directions () {
+
+c14
+c14
+}
+
+c14 () {
+
+
+}
+
+assign names () {
+
+c15
+c15
+}
+
+c15 () {
+
+
+}
+
+assign code () {
+
+c16
+c16
+}
+
+c16 () {
+
+
+}
+
+c17 () {
+
+node emittopological.js
+
+}
+
+c18 () {
+
+tsort topo1.txt 
+
+}
+
+convert to fb () {
+
+c19
+c19
+}
+
+c19 () {
+
+node sequence.js 
+
+}
+
+top level () {
+
+}
+
+make rects () {
+
+c1
+c1
+}
+
+check edges () {
+
+c4
+c4
+}
+
+senders () {
+
+c2
+c2
+}

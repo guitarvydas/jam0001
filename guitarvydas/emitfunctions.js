@@ -352,7 +352,7 @@ function _ruleExit (ruleName) {
 
 
 
-//require ('./support');
+var support = require ('./support');
 var atob = require ('atob'); // npm install atob
 var pako = require ('pako'); // npm install pako
 function decodeMxDiagram (encoded) {
@@ -487,10 +487,7 @@ function setDiagram () {
 //////// details transpiler //////////
 
 function namify (s) {
-    return s
-	.trim ()
-	.replace (/"/g,'')
-	.replace (/ /g,'__');
+    return support.namify (s);
 }
 
 function stripQuotes (s) {
@@ -509,8 +506,8 @@ function stripQuotesAddNewlines (s) {
 
 var fs = require ('fs');
 
-const sequenceGrammar = fs.readFileSync ('emitfunctions.ohm', 'utf-8');
-const sequenceGlue = fs.readFileSync ('emitfunctions.glue', 'utf-8');
+const functionsGrammar = fs.readFileSync ('emitfunctions.ohm', 'utf-8');
+const functionsGlue = fs.readFileSync ('emitfunctions.glue', 'utf-8');
 const jsonfactbase = fs.readFileSync ('details.json', 'utf-8');
 
 function execTranspiler (grammar, semantics, source) {
@@ -530,8 +527,7 @@ function execTranspiler (grammar, semantics, source) {
 
 
 function generatePipeline () {
-    var functions = execTranspiler (sequenceGrammar, sequenceGlue, jsonfactbase)
-	.replace (/~~/g,'\n');
+    var functions = decodeURIComponent(execTranspiler (functionsGrammar, functionsGlue, jsonfactbase));
     console.log (functions);
 }
 generatePipeline ();

@@ -1,83 +1,125 @@
 #!/bin/bash
-seqEmitJSON () {
- c1
-c1
+emit__topological () {
+ c17
+ }
+topological__sort () {
+ c18
  }
 c1 () {
-./seq__run__aux.bash 
+## create rect fact for every vertex that is not an edge/ellipse/text
+## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
+## but does not mark rectangles (the default)
+## this pass finds the defaults and creates explicit rect(...) facts
+swipl -q \
+   -g 'consult(sequence).' \
+   -g 'consult(rects).' \
+   -g 'printRects.' \
+   -g 'halt.' \
+   > temp.pl
+# augment the factbase (fb.pl) after every inferencing step
+cat sequence.pl temp.pl | sort >fb.pl
+cp fb.pl _seq_end_fb.pl
   }
-emitTopo () {
- c2
-c2
- }
 c2 () {
-node emittopological.js 
+./senders.bash
   }
-topologicalSort () {
+receivers () {
  c3
-c3
  }
 c3 () {
-tsort topo1.txt 
+./receivers.bash
   }
-detailsStart () {
- c4
-c4
- }
 c4 () {
-echo BBB detailsStart BBB
-cat details.pl temp.pl | sort 
+./designRuleCheckEdges.bash
   }
-detailsEmitJSON () {
+bounding__boxes () {
  c5
-c5
  }
 c5 () {
-./run__aux.bash 
+./bb.bash
   }
-emitFunctions () {
+check__bounding__boxes () {
  c7
-c7
  }
 c7 () {
-node emitfunctions.js 
+./designRuleCheckBoundingBoxes.bash
   }
-combine () {
+contains1 () {
  c8
-c8
  }
 c8 () {
-cat header.txt functions.txt topo.txt trailer.txt 
+./contains1.bash
+  }
+rectangles__must__not__intersect () {
+ c9
+ }
+c9 () {
+./designRule1.bash
+  }
+deepcontains () {
+ c10
+ }
+c10 () {
+./deepcontains.bash
+  }
+directcontains () {
+ c11
+ }
+c11 () {
+./directcontains.bash
+  }
+port__contains () {
+ c13
+ }
+c13 () {
+./portcontains1.bash
+  }
+port__directions () {
+ c14
+ }
+c14 () {
+./portdirections.bash
+  }
+assign__names () {
+ c15
+ }
+c15 () {
+./assignnames.bash
+  }
+assign__code () {
+ c16
+ }
+c16 () {
+./assigncode.bash
+  }
+c17 () {
+node emittopological.js
+  }
+c18 () {
+tsort topo1.txt >topo.txt
+  }
+convert__to__fb () {
+ c19
+ }
+c19 () {
+node sequence.js >sequence.pl
   }
 top__level () {
   }
-sequenceStart () {
- c10
-c10
+make__rects () {
+ c1
  }
-c10 () {
-echo '*** sequenceStart ***'
-cat sequence.pl temp.pl | sort 
-  }
-buildSequence () {
- c11
-c11
+check__edges () {
+ c4
  }
-c11 () {
-node sequence.js 
-  }
-buildDetails () {
- c12
-c12
+senders () {
+ c2
  }
-c12 () {
-node details.js 
-  }
 convert__to__fb
 make__rects
-check__edges
 senders
 receivers
+check__edges
 bounding__boxes
 check__bounding__boxes
 contains1
@@ -88,3 +130,6 @@ port__contains
 port__directions
 assign__names
 assign__code
+convert__to__JSON
+emit__topological
+topological__sort

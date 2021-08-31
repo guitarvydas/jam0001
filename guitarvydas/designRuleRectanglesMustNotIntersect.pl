@@ -21,13 +21,13 @@ designRuleRectanglesMustNotIntersect(A,B):-
     l(A,Al),
     t(A,At),
     r(A,Ar),
-    b(A,Ab),%b(A,Ab),
-    l(B,Bl),%l(B,Bl),
+    %b(A,Ab),
+    %l(B,Bl),
     t(B,Bt),
     r(B,Br),
     b(B,Bb),
     linesIntersect(Al, At, Ar, At, Br, Bt, Br, Bb),
-    format('FATAL design rule: rectangles must not intersect (Atop Bright) ~w ~w (~w ~w ~w ~w ~w ~w ~w ~w) ~n', [A,B, Al,At,Ar,Ab,Bl,Bt,Br,Bb]),
+    format('FATAL design rule: rectangles must not intersect (Atop Bright) ~w ~w ~n', [A,B]),
     !.
 
 
@@ -36,15 +36,15 @@ designRuleRectanglesMustNotIntersect(A,B):-
     rect(A,_),
     rect(B,_),
     l(A,Al),
-    %t(A,At),
+    t(A,At),%t(A,At),
     r(A,Ar),
     b(A,Ab),
     l(B,Bl),
     t(B,Bt),
-    %r(B,Br),
+    r(B,Br),%r(B,Br),
     b(B,Bb),
     linesIntersect(Al, Ab, Ar, Ab, Bl, Bt, Bl, Bb),
-    format('FATAL design rule: rectangles must not intersect (Abottom Bleft)~n', [A,B]),
+    format('FATAL design rule: rectangles must not intersect (Abottom Bleft) ~w ~w (~w ~w ~w ~w ~w ~w ~w ~w )~n', [A,B, Al,At,Ar,Ab,Bl,Bt,Br,Bb]),
     !.
 
 designRuleRectanglesMustNotIntersect(A,B):-

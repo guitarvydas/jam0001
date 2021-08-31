@@ -17,18 +17,20 @@ exports.expandStyle = (s) => {
     return sx;
 }
 exports.strMangle = (s) => {
-        // remove HTML junk added by drawio
-    var ret = s
-	.replace (/&[^ ]+;/g, '\n')
-	.replace (/\\\\/g, '');
-
-    return ret
-        // convert names to be acceptable to SWIPL
-	.replace (/-/g, '__')
-	.replace (/\\/g, '\\\\')
-
-	.replace (/ __g /g, ' -g ')
-	.replace (/__q/g, '-q');
+    // remove HTML junk added by drawio
+    return s
+    .replace(/&lt;div&gt;/g,'')
+    .replace(/&lt;\/div&gt;/g,`\n`)
+    .replace(/&amp;nbsp;/g,'')
+    .replace(/&amp;gt;/g,'>')
+    .replace(/&amp;lt;/g,'<')
+    .replace(/&lt;br&gt;/g,`\n`)
+    .replace(/&gt;/g,'>')
+    .replace(/&lt;/g,'<')
+    // convert names to be acceptable to SWIPL
+    .replace (/-/g, '__')
+    .replace (/ __g /g, ' -g ')
+    .replace (/__q/g, '-q');
 }
 
 var _scope;
@@ -146,11 +148,12 @@ function setDiagram () {
 
 //////// details transpiler //////////
 
-function namify (s) {
+exports.namify = (s) => {
     return s
 	.trim ()
 	.replace (/"/g,'')
-	.replace (/ /g,'__');
+	.replace (/ /g,'__')
+	.replace (/%20/g,'__')
 }
 
 function stripQuotes (s) {
@@ -165,4 +168,9 @@ function stripQuotesAddNewlines (s) {
     } else {
 	return '\n' + stripQuotes (s) + '\n';
     }
+}
+
+////////
+function connectionsNotExpected () {
+    throw "connections not expected in details";
 }

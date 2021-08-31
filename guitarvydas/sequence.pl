@@ -73,7 +73,6 @@ cell(id73,"").
 cell(id74,"").
 cell(id75,"").
 cell(id76,"").
-cell(id77,"").
 cell(id8,"").
 cell(id9,"").
 diagram(id1, "").
@@ -150,7 +149,6 @@ diagramContains(id1, id73).
 diagramContains(id1, id74).
 diagramContains(id1, id75).
 diagramContains(id1, id76).
-diagramContains(id1, id77).
 diagramContains(id1, id8).
 diagramContains(id1, id9).
 edge(id11, "").
@@ -169,7 +167,6 @@ edge(id62, "").
 edge(id66, "").
 edge(id7, "").
 edge(id70, "").
-edge(id77, "").
 edge(id9, "").
 ellipse(id10, "").
 ellipse(id12, "").
@@ -269,7 +266,7 @@ height(id35, 30).
 height(id37, 30).
 height(id38, 30).
 height(id39, 30).
-height(id4, 1210).
+height(id4, 1300).
 height(id40, 60).
 height(id41, 60).
 height(id43, 30).
@@ -375,7 +372,6 @@ longid(id73, "zQYMD_BdRtTKSIAUS__H2__222").
 longid(id74, "zQYMD_BdRtTKSIAUS__H2__226").
 longid(id75, "zQYMD_BdRtTKSIAUS__H2__227").
 longid(id76, "zQYMD_BdRtTKSIAUS__H2__228").
-longid(id77, "zQYMD_BdRtTKSIAUS__H2__231").
 longid(id8, "zQYMD_BdRtTKSIAUS__H2__105").
 longid(id9, "zQYMD_BdRtTKSIAUS__H2__234").
 name(id1, "Page__1").
@@ -395,7 +391,6 @@ source(id62, "zQYMD_BdRtTKSIAUS__H2__211").
 source(id66, "zQYMD_BdRtTKSIAUS__H2__216").
 source(id7, "zQYMD_BdRtTKSIAUS__H2__105").
 source(id70, "zQYMD_BdRtTKSIAUS__H2__220").
-source(id77, "ybbTwsdQuFU4afnuUeu4__42").
 source(id9, "zQYMD_BdRtTKSIAUS__H2__107").
 target(id11, "zQYMD_BdRtTKSIAUS__H2__115").
 target(id13, "zQYMD_BdRtTKSIAUS__H2__194").
@@ -413,7 +408,6 @@ target(id62, "zQYMD_BdRtTKSIAUS__H2__208").
 target(id66, "zQYMD_BdRtTKSIAUS__H2__221").
 target(id7, "zQYMD_BdRtTKSIAUS__H2__163").
 target(id70, "zQYMD_BdRtTKSIAUS__H2__227").
-target(id77, "ybbTwsdQuFU4afnuUeu4__42").
 target(id9, "zQYMD_BdRtTKSIAUS__H2__114").
 value(id10, "").
 value(id12, "").
@@ -469,7 +463,7 @@ value(id72, "").
 value(id73, "emit topological").
 value(id74, "").
 value(id75, "").
-value(id76, "tsort").
+value(id76, "topological sort").
 value(id8, "").
 vertex(id10, "").
 vertex(id12, "").
