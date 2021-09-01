@@ -16,7 +16,7 @@
       name [q1 @nqs q2] = [[${support.namify (nqs)}\n]]
       notQuote [c] = [[${c}]]
 
-      JSONconnection [lb name source target rb] = [[${connectionsNotExpected ()}]]
+      JSONconnection [lb name source target rb] = [[]]
 
     ComponentPortPair [ q1 name q2 colon lb component port rb ] = 
       [[${q1}${name}${q2} ${colon} ${lb}${component}${port}${rb}]]

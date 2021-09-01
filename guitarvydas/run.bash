@@ -9,7 +9,7 @@ catch () {
 }
 
 # sequence
-node sequence.js >sequence.pl
+node sequence.js sequence.drawio >sequence.pl
 
 ## create rect fact for every vertex that is not an edge/ellipse/text
 ## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
@@ -45,14 +45,14 @@ cp fb.pl _seq_end_fb.pl
 
 ./tojson.bash >sequence.json
 
-node emittopological.js >topo1.txt
+node emittopological.js sequence.json >topo1.txt
 tsort topo1.txt >topo.txt
 
 # debug
 mv fb.pl seqfb.pl
 
 ## now do details.drawio
-node details.js >details.pl
+node details.js details.drawio >details.pl
 
 swipl -q \
       -g 'consult(details).' \
@@ -70,10 +70,9 @@ cat details.pl temp.pl | sort >fb.pl
 
 ./run__aux.bash | ./fixup.bash >details.json
 
-node emitfunctions.js >functions.txt
+node emitfunctions.js details.json >functions.txt
 
 # debug
 mv fb.pl detfb.pl
 
-cat header.txt functions.txt topo.txt trailer.txt | sed -e '/^ *$/d' >final.bash
-# source final.bash
+cat header.txt functions.txt topo.txt trailer.txt | sed -e '/^ *$/d' >regression.bash

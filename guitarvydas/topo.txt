@@ -1,4 +1,5 @@
 convert__to__fb
+parse__details__diagram
 make__rects
 senders
 receivers
@@ -14,5 +15,10 @@ port__directions
 assign__names
 assign__code
 convert__to__JSON
+create__sequence__JSON
+convert__to__JSON__details
 emit__topological
+fixups
 topological__sort
+create__functions
+create__final__script

@@ -392,9 +392,9 @@ function plsort (factbase) {
 }
 
 
-var drawioRaw = fs.readFileSync ('sequence.drawio', 'utf-8');
-
-function generatePipeline () {
+function generatePipeline (filename) {
+    process.stderr.write (filename); process.stderr.write ("\n");
+    var drawioRaw = fs.readFileSync (filename, 'utf-8');
     var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
     var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed)
     var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded)
@@ -404,4 +404,4 @@ function generatePipeline () {
     var sortedFactbase = plsort (factbase);
     console.log (sortedFactbase);
 }
-generatePipeline ();
+generatePipeline (process.argv[2]);

@@ -1,13 +1,22 @@
 #!/bin/bash
-pt () {
-# convert fb.pl to "structured" form
-swipl -g 'use_module(library(http/json))' \
-      -g 'consult(fb).' \
-      -g 'consult(component).' \
-      -g 'consult(names).' \
-      -g 'consult(code).' \
-      -g 'consult(test).'  \
-      -g 'consult(jsoncomponent).'\
-      -g 'pt(S,SP,R,RP).'
-}    
-pt
+set -x
+## now do details.drawio
+node details.js >details.pl
+
+swipl -q \
+      -g 'consult(details).' \
+      -g 'consult(rects).' \
+      -g 'printRects.' \
+      -g 'halt.' \
+      > temp.pl
+
+# augment the factbase (fb.pl) after every inferencing step
+cat details.pl temp.pl | sort >fb.pl
+
+# no edges, therefore no edge check
+./bb.bash
+./designRuleCheckBoundingBoxes.bash
+
+./run__aux.bash | ./fixup.bash >details.json
+
+node emitfunctions.js >functions.txt
