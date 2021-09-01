@@ -2,7 +2,7 @@
 emit__topological () {
     c17
 }
-tsort () {
+topological__sort () {
     c18
 }
 c1 () {
@@ -132,4 +132,4 @@ assign__names
 assign__code
 convert__to__JSON
 emit__topological
-tsort
+topological__sort

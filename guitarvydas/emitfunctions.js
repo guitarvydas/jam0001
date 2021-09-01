@@ -508,7 +508,6 @@ var fs = require ('fs');
 
 const functionsGrammar = fs.readFileSync ('emitfunctions.ohm', 'utf-8');
 const functionsGlue = fs.readFileSync ('emitfunctions.glue', 'utf-8');
-const jsonfactbase = fs.readFileSync ('details.json', 'utf-8');
 
 function execTranspiler (grammar, semantics, source) {
     // first pass - transpile glue code to javascript
@@ -526,8 +525,10 @@ function execTranspiler (grammar, semantics, source) {
 }
 
 
-function generatePipeline () {
+function generatePipeline (filename) {
+    process.stderr.write (filename); process.stderr.write ("\n");
+    const jsonfactbase = fs.readFileSync (filename, 'utf-8');
     var functions = decodeURIComponent(execTranspiler (functionsGrammar, functionsGlue, jsonfactbase));
     console.log (functions);
 }
-generatePipeline ();
+generatePipeline (process.argv[2]);

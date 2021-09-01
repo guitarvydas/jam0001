@@ -5,7 +5,46 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deepcontains  directcontains 
+contains1  deepcontains 
+port__directions  assign__names 
+port__contains  port__directions 
+assign__code  convert__to__JSON__details 
+assign__names  assign__code 
+convert__to__JSON__details  fixups 
+fixups  create__functions 
+create__functions  create__final__script 
+parse__details__diagram  make__rects 
+make__rects  bounding__boxes 
 bounding__boxes  check__bounding__boxes 
+check__bounding__boxes  contains1 
+directcontains  rectangles__must__not__intersect 
+rectangles__must__not__intersect  port__contains 
+
+
+
+
+check__edges  bounding__boxes 
+bounding__boxes  check__bounding__boxes 
+create__sequence__JSON  emit__topological 
 check__bounding__boxes  contains1 
 senders  receivers 
 receivers  check__edges 
@@ -13,17 +52,15 @@ directcontains  rectangles__must__not__intersect
 rectangles__must__not__intersect  port__contains 
 deepcontains  directcontains 
 contains1  deepcontains 
-convert__to__fb  make__rects 
 port__directions  assign__names 
 port__contains  port__directions 
 assign__code  convert__to__JSON 
 assign__names  assign__code 
-convert__to__JSON  emit__topological 
-make__rects  senders 
+convert__to__JSON  create__sequence__JSON 
+convert__to__fb  make__rects 
 emit__topological  topological__sort 
-check__edges  bounding__boxes 
-
-
+topological__sort  create__final__script 
+make__rects  senders 
 
 
 

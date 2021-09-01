@@ -24,6 +24,9 @@ hasExactlyOneBB(Item):-
     length(BBag,1),
     !.
 hasExactlyOneBB(Item):-
+    value(Item,Name),
+    format('FATAL design rule: Item ~w (~w) has 0 or more than one bounding boxes~n', [Item,Name]),!.
+hasExactlyOneBB(Item):-
 	format('FATAL design rule: Item ~w has 0 or more than one bounding boxes~n', [Item]).
 
 checkBB(Item):-

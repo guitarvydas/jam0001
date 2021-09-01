@@ -12,6 +12,15 @@
 {"diagram":"id1", "toplevelcomponent":"id33"}
 {"diagram":"id1", "toplevelcomponent":"id35"}
 {"diagram":"id1", "toplevelcomponent":"id4"}
+{"diagram":"id1", "toplevelcomponent":"id40"}
+{"diagram":"id1", "toplevelcomponent":"id42"}
+{"diagram":"id1", "toplevelcomponent":"id44"}
+{"diagram":"id1", "toplevelcomponent":"id46"}
+{"diagram":"id1", "toplevelcomponent":"id48"}
+{"diagram":"id1", "toplevelcomponent":"id50"}
+{"diagram":"id1", "toplevelcomponent":"id52"}
+{"diagram":"id1", "toplevelcomponent":"id53"}
+{"diagram":"id1", "toplevelcomponent":"id56"}
 {"diagram":"id1", "toplevelcomponent":"id6"}
 {"diagram":"id1", "toplevelcomponent":"id7"}
 {"diagram":"id1", "toplevelcomponent":"id8"}
@@ -225,7 +234,7 @@
   "inputs": [],
   "name":"c13",
   "outputs": [],
-  "synccode":".%2Fportcontains1.bash%0A%0A%0A"
+  "synccode":".%2Fportcontains.bash%0A%0A%0A"
 }
 {
   "children": ["c14" ],
@@ -295,7 +304,7 @@
   "inputs": [],
   "name":"c17",
   "outputs": [],
-  "synccode":"node%20emittopological.js%0A%0A%0A"
+  "synccode":"node%20emittopological.js%20%3E%20topo1.txt%0A%0A%0A"
 }
 {
   "children": [],
@@ -308,7 +317,17 @@
   "synccode":"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A"
 }
 {
-  "children": ["c19" ],
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id39",
+  "inputs": [],
+  "name":"c19",
+  "outputs": [],
+  "synccode":"echo%0A%0A%0A"
+}
+{
+  "children": ["c25" ],
   "connections": [],
   "diagram":"id1",
   "id":"id4",
@@ -318,17 +337,197 @@
   "synccode":""
 }
 {
+  "children": ["c20" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id40",
+  "inputs": [],
+  "name":"convert%20to%20JSON",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id41",
+  "inputs": [],
+  "name":"c20",
+  "outputs": [],
+  "synccode":".%2Ftojson.bash%20%3Eout.json%0A%0A%0A"
+}
+{
+  "children": ["c21" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id42",
+  "inputs": [],
+  "name":"sequencing",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id43",
+  "inputs": [],
+  "name":"c21",
+  "outputs": [],
+  "synccode":"echo%0A%0A%0A"
+}
+{
+  "children": ["c22" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id44",
+  "inputs": [],
+  "name":"details",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id45",
+  "inputs": [],
+  "name":"c22",
+  "outputs": [],
+  "synccode":"echo%0A%0A%0A"
+}
+{
+  "children": ["c23" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id46",
+  "inputs": [],
+  "name":"fixups",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id47",
+  "inputs": [],
+  "name":"c23",
+  "outputs": [],
+  "synccode":".%2Ffixup.bash%20%3Coutd.json%20%3E%20details.json"
+}
+{
+  "children": ["c24" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id48",
+  "inputs": [],
+  "name":"create%20sequence%20JSON",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id49",
+  "inputs": [],
+  "name":"c24",
+  "outputs": [],
+  "synccode":"cp%20out.json%20details.json"
+}
+{
   "children": [],
   "connections": [],
   "diagram":"id1",
   "id":"id5",
   "inputs": [],
-  "name":"c19",
+  "name":"c25",
   "outputs": [],
   "synccode":"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A"
 }
 {
+  "children": ["c26" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id50",
+  "inputs": [],
+  "name":"convert%20to%20JSON%20details",
+  "outputs": [],
+  "synccode":""
+}
+{
   "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id51",
+  "inputs": [],
+  "name":"c26",
+  "outputs": [],
+  "synccode":".%2Ftojson.bash%20%3Eoutd.json%0A%0A%0A"
+}
+{
+  "children": ["c27" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id52",
+  "inputs": [],
+  "name":"create%20functions",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": ["c28" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id53",
+  "inputs": [],
+  "name":"create%20final%20script",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id54",
+  "inputs": [],
+  "name":"c27",
+  "outputs": [],
+  "synccode":"node%20emitfunctions.js%20%3Efunctions.txt"
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id55",
+  "inputs": [],
+  "name":"c28",
+  "outputs": [],
+  "synccode":"cat%20header.txt%20functions.txt%20topo.txt%20trailer.txt%20%7C%20.%2FdeleteBlankLines.bash%20%3Efinal.bash%0A"
+}
+{
+  "children": ["c29" ],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id56",
+  "inputs": [],
+  "name":"parse%20details%20diagram",
+  "outputs": [],
+  "synccode":""
+}
+{
+  "children": [],
+  "connections": [],
+  "diagram":"id1",
+  "id":"id57",
+  "inputs": [],
+  "name":"c29",
+  "outputs": [],
+  "synccode":"node%20details.js%20%3Edetails.pl%0A%0A%0A"
+}
+{
+  "children": ["c19" ],
   "connections": [],
   "diagram":"id1",
   "id":"id6",
