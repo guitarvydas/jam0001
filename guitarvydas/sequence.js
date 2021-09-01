@@ -51,19 +51,6 @@ SemanticsSCL {
 `;
 
 
-function ohm_parse (grammar, text) {
-    var parser = ohm.grammar (grammar);
-    var cst = parser.match (text);
-    if (cst.succeeded ()) {
-	return { parser: parser, cst: cst };
-    } else {
-	// process.stderr.write (cst.message + '\n');
-	// process.exit (1);
-	console.log (parser.trace (text).toString ());
-	throw "grammar matching failed";
-    }
-}
-
 var varNameStack = [];
 
 function addSemantics (sem) {
@@ -260,7 +247,20 @@ return _result;
     _terminal: function () { return this.primitiveValue; }
 };
 
-function transpiler (scnText, grammar, semOperation, semanticsObject) {
+function ohm_parse (grammar, text, emsg) {
+    var parser = ohm.grammar (grammar);
+    var cst = parser.match (text);
+    if (cst.succeeded ()) {
+	return { parser: parser, cst: cst };
+    } else {
+	// process.stderr.write (cst.message + '\n');
+	// process.exit (1);
+	console.log (parser.trace (text).toString ());
+	throw ("grammar matching failed" + emsg);
+    }
+}
+
+function transpiler (scnText, grammar, semOperation, semanticsObject, emsg) {
     var { parser, cst } = ohm_parse (grammar, scnText);
     var sem = {};
     try {
@@ -270,7 +270,7 @@ function transpiler (scnText, grammar, semOperation, semanticsObject) {
 	    let result = sem (cst)[semOperation]();
 	    return result;
 	} else {
-	    throw "grammar matching failed";
+	    throw ("grammar matching failed" + " " + emsg);
 	}
     }
     catch (err) {
@@ -395,12 +395,12 @@ function plsort (factbase) {
 function generatePipeline (filename) {
     process.stderr.write (filename); process.stderr.write ("\n");
     var drawioRaw = fs.readFileSync (filename, 'utf-8');
-    var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
-    var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed)
-    var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded)
-    var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided)
+    var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw, "uncompress");
+    var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed, "expand styles");
+    var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded, "elide attributes");
+    var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided, "symbol table");
     // N.B. same args as for symbolTable
-    var factbase = symbolTable + execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
+    var factbase = symbolTable + execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided, "factbase");
     var sortedFactbase = plsort (factbase);
     console.log (sortedFactbase);
 }

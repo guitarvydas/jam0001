@@ -51,19 +51,6 @@ SemanticsSCL {
 `;
 
 
-function ohm_parse (grammar, text) {
-    var parser = ohm.grammar (grammar);
-    var cst = parser.match (text);
-    if (cst.succeeded ()) {
-	return { parser: parser, cst: cst };
-    } else {
-	// process.stderr.write (cst.message + '\n');
-	// process.exit (1);
-	console.log (parser.trace (text).toString ());
-	throw "grammar matching failed";
-    }
-}
-
 var varNameStack = [];
 
 function addSemantics (sem) {
@@ -260,8 +247,21 @@ return _result;
     _terminal: function () { return this.primitiveValue; }
 };
 
-function transpiler (scnText, grammar, semOperation, semanticsObject) {
-    var { parser, cst } = ohm_parse (grammar, scnText);
+function ohm_parse (grammar, text, emsg) {
+    var parser = ohm.grammar (grammar);
+    var cst = parser.match (text);
+    if (cst.succeeded ()) {
+	return { parser: parser, cst: cst };
+    } else {
+	// process.stderr.write (cst.message + '\n');
+	// process.exit (1);
+	console.log (parser.trace (text).toString ());
+	throw ("grammar matching failed" + emsg);
+    }
+}
+
+function transpiler (scnText, grammar, semOperation, semanticsObject, emsg) {
+    var { parser, cst } = ohm_parse (grammar, scnText, emsg);
     var sem = {};
     try {
 	if (cst.succeeded ()) {
@@ -270,7 +270,7 @@ function transpiler (scnText, grammar, semOperation, semanticsObject) {
 	    let result = sem (cst)[semOperation]();
 	    return result;
 	} else {
-	    throw "grammar matching failed";
+	    throw ("grammar matching failed" + " " + emsg);
 	}
     }
     catch (err) {
@@ -383,14 +383,14 @@ function unescapeNewlines (s) {
     //return s.replace(/~~/g,`\n`);
 }
 
-function execTranspiler (grammar, semantics, source) {
+function execTranspiler (grammar, semantics, source, emsg) {
     // first pass - transpile glue code to javascript
-    let generatedSCNSemantics = transpiler (semantics, glueGrammar, "_glue", glueSemantics);
+    let generatedSCNSemantics = transpiler (semantics, glueGrammar, "_glue", glueSemantics, " (glue) " + emsg);
     
     _ruleInit(); // part of support.js
     try {
         let semObject = eval('(' + generatedSCNSemantics + ')');
-        let tr = transpiler(source, grammar, "_glue", semObject);
+        let tr = transpiler(source, grammar, "_glue", semObject, emsg);
 	return tr;
     }
     catch (err) {
@@ -409,14 +409,14 @@ function plsort (factbase) {
 function generatePipeline (filename) {
     process.stderr.write (filename); process.stderr.write ("\n");
     var drawioRaw = fs.readFileSync (filename, 'utf-8');
-    var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw);
-    var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed)
-    var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded)
-    var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided)
+    var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw, "uncompress");
+    var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed, "expand styles");
+    var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded, "elide attributes");
+    var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided, "symbol table");
     // N.B. same args as for symbolTable
-    var factbase = execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided);
+    var factbase = execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided, "factbase");
     //fs.writeFileSync("_factbase-details.pl", factbase, 'utf-8');
-    var factbasenl = execTranspiler (emitEscapeNewlinesGrammar, emitEscapeNewlinesGlue, factbase);
+    var factbasenl = execTranspiler (emitEscapeNewlinesGrammar, emitEscapeNewlinesGlue, factbase, "escape nl");
     var sortedFactbase = unescapeNewlines (plsort (factbasenl));
     //fs.writeFileSync("_sorted-details.pl", sortedFactbase, 'utf-8');
     console.log (sortedFactbase);
