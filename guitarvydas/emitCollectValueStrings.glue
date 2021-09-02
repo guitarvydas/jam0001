@@ -1,0 +1,13 @@
+emitCollectValueStrings {
+Main [@f] = [[${f}]]
+Fact [f] = [[${f}]]
+ValueFact [kvalue lpar id kcomma vstr lpardot] = [[${kvalue}${lpar}${id}${kcomma}${vstr}${lpardot}]]
+valuestring [s] = [[${s}]]
+OtherFact [rel lpar id comma obj lpardot] = [[${rel}${lpar}${id}${comma}${obj}${lpardot}]]
+Object [obj] = [[${obj}]]
+ident [@cs] = [[${cs}]]
+number [@ds frac] = [[${ds}${frac}]]
+fractionalPart [dot @ds] = [[${dot}${ds}]]
+string [q1 @cs q2] = [[${q1}${ds}${q2}]]
+quote [c] = [[${c}]]
+notQuote [c] = [[${c}]]

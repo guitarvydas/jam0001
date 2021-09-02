@@ -1,10 +1,6 @@
+'use strict'
+
 var ohm = require ('ohm-js');
-
-"use strict"
-
-//var glue = require ('./glue');
-// npm install ohm-js
-'use strict';
 
 const glueGrammar =
       `
@@ -247,21 +243,19 @@ return _result;
     _terminal: function () { return this.primitiveValue; }
 };
 
-function ohm_parse (grammar, text, emsg) {
+function ohm_parse (grammar, text, errorMessage) {
     var parser = ohm.grammar (grammar);
     var cst = parser.match (text);
     if (cst.succeeded ()) {
 	return { parser: parser, cst: cst };
     } else {
-	// process.stderr.write (cst.message + '\n');
-	// process.exit (1);
-	console.log (parser.trace (text).toString ());
-	throw ("grammar matching failed" + emsg);
+	//console.log (parser.trace (text).toString ());
+	throw ("FAIL: " + errorMessage);
     }
 }
 
-function transpiler (scnText, grammar, semOperation, semanticsObject, emsg) {
-    var { parser, cst } = ohm_parse (grammar, scnText, emsg);
+function transpiler (scnText, grammar, semOperation, semanticsObject, errorMessage) {
+    var { parser, cst } = ohm_parse (grammar, scnText, errorMessage);
     var sem = {};
     try {
 	if (cst.succeeded ()) {
@@ -270,7 +264,7 @@ function transpiler (scnText, grammar, semOperation, semanticsObject, emsg) {
 	    let result = sem (cst)[semOperation]();
 	    return result;
 	} else {
-	    throw ("grammar matching failed" + " " + emsg);
+	    throw ("fail: " + " " + errorMessage);
 	}
     }
     catch (err) {
@@ -278,12 +272,7 @@ function transpiler (scnText, grammar, semOperation, semanticsObject, emsg) {
     }
 }
 
-exports.transpiler = transpiler;
-exports.glueGrammar = glueGrammar;
-exports.glueSemantics = glueSemantics;
 
-//var scope = require ('./scope');
-'use strict'
 var _scope;
 
 function scopeStack () {
@@ -350,34 +339,16 @@ function _ruleExit (ruleName) {
     _scope.pop ();
 }
 
-
-var support = require ('./support');
-
 var fs = require ('fs');
 
-const drawioGrammar = fs.readFileSync ('drawio.ohm', 'utf-8');
-const drawioGlue = fs.readFileSync ('drawio.glue', 'utf-8');
-
-const styleExpanderGrammar = fs.readFileSync ('styleexpander.ohm', 'utf-8');
-const styleExpanderGlue = fs.readFileSync ('styleexpander.glue', 'utf-8');
-
-const attributeEliderGrammar = fs.readFileSync ('attributeelider.ohm', 'utf-8');
-const attributeEliderGlue = fs.readFileSync ('attributeelider.glue', 'utf-8');
-
-const nameTableGrammar = fs.readFileSync ('nametable.ohm', 'utf-8');
-const nameTableGlue = fs.readFileSync ('nametable.glue', 'utf-8');
-
-const emitFactbaseGrammar = fs.readFileSync ('emitFactbase.ohm', 'utf-8');
-const emitFactbaseGlue = fs.readFileSync ('emitFactbase.glue', 'utf-8');
-
-function execTranspiler (grammar, semantics, source, emsg) {
+function execTranspiler (source, grammar, semantics, errorMessage) {
     // first pass - transpile glue code to javascript
-    let generatedSCNSemantics = transpiler (semantics, glueGrammar, "_glue", glueSemantics, " (glue) " + emsg);
+    let generatedSCNSemantics = transpiler (semantics, glueGrammar, "_glue", glueSemantics, "(in glue specification) " + errorMessage);
     
-    _ruleInit(); // part of support.js
+    _ruleInit();
     try {
         let semObject = eval('(' + generatedSCNSemantics + ')');
-        let tr = transpiler(source, grammar, "_glue", semObject, emsg);
+        let tr = transpiler(source, grammar, "_glue", semObject);
 	return tr;
     }
     catch (err) {
@@ -385,30 +356,17 @@ function execTranspiler (grammar, semantics, source, emsg) {
     }
 }
 
-function plsort (factbase) {
-    var lines = factbase.split ('\n');
-    lines.sort ();
-    return lines.join('\n');
+exports.transpile = (sourceFileName, grammarFileName, glueFileName, errorMessage) => {
+    try {
+	var source = fs.readFileSync (sourceFileName, 'utf-8');
+	var grammar = fs.readFileSync (grammarFileName, 'utf-8');
+	var glue = fs.readFileSync (glueFileName, 'utf-8');
+	var returnString = execTranspiler (source, grammar, glue, errorMessage);
+	return returnString;
+    }
+    catch (err) {
+	process.stderr.write (err);
+	process.stderr.write ('\n');
+	return '';
+    }
 }
-
-
-
-function generatePipeline (filename) {
-    process.stderr.write (filename); process.stderr.write ("\n");
-    var drawioRaw = fs.readFileSync (filename, 'utf-8');
-    var drawioUncompressed = execTranspiler (drawioGrammar, drawioGlue, drawioRaw, "uncompress");
-    fs.writeFileSync("_uncompressed-details.pl", drawioUncompressed, 'utf-8');
-    var stylesExpanded = execTranspiler (styleExpanderGrammar, styleExpanderGlue, drawioUncompressed, "expand styles");
-    fs.writeFileSync("_stylesExpanded-details.pl", stylesExpanded, 'utf-8');
-    var attributesElided = execTranspiler (attributeEliderGrammar, attributeEliderGlue, stylesExpanded, "elide attributes");
-    fs.writeFileSync("_attributesElided-details.pl", attributesElided, 'utf-8');
-    var symbolTable = execTranspiler (nameTableGrammar, nameTableGlue, attributesElided, "symbol table");
-    fs.writeFileSync("_symbolTable-details.pl", symbolTable, 'utf-8');
-    // N.B. same args as for symbolTable
-    var factbase = execTranspiler (emitFactbaseGrammar, emitFactbaseGlue, attributesElided, "factbase");
-    fs.writeFileSync("_factbase-details.pl", factbase, 'utf-8');
-    var sortedFactbase = decodeURIComponent (plsort (factbase));
-    fs.writeFileSync("_sorted-details.pl", sortedFactbase, 'utf-8');
-    console.log (sortedFactbase);
-}
-generatePipeline (process.argv[2]);

@@ -1,4 +1,3 @@
-rect(id10,"").
 rect(id11,"").
 rect(id12,"").
 rect(id13,"").

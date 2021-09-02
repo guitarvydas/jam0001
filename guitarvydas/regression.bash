@@ -5,101 +5,86 @@ emit__topological () {
 topological__sort () {
  c18
  }
-c1 () {
-## create rect fact for every vertex that is not an edge/ellipse/text
-## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)
-## but does not mark rectangles (the default)
-## this pass finds the defaults and creates explicit rect(...) facts
-swipl -q \
-   -g 'consult(sequence).' \
-   -g 'consult(rects).' \
-   -g 'printRects.' \
-   -g 'halt.' \
-   > temp.pl
-# augment the factbase (fb.pl) after every inferencing step
-cat sequence.pl temp.pl | sort >fb.pl
-cp fb.pl _seq_end_fb.pl
-  }
 c2 () {
-./senders.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./senders.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 receivers () {
  c3
  }
 c3 () {
-./receivers.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./receivers.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 c4 () {
-./designRuleCheckEdges.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckEdges.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 bounding__boxes () {
  c5
  }
 c5 () {
-./bb.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./bb.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 check__bounding__boxes () {
  c7
  }
 c7 () {
-./designRuleCheckBoundingBoxes.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckBoundingBoxes.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 contains1 () {
  c8
  }
 c8 () {
-./contains1.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./contains1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 rectangles__must__not__intersect () {
  c9
  }
 c9 () {
-./designRule1.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRule1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 deepcontains () {
  c10
  }
 c10 () {
-./deepcontains.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./deepcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 directcontains () {
  c11
  }
 c11 () {
-./directcontains.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./directcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 port__contains () {
  c13
  }
 c13 () {
-./portcontains.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./portcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 port__directions () {
  c14
  }
 c14 () {
-./portdirections.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./portdirections.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 assign__names () {
  c15
  }
 c15 () {
-./assignnames.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./assignnames.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 assign__code () {
  c16
  }
 c16 () {
-./assigncode.bash
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./assigncode.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 c17 () {
-node emittopological.js > topo1.txt
+&lt;div&gt;&lt;div&gt;&lt;div&gt;node emittopological.js &amp;gt; topo1.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 c18 () {
-tsort topo1.txt >topo.txt
+&lt;div&gt;&lt;div&gt;&lt;div&gt;tsort topo1.txt &amp;gt;topo.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 c19 () {
-echo
+&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 convert__to__fb () {
  c25
@@ -108,25 +93,25 @@ convert__to__JSON () {
  c20
  }
 c20 () {
-./tojson.bash >out.json
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;out.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 sequencing () {
  c21
  }
 c21 () {
-echo
+&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 details () {
  c22
  }
 c22 () {
-echo
+&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 fixups () {
  c23
  }
 c23 () {
-./fixup.bash <outd.json > details.json 
+./fixup.bash &amp;lt;outd.json &amp;gt; details.json 
   }
 create__sequence__JSON () {
  c24
@@ -135,13 +120,13 @@ c24 () {
 cp out.json details.json 
   }
 c25 () {
-node sequence.js >sequence.pl
+&lt;div&gt;&lt;div&gt;&lt;div&gt;node sequence.js &amp;gt;sequence.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt; 
   }
 convert__to__JSON__details () {
  c26
  }
 c26 () {
-./tojson.bash >outd.json
+&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;outd.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 create__functions () {
  c27
@@ -150,16 +135,16 @@ create__final__script () {
  c28
  }
 c27 () {
-node emitfunctions.js >functions.txt 
+node emitfunctions.js &amp;gt;functions.txt 
   }
 c28 () {
-cat header.txt functions.txt topo.txt trailer.txt | ./deleteBlankLines.bash >final.bash
+&lt;div&gt;cat header.txt functions.txt topo.txt trailer.txt | ./deleteBlankLines.bash &amp;gt;final.bash&lt;/div&gt; 
   }
 parse__details__diagram () {
  c29
  }
 c29 () {
-node details.js >details.pl
+&lt;div&gt;&lt;div&gt;&lt;div&gt;node details.js &amp;gt;details.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
   }
 top__level () {
  c19
