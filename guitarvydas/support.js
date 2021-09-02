@@ -174,3 +174,7 @@ function stripQuotesAddNewlines (s) {
 function connectionsNotExpected () {
     throw "connections not expected in details";
 }
+
+exports.encodeString = (s) => {
+    return encodeURIComponent (s);
+}

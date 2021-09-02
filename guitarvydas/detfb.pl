@@ -163,151 +163,151 @@ contains_1(id6,id39).
 contains_1(id7,id12).
 contains_1(id8,id16).
 contains_1(id9,id13).
-diagram(id1,"").
-diagramContains(id1,id10).
-diagramContains(id1,id11).
-diagramContains(id1,id12).
-diagramContains(id1,id13).
-diagramContains(id1,id14).
-diagramContains(id1,id15).
-diagramContains(id1,id16).
-diagramContains(id1,id17).
-diagramContains(id1,id18).
-diagramContains(id1,id19).
-diagramContains(id1,id2).
-diagramContains(id1,id20).
-diagramContains(id1,id21).
-diagramContains(id1,id22).
-diagramContains(id1,id23).
-diagramContains(id1,id24).
-diagramContains(id1,id25).
-diagramContains(id1,id26).
-diagramContains(id1,id27).
-diagramContains(id1,id28).
-diagramContains(id1,id29).
-diagramContains(id1,id3).
-diagramContains(id1,id30).
-diagramContains(id1,id31).
-diagramContains(id1,id32).
-diagramContains(id1,id33).
-diagramContains(id1,id34).
-diagramContains(id1,id35).
-diagramContains(id1,id36).
-diagramContains(id1,id37).
-diagramContains(id1,id38).
-diagramContains(id1,id39).
-diagramContains(id1,id4).
-diagramContains(id1,id40).
-diagramContains(id1,id41).
-diagramContains(id1,id42).
-diagramContains(id1,id43).
-diagramContains(id1,id44).
-diagramContains(id1,id45).
-diagramContains(id1,id46).
-diagramContains(id1,id47).
-diagramContains(id1,id48).
-diagramContains(id1,id49).
-diagramContains(id1,id5).
-diagramContains(id1,id50).
-diagramContains(id1,id51).
-diagramContains(id1,id52).
-diagramContains(id1,id53).
-diagramContains(id1,id54).
-diagramContains(id1,id55).
-diagramContains(id1,id56).
-diagramContains(id1,id57).
-diagramContains(id1,id6).
-diagramContains(id1,id7).
-diagramContains(id1,id8).
-diagramContains(id1,id9).
+diagram(id1, "").
+diagramContains(id1, id10).
+diagramContains(id1, id11).
+diagramContains(id1, id12).
+diagramContains(id1, id13).
+diagramContains(id1, id14).
+diagramContains(id1, id15).
+diagramContains(id1, id16).
+diagramContains(id1, id17).
+diagramContains(id1, id18).
+diagramContains(id1, id19).
+diagramContains(id1, id2).
+diagramContains(id1, id20).
+diagramContains(id1, id21).
+diagramContains(id1, id22).
+diagramContains(id1, id23).
+diagramContains(id1, id24).
+diagramContains(id1, id25).
+diagramContains(id1, id26).
+diagramContains(id1, id27).
+diagramContains(id1, id28).
+diagramContains(id1, id29).
+diagramContains(id1, id3).
+diagramContains(id1, id30).
+diagramContains(id1, id31).
+diagramContains(id1, id32).
+diagramContains(id1, id33).
+diagramContains(id1, id34).
+diagramContains(id1, id35).
+diagramContains(id1, id36).
+diagramContains(id1, id37).
+diagramContains(id1, id38).
+diagramContains(id1, id39).
+diagramContains(id1, id4).
+diagramContains(id1, id40).
+diagramContains(id1, id41).
+diagramContains(id1, id42).
+diagramContains(id1, id43).
+diagramContains(id1, id44).
+diagramContains(id1, id45).
+diagramContains(id1, id46).
+diagramContains(id1, id47).
+diagramContains(id1, id48).
+diagramContains(id1, id49).
+diagramContains(id1, id5).
+diagramContains(id1, id50).
+diagramContains(id1, id51).
+diagramContains(id1, id52).
+diagramContains(id1, id53).
+diagramContains(id1, id54).
+diagramContains(id1, id55).
+diagramContains(id1, id56).
+diagramContains(id1, id57).
+diagramContains(id1, id6).
+diagramContains(id1, id7).
+diagramContains(id1, id8).
+diagramContains(id1, id9).
 factcomponentcode(id10,"").
 factcomponentcode(id11,"").
-factcomponentcode(id12,"%23%23%20create%20rect%20fact%20for%20every%20vertex%20that%20is%20not%20an%20edge%2Fellipse%2Ftext%0A%23%23%20sequence.drawio%20file%20contains%20vertexes%2C%20and%20marks%20all%20edge%20and%20ellipse%20(and%20text)%0A%23%23%20but%20does%20not%20mark%20rectangles%20(the%20default)%0A%23%23%20this%20pass%20finds%20the%20defaults%20and%20creates%20explicit%20rect(...)%20facts%0Aswipl%20-q%20%5C%0A%20%20%20-g%20'consult(sequence).'%20%5C%0A%20%20%20-g%20'consult(rects).'%20%5C%0A%20%20%20-g%20'printRects.'%20%5C%0A%20%20%20-g%20'halt.'%20%5C%0A%20%20%20%3E%20temp.pl%0A%0A%0A%23%20augment%20the%20factbase%20(fb.pl)%20after%20every%20inferencing%20step%0Acat%20sequence.pl%20temp.pl%20%7C%20sort%20%3Efb.pl%0Acp%20fb.pl%20_seq_end_fb.pl%0A%0A%0A").
-factcomponentcode(id13,".%2Fsenders.bash%0A%0A%0A").
+factcomponentcode(id12,"").
+factcomponentcode(id13,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./senders.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id14,"").
-factcomponentcode(id15,".%2Freceivers.bash%0A%0A%0A").
-factcomponentcode(id16,".%2FdesignRuleCheckEdges.bash%0A%0A%0A").
+factcomponentcode(id15,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./receivers.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+factcomponentcode(id16,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckEdges.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id17,"").
-factcomponentcode(id18,".%2Fbb.bash%0A%0A%0A").
+factcomponentcode(id18,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./bb.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id19,"").
 factcomponentcode(id2,"").
-factcomponentcode(id20,".%2FdesignRuleCheckBoundingBoxes.bash%0A%0A%0A").
+factcomponentcode(id20,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckBoundingBoxes.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id21,"").
-factcomponentcode(id22,".%2Fcontains1.bash%0A%0A%0A").
+factcomponentcode(id22,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./contains1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id23,"").
-factcomponentcode(id24,".%2FdesignRule1.bash%0A%0A%0A").
+factcomponentcode(id24,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRule1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id25,"").
-factcomponentcode(id26,".%2Fdeepcontains.bash%0A%0A%0A").
+factcomponentcode(id26,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./deepcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id27,"").
-factcomponentcode(id28,".%2Fdirectcontains.bash%0A%0A%0A").
+factcomponentcode(id28,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./directcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id29,"").
 factcomponentcode(id3,"").
-factcomponentcode(id30,".%2Fportcontains.bash%0A%0A%0A").
+factcomponentcode(id30,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./portcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id31,"").
-factcomponentcode(id32,".%2Fportdirections.bash%0A%0A%0A").
+factcomponentcode(id32,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./portdirections.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id33,"").
-factcomponentcode(id34,".%2Fassignnames.bash%0A%0A%0A").
+factcomponentcode(id34,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./assignnames.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id35,"").
-factcomponentcode(id36,".%2Fassigncode.bash%0A%0A%0A").
-factcomponentcode(id37,"node%20emittopological.js%20%3E%20topo1.txt%0A%0A%0A").
-factcomponentcode(id38,"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A").
-factcomponentcode(id39,"echo%0A%0A%0A").
+factcomponentcode(id36,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./assigncode.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+factcomponentcode(id37,"&lt;div&gt;&lt;div&gt;&lt;div&gt;node emittopological.js &amp;gt; topo1.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+factcomponentcode(id38,"&lt;div&gt;&lt;div&gt;&lt;div&gt;tsort topo1.txt &amp;gt;topo.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+factcomponentcode(id39,"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id4,"").
 factcomponentcode(id40,"").
-factcomponentcode(id41,".%2Ftojson.bash%20%3Eout.json%0A%0A%0A").
+factcomponentcode(id41,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;out.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id42,"").
-factcomponentcode(id43,"echo%0A%0A%0A").
+factcomponentcode(id43,"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id44,"").
-factcomponentcode(id45,"echo%0A%0A%0A").
+factcomponentcode(id45,"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id46,"").
-factcomponentcode(id47,".%2Ffixup.bash%20%3Coutd.json%20%3E%20details.json").
+factcomponentcode(id47,"./fixup.bash &amp;lt;outd.json &amp;gt; details.json").
 factcomponentcode(id48,"").
-factcomponentcode(id49,"cp%20out.json%20details.json").
-factcomponentcode(id5,"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A").
+factcomponentcode(id49,"cp out.json details.json").
+factcomponentcode(id5,"&lt;div&gt;&lt;div&gt;&lt;div&gt;node sequence.js &amp;gt;sequence.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
 factcomponentcode(id50,"").
-factcomponentcode(id51,".%2Ftojson.bash%20%3Eoutd.json%0A%0A%0A").
+factcomponentcode(id51,"&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;outd.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id52,"").
 factcomponentcode(id53,"").
-factcomponentcode(id54,"node%20emitfunctions.js%20%3Efunctions.txt").
-factcomponentcode(id55,"cat%20header.txt%20functions.txt%20topo.txt%20trailer.txt%20%7C%20.%2FdeleteBlankLines.bash%20%3Efinal.bash%0A").
+factcomponentcode(id54,"node emitfunctions.js &amp;gt;functions.txt").
+factcomponentcode(id55,"&lt;div&gt;cat header.txt functions.txt topo.txt trailer.txt | ./deleteBlankLines.bash &amp;gt;final.bash&lt;/div&gt;").
 factcomponentcode(id56,"").
-factcomponentcode(id57,"node%20details.js%20%3Edetails.pl%0A%0A%0A").
+factcomponentcode(id57,"&lt;div&gt;&lt;div&gt;&lt;div&gt;node details.js &amp;gt;details.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
 factcomponentcode(id6,"").
 factcomponentcode(id7,"").
 factcomponentcode(id8,"").
 factcomponentcode(id9,"").
-factcomponentname(id10,"emit%20topological").
-factcomponentname(id11,"topological%20sort").
+factcomponentname(id10,"emit topological").
+factcomponentname(id11,"topological sort").
 factcomponentname(id12,"c1").
 factcomponentname(id13,"c2").
 factcomponentname(id14,"receivers").
 factcomponentname(id15,"c3").
 factcomponentname(id16,"c4").
-factcomponentname(id17,"bounding%20boxes").
+factcomponentname(id17,"bounding boxes").
 factcomponentname(id18,"c5").
-factcomponentname(id19,"check%20bounding%20boxes").
+factcomponentname(id19,"check bounding boxes").
 factcomponentname(id20,"c7").
 factcomponentname(id21,"contains1").
 factcomponentname(id22,"c8").
-factcomponentname(id23,"rectangles%20must%20not%20intersect").
+factcomponentname(id23,"rectangles must not intersect").
 factcomponentname(id24,"c9").
 factcomponentname(id25,"deepcontains").
 factcomponentname(id26,"c10").
 factcomponentname(id27,"directcontains").
 factcomponentname(id28,"c11").
-factcomponentname(id29,"port%20contains").
+factcomponentname(id29,"port contains").
 factcomponentname(id30,"c13").
-factcomponentname(id31,"port%20directions").
+factcomponentname(id31,"port directions").
 factcomponentname(id32,"c14").
-factcomponentname(id33,"assign%20names").
+factcomponentname(id33,"assign names").
 factcomponentname(id34,"c15").
-factcomponentname(id35,"assign%20code").
+factcomponentname(id35,"assign code").
 factcomponentname(id36,"c16").
 factcomponentname(id37,"c17").
 factcomponentname(id38,"c18").
 factcomponentname(id39,"c19").
-factcomponentname(id4,"convert%20to%20fb").
-factcomponentname(id40,"convert%20to%20JSON").
+factcomponentname(id4,"convert to fb").
+factcomponentname(id40,"convert to JSON").
 factcomponentname(id41,"c20").
 factcomponentname(id42,"sequencing").
 factcomponentname(id43,"c21").
@@ -315,102 +315,102 @@ factcomponentname(id44,"details").
 factcomponentname(id45,"c22").
 factcomponentname(id46,"fixups").
 factcomponentname(id47,"c23").
-factcomponentname(id48,"create%20sequence%20JSON").
+factcomponentname(id48,"create sequence JSON").
 factcomponentname(id49,"c24").
 factcomponentname(id5,"c25").
-factcomponentname(id50,"convert%20to%20JSON%20details").
+factcomponentname(id50,"convert to JSON details").
 factcomponentname(id51,"c26").
-factcomponentname(id52,"create%20functions").
-factcomponentname(id53,"create%20final%20script").
+factcomponentname(id52,"create functions").
+factcomponentname(id53,"create final script").
 factcomponentname(id54,"c27").
 factcomponentname(id55,"c28").
-factcomponentname(id56,"parse%20details%20diagram").
+factcomponentname(id56,"parse details diagram").
 factcomponentname(id57,"c29").
-factcomponentname(id6,"top%20level").
-factcomponentname(id7,"make%20rects").
-factcomponentname(id8,"check%20edges").
+factcomponentname(id6,"top level").
+factcomponentname(id7,"make rects").
+factcomponentname(id8,"check edges").
 factcomponentname(id9,"senders").
-fillColor(id12,"red").
-fillColor(id13,"red").
-fillColor(id15,"red").
-fillColor(id16,"red").
-fillColor(id18,"red").
-fillColor(id20,"red").
-fillColor(id22,"red").
-fillColor(id24,"red").
-fillColor(id26,"red").
-fillColor(id28,"red").
-fillColor(id30,"red").
-fillColor(id32,"red").
-fillColor(id34,"red").
-fillColor(id36,"red").
-fillColor(id37,"red").
-fillColor(id38,"red").
-fillColor(id39,"red").
-fillColor(id41,"red").
-fillColor(id43,"red").
-fillColor(id45,"red").
-fillColor(id47,"red").
-fillColor(id49,"red").
-fillColor(id5,"red").
-fillColor(id51,"red").
-fillColor(id54,"red").
-fillColor(id55,"red").
-fillColor(id57,"red").
-height(id10,70).
-height(id11,70).
-height(id12,237.5).
-height(id13,30).
-height(id14,70).
-height(id15,30).
-height(id16,30).
-height(id17,70).
-height(id18,30).
-height(id19,70).
-height(id20,30).
-height(id21,70).
-height(id22,30).
-height(id23,70).
-height(id24,30).
-height(id25,70).
-height(id26,30).
-height(id27,70).
-height(id28,30).
-height(id29,70).
-height(id30,30).
-height(id31,70).
-height(id32,30).
-height(id33,70).
-height(id34,30).
-height(id35,70).
-height(id36,30).
-height(id37,30).
-height(id38,30).
-height(id39,30).
-height(id4,70).
-height(id40,70).
-height(id41,30).
-height(id42,95).
-height(id43,30).
-height(id44,95).
-height(id45,30).
-height(id46,70).
-height(id47,30).
-height(id48,70).
-height(id49,30).
-height(id5,30).
-height(id50,70).
-height(id51,30).
-height(id52,70).
-height(id53,70).
-height(id54,30).
-height(id55,30).
-height(id56,70).
-height(id57,30).
-height(id6,95).
-height(id7,300).
-height(id8,70).
-height(id9,70).
+fillColor(id12, "red").
+fillColor(id13, "red").
+fillColor(id15, "red").
+fillColor(id16, "red").
+fillColor(id18, "red").
+fillColor(id20, "red").
+fillColor(id22, "red").
+fillColor(id24, "red").
+fillColor(id26, "red").
+fillColor(id28, "red").
+fillColor(id30, "red").
+fillColor(id32, "red").
+fillColor(id34, "red").
+fillColor(id36, "red").
+fillColor(id37, "red").
+fillColor(id38, "red").
+fillColor(id39, "red").
+fillColor(id41, "red").
+fillColor(id43, "red").
+fillColor(id45, "red").
+fillColor(id47, "red").
+fillColor(id49, "red").
+fillColor(id5, "red").
+fillColor(id51, "red").
+fillColor(id54, "red").
+fillColor(id55, "red").
+fillColor(id57, "red").
+height(id10, 70).
+height(id11, 70).
+height(id12, 237.5).
+height(id13, 30).
+height(id14, 70).
+height(id15, 30).
+height(id16, 30).
+height(id17, 70).
+height(id18, 30).
+height(id19, 70).
+height(id20, 30).
+height(id21, 70).
+height(id22, 30).
+height(id23, 70).
+height(id24, 30).
+height(id25, 70).
+height(id26, 30).
+height(id27, 70).
+height(id28, 30).
+height(id29, 70).
+height(id30, 30).
+height(id31, 70).
+height(id32, 30).
+height(id33, 70).
+height(id34, 30).
+height(id35, 70).
+height(id36, 30).
+height(id37, 30).
+height(id38, 30).
+height(id39, 30).
+height(id4, 70).
+height(id40, 70).
+height(id41, 30).
+height(id42, 95).
+height(id43, 30).
+height(id44, 95).
+height(id45, 30).
+height(id46, 70).
+height(id47, 30).
+height(id48, 70).
+height(id49, 30).
+height(id5, 30).
+height(id50, 70).
+height(id51, 30).
+height(id52, 70).
+height(id53, 70).
+height(id54, 30).
+height(id55, 30).
+height(id56, 70).
+height(id57, 30).
+height(id6, 95).
+height(id7, 300).
+height(id8, 70).
+height(id9, 70).
 l(id10,201.88).
 l(id11,201.88).
 l(id12,210).
@@ -465,7 +465,7 @@ l(id6,70).
 l(id7,190).
 l(id8,180).
 l(id9,185).
-name(id1,"Details").
+name(id1, "Details").
 r(id10,410.0).
 r(id11,349.38).
 r(id12,580).
@@ -632,273 +632,273 @@ t(id8,710).
 t(id9,610).
 unknowncomponentname(id2,"c6").
 unknowncomponentname(id3,"c12").
-value(id10,"emit%20topological").
-value(id11,"topological%20sort").
-value(id12,"%23%23%20create%20rect%20fact%20for%20every%20vertex%20that%20is%20not%20an%20edge%2Fellipse%2Ftext%0A%23%23%20sequence.drawio%20file%20contains%20vertexes%2C%20and%20marks%20all%20edge%20and%20ellipse%20(and%20text)%0A%23%23%20but%20does%20not%20mark%20rectangles%20(the%20default)%0A%23%23%20this%20pass%20finds%20the%20defaults%20and%20creates%20explicit%20rect(...)%20facts%0Aswipl%20-q%20%5C%0A%20%20%20-g%20'consult(sequence).'%20%5C%0A%20%20%20-g%20'consult(rects).'%20%5C%0A%20%20%20-g%20'printRects.'%20%5C%0A%20%20%20-g%20'halt.'%20%5C%0A%20%20%20%3E%20temp.pl%0A%0A%0A%23%20augment%20the%20factbase%20(fb.pl)%20after%20every%20inferencing%20step%0Acat%20sequence.pl%20temp.pl%20%7C%20sort%20%3Efb.pl%0Acp%20fb.pl%20_seq_end_fb.pl%0A%0A%0A").
-value(id13,".%2Fsenders.bash%0A%0A%0A").
-value(id14,"receivers").
-value(id15,".%2Freceivers.bash%0A%0A%0A").
-value(id16,".%2FdesignRuleCheckEdges.bash%0A%0A%0A").
-value(id17,"bounding%20boxes").
-value(id18,".%2Fbb.bash%0A%0A%0A").
-value(id19,"check%20bounding%20boxes").
-value(id20,".%2FdesignRuleCheckBoundingBoxes.bash%0A%0A%0A").
-value(id21,"contains1").
-value(id22,".%2Fcontains1.bash%0A%0A%0A").
-value(id23,"rectangles%20must%20not%20intersect").
-value(id24,".%2FdesignRule1.bash%0A%0A%0A").
-value(id25,"deepcontains").
-value(id26,".%2Fdeepcontains.bash%0A%0A%0A").
-value(id27,"directcontains").
-value(id28,".%2Fdirectcontains.bash%0A%0A%0A").
-value(id29,"port%20contains").
-value(id30,".%2Fportcontains.bash%0A%0A%0A").
-value(id31,"port%20directions").
-value(id32,".%2Fportdirections.bash%0A%0A%0A").
-value(id33,"assign%20names").
-value(id34,".%2Fassignnames.bash%0A%0A%0A").
-value(id35,"assign%20code").
-value(id36,".%2Fassigncode.bash%0A%0A%0A").
-value(id37,"node%20emittopological.js%20%3E%20topo1.txt%0A%0A%0A").
-value(id38,"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A").
-value(id39,"echo%0A%0A%0A").
-value(id4,"convert%20to%20fb").
-value(id40,"convert%20to%20JSON").
-value(id41,".%2Ftojson.bash%20%3Eout.json%0A%0A%0A").
-value(id42,"sequencing").
-value(id43,"echo%0A%0A%0A").
-value(id44,"details").
-value(id45,"echo%0A%0A%0A").
-value(id46,"fixups").
-value(id47,".%2Ffixup.bash%20%3Coutd.json%20%3E%20details.json").
-value(id48,"create%20sequence%20JSON").
-value(id49,"cp%20out.json%20details.json").
-value(id5,"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A").
-value(id50,"convert%20to%20JSON%20details").
-value(id51,".%2Ftojson.bash%20%3Eoutd.json%0A%0A%0A").
-value(id52,"create%20functions").
-value(id53,"create%20final%20script").
-value(id54,"node%20emitfunctions.js%20%3Efunctions.txt").
-value(id55,"cat%20header.txt%20functions.txt%20topo.txt%20trailer.txt%20%7C%20.%2FdeleteBlankLines.bash%20%3Efinal.bash%0A").
-value(id56,"parse%20details%20diagram").
-value(id57,"node%20details.js%20%3Edetails.pl%0A%0A%0A").
-value(id6,"top%20level").
-value(id7,"make%20rects").
-value(id8,"check%20edges").
-value(id9,"senders").
-vertex(id10,"").
-vertex(id11,"").
-vertex(id12,"").
-vertex(id13,"").
-vertex(id14,"").
-vertex(id15,"").
-vertex(id16,"").
-vertex(id17,"").
-vertex(id18,"").
-vertex(id19,"").
-vertex(id20,"").
-vertex(id21,"").
-vertex(id22,"").
-vertex(id23,"").
-vertex(id24,"").
-vertex(id25,"").
-vertex(id26,"").
-vertex(id27,"").
-vertex(id28,"").
-vertex(id29,"").
-vertex(id30,"").
-vertex(id31,"").
-vertex(id32,"").
-vertex(id33,"").
-vertex(id34,"").
-vertex(id35,"").
-vertex(id36,"").
-vertex(id37,"").
-vertex(id38,"").
-vertex(id39,"").
-vertex(id4,"").
-vertex(id40,"").
-vertex(id41,"").
-vertex(id42,"").
-vertex(id43,"").
-vertex(id44,"").
-vertex(id45,"").
-vertex(id46,"").
-vertex(id47,"").
-vertex(id48,"").
-vertex(id49,"").
-vertex(id5,"").
-vertex(id50,"").
-vertex(id51,"").
-vertex(id52,"").
-vertex(id53,"").
-vertex(id54,"").
-vertex(id55,"").
-vertex(id56,"").
-vertex(id57,"").
-vertex(id6,"").
-vertex(id7,"").
-vertex(id8,"").
-vertex(id9,"").
-width(id10,208.12).
-width(id11,147.5).
-width(id12,370).
-width(id13,95).
-width(id14,115).
-width(id15,95).
-width(id16,175).
-width(id17,115).
-width(id18,95).
-width(id19,250).
-width(id20,225).
-width(id21,115).
-width(id22,95).
-width(id23,190).
-width(id24,115).
-width(id25,130).
-width(id26,110).
-width(id27,135).
-width(id28,115).
-width(id29,140).
-width(id30,120).
-width(id31,140).
-width(id32,120).
-width(id33,140).
-width(id34,120).
-width(id35,140).
-width(id36,120).
-width(id37,190.62).
-width(id38,127.5).
-width(id39,180).
-width(id4,230).
-width(id40,188.75).
-width(id41,168.75).
-width(id42,240).
-width(id43,180).
-width(id44,240).
-width(id45,180).
-width(id46,220).
-width(id47,202.5).
-width(id48,160.62).
-width(id49,133.12).
-width(id5,180).
-width(id50,188.75).
-width(id51,168.75).
-width(id52,219.97).
-width(id53,460.62).
-width(id54,202.5).
-width(id55,443.12).
-width(id56,158.75).
-width(id57,143.75).
-width(id6,240).
-width(id7,410).
-width(id8,200).
-width(id9,115).
-x(id10,201.88).
-x(id11,201.88).
-x(id12,210).
-x(id13,195).
-x(id14,375).
-x(id15,385).
-x(id16,195).
-x(id17,180).
-x(id18,190).
-x(id19,320).
-x(id20,335).
-x(id21,180).
-x(id22,190).
-x(id23,630).
-x(id24,665).
-x(id25,320).
-x(id26,330).
-x(id27,470).
-x(id28,480).
-x(id29,180).
-x(id30,190).
-x(id31,340).
-x(id32,350).
-x(id33,180).
-x(id34,190).
-x(id35,340).
-x(id36,350).
-x(id37,209.38).
-x(id38,209.38).
-x(id39,105).
-x(id4,195).
-x(id40,201.88).
-x(id41,211.88).
-x(id42,320).
-x(id43,355).
-x(id44,570).
-x(id45,605).
-x(id46,172.5).
-x(id47,180).
-x(id48,419.38).
-x(id49,433.13).
-x(id5,220).
-x(id50,181.26).
-x(id51,191.26).
-x(id52,210.03).
-x(id53,209.38).
-x(id54,216.88).
-x(id55,216.88).
-x(id56,441.25).
-x(id57,450).
-x(id6,70).
-x(id7,190).
-x(id8,180).
-x(id9,185).
-y(id10,1280).
-y(id11,1370).
-y(id12,312.5).
-y(id13,640).
-y(id14,610).
-y(id15,640).
-y(id16,740).
-y(id17,810).
-y(id18,840).
-y(id19,810).
-y(id20,840).
-y(id21,910).
-y(id22,940).
-y(id23,910).
-y(id24,940).
-y(id25,910).
-y(id26,940).
-y(id27,910).
-y(id28,940).
-y(id29,1000).
-y(id30,1030).
-y(id31,1000).
-y(id32,1030).
-y(id33,1090).
-y(id34,1120).
-y(id35,1090).
-y(id36,1120).
-y(id37,1310).
-y(id38,1400).
-y(id39,42.5).
-y(id4,130).
-y(id40,1190).
-y(id41,1220).
-y(id42,10).
-y(id43,42.5).
-y(id44,10).
-y(id45,42.5).
-y(id46,1840).
-y(id47,1870).
-y(id48,1190).
-y(id49,1220).
-y(id5,155).
-y(id50,1760).
-y(id51,1790).
-y(id52,1920).
-y(id53,2010).
-y(id54,1950).
-y(id55,2040).
-y(id56,1760).
-y(id57,1790).
-y(id6,10).
-y(id7,280).
-y(id8,710).
-y(id9,610).
+value(id10, "emit topological").
+value(id11, "topological sort").
+value(id12, "&lt;div&gt;&lt;div&gt;&lt;div&gt;## create rect fact for every vertex that is not an edge/ellipse/text&lt;/div&gt;&lt;div&gt;## sequence.drawio file contains vertexes, and marks all edge and ellipse (and text)&lt;/div&gt;&lt;div&gt;## but does not mark rectangles (the default)&lt;/div&gt;&lt;div&gt;## this pass finds the defaults and creates explicit rect(...) facts&lt;/div&gt;&lt;div&gt;swipl -q \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; __g 'consult(sequence).' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; __g 'consult(rects).' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; __g 'printRects.' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; __g 'halt.' \&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;gt; temp.pl&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;# augment the factbase (fb.pl) after every inferencing step&lt;/div&gt;&lt;div&gt;cat sequence.pl temp.pl | sort &amp;gt;fb.pl&lt;/div&gt;&lt;div&gt;cp fb.pl _seq_end_fb.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id13, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./senders.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id14, "receivers").
+value(id15, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./receivers.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id16, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckEdges.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id17, "bounding boxes").
+value(id18, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./bb.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id19, "check bounding boxes").
+value(id20, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckBoundingBoxes.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id21, "contains1").
+value(id22, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./contains1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id23, "rectangles must not intersect").
+value(id24, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRule1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id25, "deepcontains").
+value(id26, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./deepcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id27, "directcontains").
+value(id28, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./directcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id29, "port contains").
+value(id30, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./portcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id31, "port directions").
+value(id32, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./portdirections.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id33, "assign names").
+value(id34, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./assignnames.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id35, "assign code").
+value(id36, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./assigncode.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id37, "&lt;div&gt;&lt;div&gt;&lt;div&gt;node emittopological.js &amp;gt; topo1.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id38, "&lt;div&gt;&lt;div&gt;&lt;div&gt;tsort topo1.txt &amp;gt;topo.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id39, "&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id4, "convert to fb").
+value(id40, "convert to JSON").
+value(id41, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;out.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id42, "sequencing").
+value(id43, "&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id44, "details").
+value(id45, "&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id46, "fixups").
+value(id47, "./fixup.bash &amp;lt;outd.json &amp;gt; details.json").
+value(id48, "create sequence JSON").
+value(id49, "cp out.json details.json").
+value(id5, "&lt;div&gt;&lt;div&gt;&lt;div&gt;node sequence.js &amp;gt;sequence.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;").
+value(id50, "convert to JSON details").
+value(id51, "&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;outd.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id52, "create functions").
+value(id53, "create final script").
+value(id54, "node emitfunctions.js &amp;gt;functions.txt").
+value(id55, "&lt;div&gt;cat header.txt functions.txt topo.txt trailer.txt | ./deleteBlankLines.bash &amp;gt;final.bash&lt;/div&gt;").
+value(id56, "parse details diagram").
+value(id57, "&lt;div&gt;&lt;div&gt;&lt;div&gt;node details.js &amp;gt;details.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;").
+value(id6, "top level").
+value(id7, "make rects").
+value(id8, "check edges").
+value(id9, "senders").
+vertex(id10, "").
+vertex(id11, "").
+vertex(id12, "").
+vertex(id13, "").
+vertex(id14, "").
+vertex(id15, "").
+vertex(id16, "").
+vertex(id17, "").
+vertex(id18, "").
+vertex(id19, "").
+vertex(id20, "").
+vertex(id21, "").
+vertex(id22, "").
+vertex(id23, "").
+vertex(id24, "").
+vertex(id25, "").
+vertex(id26, "").
+vertex(id27, "").
+vertex(id28, "").
+vertex(id29, "").
+vertex(id30, "").
+vertex(id31, "").
+vertex(id32, "").
+vertex(id33, "").
+vertex(id34, "").
+vertex(id35, "").
+vertex(id36, "").
+vertex(id37, "").
+vertex(id38, "").
+vertex(id39, "").
+vertex(id4, "").
+vertex(id40, "").
+vertex(id41, "").
+vertex(id42, "").
+vertex(id43, "").
+vertex(id44, "").
+vertex(id45, "").
+vertex(id46, "").
+vertex(id47, "").
+vertex(id48, "").
+vertex(id49, "").
+vertex(id5, "").
+vertex(id50, "").
+vertex(id51, "").
+vertex(id52, "").
+vertex(id53, "").
+vertex(id54, "").
+vertex(id55, "").
+vertex(id56, "").
+vertex(id57, "").
+vertex(id6, "").
+vertex(id7, "").
+vertex(id8, "").
+vertex(id9, "").
+width(id10, 208.12).
+width(id11, 147.5).
+width(id12, 370).
+width(id13, 95).
+width(id14, 115).
+width(id15, 95).
+width(id16, 175).
+width(id17, 115).
+width(id18, 95).
+width(id19, 250).
+width(id20, 225).
+width(id21, 115).
+width(id22, 95).
+width(id23, 190).
+width(id24, 115).
+width(id25, 130).
+width(id26, 110).
+width(id27, 135).
+width(id28, 115).
+width(id29, 140).
+width(id30, 120).
+width(id31, 140).
+width(id32, 120).
+width(id33, 140).
+width(id34, 120).
+width(id35, 140).
+width(id36, 120).
+width(id37, 190.62).
+width(id38, 127.5).
+width(id39, 180).
+width(id4, 230).
+width(id40, 188.75).
+width(id41, 168.75).
+width(id42, 240).
+width(id43, 180).
+width(id44, 240).
+width(id45, 180).
+width(id46, 220).
+width(id47, 202.5).
+width(id48, 160.62).
+width(id49, 133.12).
+width(id5, 180).
+width(id50, 188.75).
+width(id51, 168.75).
+width(id52, 219.97).
+width(id53, 460.62).
+width(id54, 202.5).
+width(id55, 443.12).
+width(id56, 158.75).
+width(id57, 143.75).
+width(id6, 240).
+width(id7, 410).
+width(id8, 200).
+width(id9, 115).
+x(id10, 201.88).
+x(id11, 201.88).
+x(id12, 210).
+x(id13, 195).
+x(id14, 375).
+x(id15, 385).
+x(id16, 195).
+x(id17, 180).
+x(id18, 190).
+x(id19, 320).
+x(id20, 335).
+x(id21, 180).
+x(id22, 190).
+x(id23, 630).
+x(id24, 665).
+x(id25, 320).
+x(id26, 330).
+x(id27, 470).
+x(id28, 480).
+x(id29, 180).
+x(id30, 190).
+x(id31, 340).
+x(id32, 350).
+x(id33, 180).
+x(id34, 190).
+x(id35, 340).
+x(id36, 350).
+x(id37, 209.38).
+x(id38, 209.38).
+x(id39, 105).
+x(id4, 195).
+x(id40, 201.88).
+x(id41, 211.88).
+x(id42, 320).
+x(id43, 355).
+x(id44, 570).
+x(id45, 605).
+x(id46, 172.5).
+x(id47, 180).
+x(id48, 419.38).
+x(id49, 433.13).
+x(id5, 220).
+x(id50, 181.26).
+x(id51, 191.26).
+x(id52, 210.03).
+x(id53, 209.38).
+x(id54, 216.88).
+x(id55, 216.88).
+x(id56, 441.25).
+x(id57, 450).
+x(id6, 70).
+x(id7, 190).
+x(id8, 180).
+x(id9, 185).
+y(id10, 1280).
+y(id11, 1370).
+y(id12, 312.5).
+y(id13, 640).
+y(id14, 610).
+y(id15, 640).
+y(id16, 740).
+y(id17, 810).
+y(id18, 840).
+y(id19, 810).
+y(id20, 840).
+y(id21, 910).
+y(id22, 940).
+y(id23, 910).
+y(id24, 940).
+y(id25, 910).
+y(id26, 940).
+y(id27, 910).
+y(id28, 940).
+y(id29, 1000).
+y(id30, 1030).
+y(id31, 1000).
+y(id32, 1030).
+y(id33, 1090).
+y(id34, 1120).
+y(id35, 1090).
+y(id36, 1120).
+y(id37, 1310).
+y(id38, 1400).
+y(id39, 42.5).
+y(id4, 130).
+y(id40, 1190).
+y(id41, 1220).
+y(id42, 10).
+y(id43, 42.5).
+y(id44, 10).
+y(id45, 42.5).
+y(id46, 1840).
+y(id47, 1870).
+y(id48, 1190).
+y(id49, 1220).
+y(id5, 155).
+y(id50, 1760).
+y(id51, 1790).
+y(id52, 1920).
+y(id53, 2010).
+y(id54, 1950).
+y(id55, 2040).
+y(id56, 1760).
+y(id57, 1790).
+y(id6, 10).
+y(id7, 280).
+y(id8, 710).
+y(id9, 610).

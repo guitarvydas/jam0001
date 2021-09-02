@@ -32,7 +32,7 @@
   "diagram":"id1",
   "id":"id10",
   "inputs": [],
-  "name":"emit%20topological",
+  "name":"emit topological",
   "outputs": [],
   "synccode":""
 }
@@ -42,19 +42,9 @@
   "diagram":"id1",
   "id":"id11",
   "inputs": [],
-  "name":"topological%20sort",
+  "name":"topological sort",
   "outputs": [],
   "synccode":""
-}
-{
-  "children": [],
-  "connections": [],
-  "diagram":"id1",
-  "id":"id12",
-  "inputs": [],
-  "name":"c1",
-  "outputs": [],
-  "synccode":"%23%23%20create%20rect%20fact%20for%20every%20vertex%20that%20is%20not%20an%20edge%2Fellipse%2Ftext%0A%23%23%20sequence.drawio%20file%20contains%20vertexes%2C%20and%20marks%20all%20edge%20and%20ellipse%20(and%20text)%0A%23%23%20but%20does%20not%20mark%20rectangles%20(the%20default)%0A%23%23%20this%20pass%20finds%20the%20defaults%20and%20creates%20explicit%20rect(...)%20facts%0Aswipl%20-q%20%5C%0A%20%20%20-g%20'consult(sequence).'%20%5C%0A%20%20%20-g%20'consult(rects).'%20%5C%0A%20%20%20-g%20'printRects.'%20%5C%0A%20%20%20-g%20'halt.'%20%5C%0A%20%20%20%3E%20temp.pl%0A%0A%0A%23%20augment%20the%20factbase%20(fb.pl)%20after%20every%20inferencing%20step%0Acat%20sequence.pl%20temp.pl%20%7C%20sort%20%3Efb.pl%0Acp%20fb.pl%20_seq_end_fb.pl%0A%0A%0A"
 }
 {
   "children": [],
@@ -64,7 +54,7 @@
   "inputs": [],
   "name":"c2",
   "outputs": [],
-  "synccode":".%2Fsenders.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./senders.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c3" ],
@@ -84,7 +74,7 @@
   "inputs": [],
   "name":"c3",
   "outputs": [],
-  "synccode":".%2Freceivers.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./receivers.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": [],
@@ -94,7 +84,7 @@
   "inputs": [],
   "name":"c4",
   "outputs": [],
-  "synccode":".%2FdesignRuleCheckEdges.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckEdges.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c5" ],
@@ -102,7 +92,7 @@
   "diagram":"id1",
   "id":"id17",
   "inputs": [],
-  "name":"bounding%20boxes",
+  "name":"bounding boxes",
   "outputs": [],
   "synccode":""
 }
@@ -114,7 +104,7 @@
   "inputs": [],
   "name":"c5",
   "outputs": [],
-  "synccode":".%2Fbb.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./bb.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c7" ],
@@ -122,7 +112,7 @@
   "diagram":"id1",
   "id":"id19",
   "inputs": [],
-  "name":"check%20bounding%20boxes",
+  "name":"check bounding boxes",
   "outputs": [],
   "synccode":""
 }
@@ -134,7 +124,7 @@
   "inputs": [],
   "name":"c7",
   "outputs": [],
-  "synccode":".%2FdesignRuleCheckBoundingBoxes.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRuleCheckBoundingBoxes.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c8" ],
@@ -154,7 +144,7 @@
   "inputs": [],
   "name":"c8",
   "outputs": [],
-  "synccode":".%2Fcontains1.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./contains1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c9" ],
@@ -162,7 +152,7 @@
   "diagram":"id1",
   "id":"id23",
   "inputs": [],
-  "name":"rectangles%20must%20not%20intersect",
+  "name":"rectangles must not intersect",
   "outputs": [],
   "synccode":""
 }
@@ -174,7 +164,7 @@
   "inputs": [],
   "name":"c9",
   "outputs": [],
-  "synccode":".%2FdesignRule1.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./designRule1.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c10" ],
@@ -194,7 +184,7 @@
   "inputs": [],
   "name":"c10",
   "outputs": [],
-  "synccode":".%2Fdeepcontains.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./deepcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c11" ],
@@ -214,7 +204,7 @@
   "inputs": [],
   "name":"c11",
   "outputs": [],
-  "synccode":".%2Fdirectcontains.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./directcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c13" ],
@@ -222,7 +212,7 @@
   "diagram":"id1",
   "id":"id29",
   "inputs": [],
-  "name":"port%20contains",
+  "name":"port contains",
   "outputs": [],
   "synccode":""
 }
@@ -234,7 +224,7 @@
   "inputs": [],
   "name":"c13",
   "outputs": [],
-  "synccode":".%2Fportcontains.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./portcontains.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c14" ],
@@ -242,7 +232,7 @@
   "diagram":"id1",
   "id":"id31",
   "inputs": [],
-  "name":"port%20directions",
+  "name":"port directions",
   "outputs": [],
   "synccode":""
 }
@@ -254,7 +244,7 @@
   "inputs": [],
   "name":"c14",
   "outputs": [],
-  "synccode":".%2Fportdirections.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./portdirections.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c15" ],
@@ -262,7 +252,7 @@
   "diagram":"id1",
   "id":"id33",
   "inputs": [],
-  "name":"assign%20names",
+  "name":"assign names",
   "outputs": [],
   "synccode":""
 }
@@ -274,7 +264,7 @@
   "inputs": [],
   "name":"c15",
   "outputs": [],
-  "synccode":".%2Fassignnames.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./assignnames.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c16" ],
@@ -282,7 +272,7 @@
   "diagram":"id1",
   "id":"id35",
   "inputs": [],
-  "name":"assign%20code",
+  "name":"assign code",
   "outputs": [],
   "synccode":""
 }
@@ -294,7 +284,7 @@
   "inputs": [],
   "name":"c16",
   "outputs": [],
-  "synccode":".%2Fassigncode.bash%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./assigncode.bash&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": [],
@@ -304,7 +294,7 @@
   "inputs": [],
   "name":"c17",
   "outputs": [],
-  "synccode":"node%20emittopological.js%20%3E%20topo1.txt%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;node emittopological.js &amp;gt; topo1.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": [],
@@ -314,7 +304,7 @@
   "inputs": [],
   "name":"c18",
   "outputs": [],
-  "synccode":"tsort%20topo1.txt%20%3Etopo.txt%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;tsort topo1.txt &amp;gt;topo.txt&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": [],
@@ -324,7 +314,7 @@
   "inputs": [],
   "name":"c19",
   "outputs": [],
-  "synccode":"echo%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c25" ],
@@ -332,7 +322,7 @@
   "diagram":"id1",
   "id":"id4",
   "inputs": [],
-  "name":"convert%20to%20fb",
+  "name":"convert to fb",
   "outputs": [],
   "synccode":""
 }
@@ -342,7 +332,7 @@
   "diagram":"id1",
   "id":"id40",
   "inputs": [],
-  "name":"convert%20to%20JSON",
+  "name":"convert to JSON",
   "outputs": [],
   "synccode":""
 }
@@ -354,7 +344,7 @@
   "inputs": [],
   "name":"c20",
   "outputs": [],
-  "synccode":".%2Ftojson.bash%20%3Eout.json%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;out.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c21" ],
@@ -374,7 +364,7 @@
   "inputs": [],
   "name":"c21",
   "outputs": [],
-  "synccode":"echo%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c22" ],
@@ -394,7 +384,7 @@
   "inputs": [],
   "name":"c22",
   "outputs": [],
-  "synccode":"echo%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;echo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c23" ],
@@ -414,7 +404,7 @@
   "inputs": [],
   "name":"c23",
   "outputs": [],
-  "synccode":".%2Ffixup.bash%20%3Coutd.json%20%3E%20details.json"
+  "synccode":"./fixup.bash &amp;lt;outd.json &amp;gt; details.json"
 }
 {
   "children": ["c24" ],
@@ -422,7 +412,7 @@
   "diagram":"id1",
   "id":"id48",
   "inputs": [],
-  "name":"create%20sequence%20JSON",
+  "name":"create sequence JSON",
   "outputs": [],
   "synccode":""
 }
@@ -434,7 +424,7 @@
   "inputs": [],
   "name":"c24",
   "outputs": [],
-  "synccode":"cp%20out.json%20details.json"
+  "synccode":"cp out.json details.json"
 }
 {
   "children": [],
@@ -444,7 +434,7 @@
   "inputs": [],
   "name":"c25",
   "outputs": [],
-  "synccode":"node%20sequence.js%20%3Esequence.pl%0A%0A%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;node sequence.js &amp;gt;sequence.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;"
 }
 {
   "children": ["c26" ],
@@ -452,7 +442,7 @@
   "diagram":"id1",
   "id":"id50",
   "inputs": [],
-  "name":"convert%20to%20JSON%20details",
+  "name":"convert to JSON details",
   "outputs": [],
   "synccode":""
 }
@@ -464,7 +454,7 @@
   "inputs": [],
   "name":"c26",
   "outputs": [],
-  "synccode":".%2Ftojson.bash%20%3Eoutd.json%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;./tojson.bash &amp;gt;outd.json&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c27" ],
@@ -472,7 +462,7 @@
   "diagram":"id1",
   "id":"id52",
   "inputs": [],
-  "name":"create%20functions",
+  "name":"create functions",
   "outputs": [],
   "synccode":""
 }
@@ -482,7 +472,7 @@
   "diagram":"id1",
   "id":"id53",
   "inputs": [],
-  "name":"create%20final%20script",
+  "name":"create final script",
   "outputs": [],
   "synccode":""
 }
@@ -494,7 +484,7 @@
   "inputs": [],
   "name":"c27",
   "outputs": [],
-  "synccode":"node%20emitfunctions.js%20%3Efunctions.txt"
+  "synccode":"node emitfunctions.js &amp;gt;functions.txt"
 }
 {
   "children": [],
@@ -504,7 +494,7 @@
   "inputs": [],
   "name":"c28",
   "outputs": [],
-  "synccode":"cat%20header.txt%20functions.txt%20topo.txt%20trailer.txt%20%7C%20.%2FdeleteBlankLines.bash%20%3Efinal.bash%0A"
+  "synccode":"&lt;div&gt;cat header.txt functions.txt topo.txt trailer.txt | ./deleteBlankLines.bash &amp;gt;final.bash&lt;/div&gt;"
 }
 {
   "children": ["c29" ],
@@ -512,7 +502,7 @@
   "diagram":"id1",
   "id":"id56",
   "inputs": [],
-  "name":"parse%20details%20diagram",
+  "name":"parse details diagram",
   "outputs": [],
   "synccode":""
 }
@@ -524,7 +514,7 @@
   "inputs": [],
   "name":"c29",
   "outputs": [],
-  "synccode":"node%20details.js%20%3Edetails.pl%0A%0A%0A"
+  "synccode":"&lt;div&gt;&lt;div&gt;&lt;div&gt;node details.js &amp;gt;details.pl&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
 }
 {
   "children": ["c19" ],
@@ -532,7 +522,7 @@
   "diagram":"id1",
   "id":"id6",
   "inputs": [],
-  "name":"top%20level",
+  "name":"top level",
   "outputs": [],
   "synccode":""
 }
@@ -542,7 +532,7 @@
   "diagram":"id1",
   "id":"id7",
   "inputs": [],
-  "name":"make%20rects",
+  "name":"make rects",
   "outputs": [],
   "synccode":""
 }
@@ -552,7 +542,7 @@
   "diagram":"id1",
   "id":"id8",
   "inputs": [],
-  "name":"check%20edges",
+  "name":"check edges",
   "outputs": [],
   "synccode":""
 }

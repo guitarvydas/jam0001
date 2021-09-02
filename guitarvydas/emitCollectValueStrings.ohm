@@ -1,0 +1,14 @@
+emitCollectValueStrings {
+Main = Fact+
+Fact = ValueFact | OtherFact
+ValueFact = "value" "(" ident "," valuestring ")."
+valuestring = string
+OtherFact = ident "(" ident "," Object ")."
+Object = string | number | ident
+ident = alnum+
+number = digit+ fractionalPart
+fractionalPart = "." digit+
+string = quote notQuote* quote
+quote = "\""
+notQuote = ~quote any
+}
